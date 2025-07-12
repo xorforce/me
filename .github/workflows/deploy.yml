@@ -31,7 +31,9 @@ jobs:
         uses: actions/configure-pages@v4
       
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps
+        run: |
+          rm -f package-lock.json
+          npm install --legacy-peer-deps
       
       - name: Build with Next.js
         run: npm run build
