@@ -1,73 +1,47 @@
-import Link from 'next/link';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Calendar, MapPin, Users, ExternalLink } from 'lucide-react';
+import Link from "next/link"
+import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Calendar, MapPin, Users, ExternalLink } from "lucide-react"
 
 export default function Talks() {
   return (
-    <div className='min-h-screen bg-white font-mono'>
+    <div className="min-h-screen bg-background font-mono dark:bg-gray-950">
       {/* Navigation */}
-      <nav className='flex items-center justify-between px-8 py-6 max-w-2xl mx-auto text-sm'>
-        <div className='flex items-center space-x-6'>
-          <Link
-            href='/'
-            className='text-gray-900 hover:text-gray-600 transition-colors duration-200'
-          >
-            home
-          </Link>
-          <Link
-            href='/writing'
-            className='text-gray-900 hover:text-gray-600 transition-colors duration-200'
-          >
-            writing
-          </Link>
-          <Link
-            href='/talks'
-            className='text-gray-900 hover:text-gray-600 transition-colors duration-200'
-          >
-            talks
-          </Link>
-          <Link
-            href='/podcasts'
-            className='text-gray-900 hover:text-gray-600 transition-colors duration-200'
-          >
-            podcasts
-          </Link>
-        </div>
-        <div className='flex items-center space-x-4 text-xs'>
+      <nav className="flex items-center justify-end px-8 py-6 max-w-2xl mx-auto text-sm">
+        <div className="flex items-center space-x-4 text-xs">
           <Button
-            variant='ghost'
-            size='sm'
-            className='h-auto p-0 text-xs text-gray-600 hover:text-gray-900 hover:bg-transparent'
+            variant="ghost"
+            size="sm"
+            className="h-auto p-0 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-transparent"
           >
-            <Link
-              href='https://github.com/xorforce'
-              className='hover:underline'
-            >
+            <Link href="/" className="hover:underline">
+              home
+            </Link>
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="h-auto p-0 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-transparent"
+          >
+            <Link href="https://github.com/xorforce" className="hover:underline">
               github
             </Link>
           </Button>
           <Button
-            variant='ghost'
-            size='sm'
-            className='h-auto p-0 text-xs text-gray-600 hover:text-gray-900 hover:bg-transparent'
+            variant="ghost"
+            size="sm"
+            className="h-auto p-0 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-transparent"
           >
-            <Link
-              href='https://twitter.com/soulful_swift'
-              className='hover:underline'
-            >
+            <Link href="https://twitter.com/soulful_swift" className="hover:underline">
               twitter
             </Link>
           </Button>
           <Button
-            variant='ghost'
-            size='sm'
-            className='h-auto p-0 text-xs text-gray-600 hover:text-gray-900 hover:bg-transparent'
+            variant="ghost"
+            size="sm"
+            className="h-auto p-0 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-transparent"
           >
-            <Link
-              href='mailto:bhagatsingh2297@gmail.com'
-              className='hover:underline'
-            >
+            <Link href="mailto:bhagatsingh2297@gmail.com" className="hover:underline">
               email
             </Link>
           </Button>

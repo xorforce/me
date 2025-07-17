@@ -32,11 +32,23 @@ jobs:
       
       - name: Install dependencies
         run: |
-          rm -f package-lock.json
-          npm install --legacy-peer-deps
+          # Clean install for consistent builds
+          npm ci --legacy-peer-deps || (rm -f package-lock.json && npm install --legacy-peer-deps)
       
       - name: Build with Next.js
         run: npm run build
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_ACTIONS: true
+      
+      - name: Verify build output
+        run: |
+          echo "Build output contents:"
+          ls -la out/
+          echo "Static media directory (fonts):"
+          ls -la out/_next/static/media/ || echo "No media directory found"
+          echo "Custom fonts in public:"
+          find out/ -name "*.woff2" -o -name "*.woff" || echo "No custom fonts found"
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -12,6 +12,24 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        primary: ['var(--font-primary)', 'sans-serif'],
+        secondary: ['var(--font-secondary)', 'sans-serif'],
+        mono: ['var(--font-mono)', 'monospace'],
+        display: ['var(--font-display)', 'serif'],
+      },
+      fontSize: {
+        'xs': '0.875rem',    // xs → sm: 12px → 14px
+        'sm': '1rem',        // sm → base: 14px → 16px
+        'base': '1.125rem',  // base → lg: 16px → 18px
+        'lg': '1.25rem',     // lg → xl: 18px → 20px
+        'xl': '1.5rem',      // xl → 2xl: 20px → 24px
+        '2xl': '1.875rem',   // 2xl → 3xl: 24px → 30px
+        '3xl': '2.25rem',    // 3xl → 4xl: 30px → 36px
+        '4xl': '3rem',       // 4xl → 5xl: 36px → 48px
+        '5xl': '3.75rem',    // 5xl → 6xl: 48px → 60px
+        '6xl': '4.5rem',     // 6xl → 7xl: 60px → 72px
+      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

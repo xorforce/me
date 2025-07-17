@@ -1,55 +1,60 @@
-import Link from 'next/link';
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
 
 export default function About() {
   return (
-    <div className='min-h-screen bg-white font-mono'>
+    <div className="min-h-screen bg-background font-mono dark:bg-gray-950">
       {/* Navigation */}
-      <nav className='flex items-center justify-between px-8 py-6 max-w-2xl mx-auto text-sm'>
-        <div className='flex items-center space-x-6'>
-          <Link
-            href='/'
-            className='text-gray-900 hover:text-gray-600 transition-colors duration-200'
+      <nav className="flex items-center justify-end px-8 py-6 max-w-2xl mx-auto text-sm">
+        <div className="flex items-center space-x-4 text-xs">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="h-auto p-0 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-transparent"
           >
-            home
-          </Link>
-          <Link
-            href='/writing'
-            className='text-gray-900 hover:text-gray-600 transition-colors duration-200'
+            <Link href="/" className="hover:underline">
+              home
+            </Link>
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="h-auto p-0 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-transparent"
           >
-            writing
-          </Link>
-        </div>
-        <div className='flex items-center space-x-4 text-xs'>
-          <Link
-            href='https://github.com/xorforce'
-            className='text-gray-600 hover:text-gray-900 transition-colors duration-200 hover:underline'
+            <Link href="https://github.com/xorforce" className="hover:underline">
+              github
+            </Link>
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="h-auto p-0 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-transparent"
           >
-            github
-          </Link>
-          <Link
-            href='https://twitter.com/soulful_swift'
-            className='text-gray-600 hover:text-gray-900 transition-colors duration-200 hover:underline'
+            <Link href="https://twitter.com/soulful_swift" className="hover:underline">
+              twitter
+            </Link>
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="h-auto p-0 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-transparent"
           >
-            twitter
-          </Link>
-          <Link
-            href='mailto:bhagatsingh2297@gmail.com'
-            className='text-gray-600 hover:text-gray-900 transition-colors duration-200 hover:underline'
-          >
-            email
-          </Link>
+            <Link href="mailto:bhagatsingh2297@gmail.com" className="hover:underline">
+              email
+            </Link>
+          </Button>
         </div>
       </nav>
 
       {/* Main Content */}
-      <main className='max-w-2xl mx-auto px-8 py-12 animate-in fade-in duration-500'>
-        <section className='mb-16'>
-          <h1 className='text-2xl font-medium text-gray-900 mb-8 hover:text-gray-700 transition-colors duration-300'>
+      <main className="max-w-2xl mx-auto px-8 py-12 animate-in fade-in duration-500">
+        <section className="mb-16">
+          <h1 className="text-2xl font-medium text-gray-900 dark:text-gray-50 mb-8 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300">
             About
           </h1>
 
-          <div className='space-y-6 text-sm text-gray-600 leading-relaxed'>
-            <p className='hover:text-gray-800 transition-colors duration-200'>
+          <div className="space-y-6 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="hover:text-gray-800 dark:hover:text-gray-300 transition-colors duration-200 hover:scale-[1.005] transition-transform duration-200">
               I'm an iOS Engineer with an ever-lasting knack for design. For me,
               a perfect user interface should look good and work even better.
               I'm passionate about uncovering problems and solving them to
@@ -79,13 +84,13 @@ export default function About() {
           </div>
         </section>
 
-        <section className='mb-16'>
-          <h2 className='text-lg font-medium text-gray-900 mb-6'>Experience</h2>
+        <section className="mb-16">
+          <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50 mb-6">Experience</h2>
 
-          <div className='space-y-6'>
-            <div className='hover:bg-gray-50 transition-colors duration-200 p-3 -m-3 rounded-lg'>
-              <div className='flex justify-between items-start mb-2'>
-                <h3 className='text-sm font-medium text-gray-900'>
+          <div className="space-y-6">
+            <div className="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 p-3 -m-3 rounded-lg hover:scale-[1.005] transition-transform duration-200">
+              <div className="flex justify-between items-start mb-2">
+                <h3 className="text-sm font-medium text-gray-900 dark:text-gray-50">
                   iOS Engineer
                 </h3>
                 <span className='text-xs text-gray-500'>
