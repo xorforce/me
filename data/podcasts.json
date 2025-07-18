@@ -1,0 +1,49 @@
+{
+  "podcasts": [
+    {
+      "id": 1,
+      "title": "Indie vs. Corporate - Which path is right for you?",
+      "date": "2024",
+      "duration": "1hr 22 min",
+      "podcast": "Kodeco Podcast, S02 E02",
+      "description": "In this episode, we discuss the pros and cons of working as an indie developer vs. a corporate employee. We explore the challenges and rewards of both paths, and the importance of finding a balance between the two.",
+      "tags": ["Career", "iOS Development", "Guest"],
+      "thumbnail": {
+        "image": "https://img.youtube.com/vi/3wiWlLSewU4/hqdefault.jpg",
+        "text": "iOS Dev",
+        "gradient": "from-blue-500 to-purple-600"
+      },
+      "link": "https://www.youtube.com/watch?v=3wiWlLSewU4"
+    },
+    {
+      "id": 2,
+      "title": "From Tier-3 College to Ex- Zomato Engineer and PhonePe",
+      "date": "2021",
+      "duration": "1hr 7 min",
+      "podcast": "The Mayank Show",
+      "description": "In this episode, we discuss my journey from a Tier-3 college to an ex-Zomato engineer and now a PhonePe engineer. We explore the challenges I faced and how I overcame them to achieve my goals.",
+      "tags": ["Career", "Guest"],
+      "thumbnail": {
+        "image": "https://img.youtube.com/vi/CjRNyl5urTs/hqdefault.jpg",
+        "text": "E-commerce",
+        "gradient": "from-green-500 to-teal-600"
+      },
+      "link": "https://www.youtube.com/watch?v=CjRNyl5urTs"
+    },
+    {
+      "id": 3,
+      "title": "Content Creator's Chat",
+      "date": "2021",
+      "duration": "1hr 50m",
+      "podcast": "WWDC Community Week",
+      "description": "In this podcast, we discussed latest announcements in WWDC with respect to content creation, and how it benefits consumers. We also opened the panel for any questions viewers might have had with respect to it.",
+      "tags": ["WWDC", "Guest"],
+      "thumbnail": {
+        "image": "https://img.youtube.com/vi/CekLjzqOflw/hqdefault.jpg",
+        "text": "Career",
+        "gradient": "from-purple-500 to-pink-600"
+      },
+      "link": "https://www.youtube.com/watch?v=CekLjzqOflw"
+    }
+  ]
+} 
