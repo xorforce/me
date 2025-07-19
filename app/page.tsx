@@ -33,7 +33,7 @@ export default function Portfolio() {
             <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
               I{" "}
               <Link
-                href="/"
+                href="/writing"
                 className="hover:underline text-gray-900 dark:text-gray-50 bg-gray-100 dark:bg-gray-800 px-1 rounded"
               >
                 write

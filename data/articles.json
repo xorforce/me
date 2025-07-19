@@ -1,0 +1,254 @@
+[{
+  "id": "git-apprentice",
+  "title": "Git Apprentice",
+  "excerpt": "Learn the basics of Git, how to set up your own repos, as well as how to deal with remote syncing",
+  "date": "Apr 10, 2025",
+  "tags": ["Git", "Version Control", "Author", "Kodeco", "Book"],
+  "kodecoUrl": "https://www.kodeco.com/books/git-apprentice",
+  "contentType": "Book"
+},
+{
+  "id": "data-persistence-in-swiftui",
+  "title": "Data Persistence in SwiftUI",
+  "excerpt": "This module explores the fundamental principles of persistent data storage in SwiftUI-based iOS applications, guiding participants in creating seamless user experiences. Covering diverse data persistence techniques, it equips learners with the skills to enhance iOS applications by effectively managing and utilizing data.",
+  "date": "Jun 20, 2024",
+  "readTime": "40 min",
+  "tags": ["DataPersistence", "SwiftUI", "iOS", "Tech Editor", "Kodeco", "Course"],
+  "kodecoUrl": "https://www.kodeco.com/ios/paths/sharing-state-management-swiftui/43760166-data-persistence-in-swiftui",
+  "contentType": "Course"
+},
+{
+  "id": "swiftui-views-layouts",
+  "title": "SwiftUI Views & Layouts",
+  "excerpt": "This lesson will walk you through building your own custom views, configuring app layouts in portrait and landscape modes, and building vertical and horizontal layout containers.",
+  "date": "Jun 20, 2024",
+  "readTime": "1h 10 min",
+  "tags": ["SwiftUI", "iOS", "Tech Editor", "Kodeco", "Course"],
+  "kodecoUrl": "https://www.kodeco.com/ios/paths/getting-started-swiftui/44430903-swiftui-views-layouts",
+  "contentType": "Course"
+},
+{
+  "id": "performance-opt",
+  "title": "Performance Optimization",
+  "excerpt": "Take your app to the next level! This module will equip you with advanced techniques to optimize your network calls, threading, and memory management, resulting in a faster and efficient app.",
+  "date": "Jun 20, 2024",
+  "readTime": "60 min",
+  "tags": ["Performance", "iOS", "Tech Editor", "Kodeco", "Course"],
+  "kodecoUrl": "https://www.kodeco.com/ios/paths/networking-concurrency-swiftui/44704939-performance-optimization",
+  "contentType": "Course"
+},
+{
+  "id": "concurrency-demystified",
+  "title": "Concurrency Demystified",
+  "excerpt": "Unleash the power of concurrency! This module will equip you with the tools and techniques to handle multiple tasks simultaneously, keeping your app responsive and efficient. Discover the fundamentals of async/await, conquer network calls, and handle background tasks, all while ensuring a smooth, responsive user experience.",
+  "date": "Jun 20, 2024",
+  "readTime": "1h 16 min",
+  "tags": ["Concurrency", "iOS", "Tech Editor", "Kodeco", "Course"],
+  "kodecoUrl": "https://www.kodeco.com/ios/paths/networking-concurrency-swiftui/44705022-concurrency-demystified",
+  "contentType": "Course"
+},
+{
+  "id": "intro-swift",
+  "title": "Introduction to Swift",
+  "excerpt": "This module will introduce you to the fundamentals of the Swift programming language. You’ll learn about the different data types in Swift, how to write simple variables and functions, and how to use conditional statements and loops",
+  "date": "Apr 24, 2024",
+  "readTime": "2h 19 min",
+  "tags": ["Swift", "iOS", "Tech Editor", "Kodeco", "Course"],
+  "kodecoUrl": "https://www.kodeco.com/ios/paths/foundational-tools-ios/43720851-introduction-to-swift",
+  "contentType": "Course"
+},
+{
+  "id": "intro-xcode",
+  "title": "Introduction to Xcode",
+  "excerpt": "This module introduces you to Xcode, the app to use to develop software for all of Apple’s platforms. You will learn about the different components of the Xcode interface and how to use them to create, build, and run iOS apps. You will also learn how to find and fix problems in your code using Xcode’s built-in debugging tools. Finally, you’ll learn the steps to put your app on your own devices and to publish it to Apple’s App Store.",
+  "date": "Apr 24, 2024",
+  "readTime": "2h 51 min",
+  "tags": ["Xcode", "iOS", "Swift", "Tech Editor", "Kodeco", "Course"],
+  "kodecoUrl": "https://www.kodeco.com/ios/paths/foundational-tools-ios/43817071-introduction-to-xcode",
+  "contentType": "Course"
+},
+{
+  "id": "shortcuts",
+  "title": "Creating Shortcuts with App Intents",
+  "excerpt": "Learn how to create iOS shortcuts using Swift in this App Intents tutorial.",
+  "date": "Oct 02, 2023",
+  "readTime": "25 min read",
+  "tags": ["UI", "iOS", "Swift", "Tech Editor", "Kodeco", "App Intents"],
+  "kodecoUrl": "https://www.kodeco.com/40950083-creating-shortcuts-with-app-intents",
+  "contentType": "Article"
+},{
+  "id": "wordle-2",
+  "title": "How to Make a Game Like Wordle in SwiftUI: Part Two",
+  "excerpt": "Extend your Wordle word-game clone with animation, accessibility, statistics and shareable results, all in SwiftUI",
+  "date": "May 30, 2022",
+  "readTime": "35 min read",
+  "tags": ["UI", "iOS", "Swift", "Tech Editor", "Kodeco", "Wordle"],
+  "kodecoUrl": "https://www.kodeco.com/31881532-how-to-make-a-game-like-wordle-in-swiftui-part-two",
+  "contentType": "Article"
+},{
+  "id": "wordle-1",
+  "title": "How to Make a Game Like Wordle in SwiftUI: Part One",
+  "excerpt": "Learn how to create your own Wordle word-game clone in SwiftUI. Understand game logic as you build an onscreen keyboard and letter tile game board",
+  "date": "May 23, 2022",
+  "readTime": "35 min read",
+  "tags": ["UI", "iOS", "Swift", "Tech Editor", "Kodeco", "Wordle"],
+  "kodecoUrl": "https://www.kodeco.com/31661263-how-to-make-a-game-like-wordle-in-swiftui-part-one",
+  "contentType": "Article"
+},{
+  "id": "ipados15-guide",
+  "title": "iPadOS 15 Tutorial: What's New for Developers",
+  "excerpt": "See what's new in iPadOS 15 and take your app to the next level with groundbreaking changes!",
+  "date": "Nov 22, 2021",
+  "readTime": "30 min read",
+  "tags": ["UI", "iPadOS", "Swift", "Tech Editor", "Kodeco", "iPadOS 15"],
+  "kodecoUrl": "https://www.kodeco.com/27454008-ipados-15-tutorial-what-s-new-for-developers",
+  "contentType": "Article"
+},{
+  "id": "pip-ios-guide",
+  "title": "Picture in Picture Across All Platforms",
+  "excerpt": "Learn how to implement Picture in Picture for default and custom video players across all app platforms.",
+  "date": "Jul 26, 2021",
+  "readTime": "10 min read",
+  "tags": ["UI", "iOS", "Swift", "Tech Editor", "Kodeco", "Picture in Picture"],
+  "kodecoUrl": "https://www.kodeco.com/24247382-picture-in-picture-across-all-platforms",
+  "contentType": "Article"
+},{
+  "id": "coreml-ios-guide",
+  "title": "Understanding and Managing Xcode Space",
+  "excerpt": "Learn how to free up space hogged by Xcode in caches, derived data, archives and simulators!",
+  "date": "Mar 21, 2021",
+  "readTime": "20 min read",
+  "tags": ["Xcode", "iOS", "Swift", "Tech Editor", "Kodeco", "Xcode Space"],
+  "kodecoUrl": "https://www.kodeco.com/19998365-understanding-and-managing-xcode-space",
+  "contentType": "Article"
+},{
+  "id": "multipeer-connectivity-ios",
+  "title": "Getting Started with Multipeer Connectivity",
+  "excerpt": "In this tutorial, you'll learn how to transfer data between devices with no external network. You'll also try your hand at creating a chat feature.",
+  "date": "Nov 30, 2020",
+  "readTime": "30 min read",
+  "tags": ["UI", "iOS", "Swift", "Tech Editor", "Kodeco", "Multipeer Connectivity"],
+  "kodecoUrl": "https://www.kodeco.com/12689804-getting-started-with-multipeer-connectivity",
+  "contentType": "Article"
+},{
+  "id": "advanced-git",
+  "title": "Advanced Git",
+  "excerpt": "Advance your understanding of how Git works under the hood, master workflows, branching, merging and rebasing your work for easy and successful project collaboration!",
+  "date": "Oct 01, 2020",
+  "tags": ["Git", "Version Control", "Tech Editor", "Kodeco", "Book"],
+  "kodecoUrl": "https://www.kodeco.com/books/advanced-git/v1.0/",
+  "contentType": "Book"
+},{
+  "id": "mastering-git",
+  "title": "Mastering Git",
+  "excerpt": "Learn how Git works under the hood, master workflows, branching, merging and rebasing your work for easy and successful project collaboration!",
+  "date": "Aug 24, 2020",
+  "tags": ["Git", "Version Control", "Tech Editor", "Kodeco", "Book"],
+  "kodecoUrl": "https://www.kodeco.com/books/mastering-git",
+  "contentType": "Book"
+},{
+  "id": "advanced-mapkit",
+  "title": "Advanced MapKit Tutorial: Custom MapKit Tiles",
+  "excerpt": "In this custom MapKit tiles tutorial, you'll learn to modify the default MapKit tiles by adding cool, custom tiles to an adventure game",
+  "date": "Jun 08, 2020",
+  "readTime": "25 min read",
+  "tags": ["UI", "iOS", "Swift", "Tech Editor", "Kodeco", "MapKit"],
+  "kodecoUrl": "https://www.kodeco.com/9697133-advanced-mapkit-tutorial-custom-mapkit-tiles",
+  "contentType": "Article"
+},{
+  "id": "ui-autolayout",
+  "title": "Building an App With Only Code Using Auto Layout",
+  "excerpt": "Learn how to make your iOS app's UI in code using Auto Layout without using Storyboards or XIBs, and how it can make working in a team easier.",
+  "date": "Dec 30, 2019",
+  "readTime": "15 min read",
+  "tags": ["UI", "iOS", "Swift", "Author", "Kodeco"],
+  "kodecoUrl": "https://www.kodeco.com/6004856-building-an-app-with-only-code-using-auto-layout",
+  "contentType": "Article"
+},{
+  "id": "collection-view-ios",
+  "title": "UICollectionView Custom Layout Tutorial: Pinterest",
+  "excerpt": "Build a UICollectionView custom layout inspired by the Pinterest app, and learn how to cache attributes and dynamically size cells.",
+  "date": "Sep 09, 2019",
+  "readTime": "15 min read",
+  "tags": ["UI", "iOS", "Swift", "Tech Editor", "Kodeco"],
+  "kodecoUrl": "https://www.kodeco.com/4829472-uicollectionview-custom-layout-tutorial-pinterest",
+  "contentType": "Article"
+},{
+  "id": "realtime-comms-ios",
+  "title": "Real-Time Communication with Streams Tutorial for iOS",
+  "excerpt": "Get down to TCP-level networking and learn about sockets and how to use Core Foundation to build a real-time chat app in this iOS streams tutorial",
+  "date": "Jul 08, 2019",
+  "readTime": "25 min read",
+  "tags": ["UI", "iOS", "Swift", "Tech Editor", "Kodeco"],
+  "kodecoUrl": "https://www.kodeco.com/3437391-real-time-communication-with-streams-tutorial-for-ios",
+  "contentType": "Article"
+},{
+  "id": "mvc-modern-ios",
+  "title": "Model-View-Controller (MVC) in iOS – A Modern Approach",
+  "excerpt": "Learn some tips and tricks to go one up on MVC, Apple's recommended architecture pattern, and modify your code to be scalable and extensible!",
+  "date": "Apr 15, 2019",
+  "readTime": "15 min read",
+  "tags": ["UI", "iOS", "Swift"],
+  "kodecoUrl": "https://www.kodeco.com/1000705-model-view-controller-mvc-in-ios-a-modern-approach",
+  "contentType": "Article"
+},{
+  "id": "custom-subscripts",
+  "title": "Custom Subscripts in Swift",
+  "excerpt": "Learn how to extend your own types with subscripts, allowing you to index into them with simple syntax just like native arrays and dictionaries. ",
+  "date": "Dec 26, 2018",
+  "readTime": "15 min read",
+  "tags": ["Swift", "iOS", "Tech Editor", "Kodeco"],
+  "kodecoUrl": "https://www.kodeco.com/9088-custom-subscripts-in-swift",
+  "contentType": "Article"
+},{
+  "id": "peek-pop-3D-touch",
+  "title": "Peek and Pop With 3D Touch",
+  "excerpt": "In this tutorial, you'll implement Peek and Pop, which enables you to preview content of the navigating view controller. You'll also take a look at custom UIPreview Actions!",
+  "date": "Oct 08, 2018",
+  "readTime": "10 min read",
+  "tags": ["UI", "iOS", "Swift", "Kodeco", "Tech Editor"],
+  "kodecoUrl": "https://www.kodeco.com/6794-peek-and-pop-with-3d-touch",
+  "contentType": "Article"
+},{
+  "id": "moya-ios",
+  "title": "Moya Tutorial for iOS: Getting Started",
+  "excerpt": "Moya is a networking library inspired by the concept of encapsulating network requests in type-safe way, typically using enumerations, that provides confidence when working with your network layer. Become a networking superhero with Moya!",
+  "date": "Jul 23, 2018",
+  "readTime": "30 min read",
+  "tags": ["Swift", "iOS", "Tech Editor", "Kodeco"],
+  "kodecoUrl": "https://www.kodeco.com/5121-moya-tutorial-for-ios-getting-started",
+  "contentType": "Article"
+},{
+  "id": "new-in-4.2",
+  "title": "What's New in Swift 4.2?",
+  "excerpt": "Good news: Swift 4.2 is now available in Xcode 10 beta! This release updates important Swift 4.1 features and improves the language in preparation for ABI stability. This tutorial covers the most significant changes in Swift 4.2. It requires Xcode 10, so make sure you download and install the latest beta of Xcode before getting started.",
+  "date": "Jun 11, 2018",
+  "readTime": "30 min read",
+  "tags": ["Swift", "iOS", "Tech Editor", "Kodeco"],
+  "kodecoUrl": "https://www.kodeco.com/5357-what-s-new-in-swift-4-2",
+  "contentType": "Article"
+},{
+  "id": "gifs-ios",
+  "title": "Ultimate Guide to Gifs in iOS",
+  "excerpt": "The other side of the animated stuff. GIFs are around from the late 1980s. It is only in the recently that they have blown virtually. From blogs to meme websites, you can see them anywhere. There are many reasons of using a GIF over a picture, for example, they are not usually heavy as videos, gets across your point appropriately and are compatible everywhere.",
+  "date": "Feb 13, 2018",
+  "readTime": "7 min read",
+  "tags": ["GIFs", "iOS", "UX Design"],
+  "mediumUrl": "https://medium.com/swift-sundae/ultimate-guide-to-gifs-in-ios-f903ab69ddf6"
+},{
+  "id": "zomato-internship",
+  "title": "My Internship Experience at Zomato",
+  "excerpt": "Since I'm an iOS Developer, I got the chance to work with the iOS Division of Zomato, during October to February, at their tech office in Gurgaon. For those who don't know, Zomato is a restaurant discovery service, with additional features such as food delivery, table reservations and many more. They are present in over 23 countries across the globe.",
+  "date": "Feb 06, 2018",
+  "readTime": "5 min read",
+  "tags": ["Zomato", "Internship", "iOS"],
+  "mediumUrl": "https://medium.com/@bhagat_singh/zomato-cecf97511888"
+},{
+  "id": "android-ios-jump-ship",
+  "title": "From Android to iOS : Switching Ships",
+  "excerpt": "With smartphones in the hands of almost every teenager across the globe and websites showing declining usage over apps, app development becomes a serious career option for the masses.",
+  "date": "Jan 27, 2017",
+  "readTime": "10 min read",
+  "tags": ["Android", "iOS", "Career"],
+  "mediumUrl": "https://medium.com/@bhagat_singh/from-android-to-ios-switching-ships-309a60608b7b"
+}]

@@ -1,7 +1,31 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { useState, useMemo } from "react"
+import articles from "@/data/articles.json"
 
 export default function Writing() {
+  const [selectedSource, setSelectedSource] = useState("All")
+  const [selectedContentType, setSelectedContentType] = useState("All")
+
+  const sources = useMemo(() => ["All", "Medium", "Kodeco"], [])
+  const contentTypes = useMemo(() => ["All", "Article", "Course", "Book"], [])
+
+  const filteredArticles = useMemo(() => {
+    return articles.filter((article) => {
+      // First filter by source
+      if (selectedSource === "All") return true
+      if (selectedSource === "Medium" && article.mediumUrl) return true
+      if (selectedSource === "Kodeco" && article.kodecoUrl) {
+        // Then filter by content type (only for Kodeco)
+        if (selectedContentType === "All") return true
+        return article.contentType === selectedContentType
+      }
+      return false
+    })
+  }, [selectedSource, selectedContentType])
+
   return (
     <div className="min-h-screen bg-background font-mono dark:bg-gray-950">
       {/* Navigation */}
@@ -53,209 +77,95 @@ export default function Writing() {
             Writing
           </h1>
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-12 hover:text-gray-800 dark:hover:text-gray-300 transition-colors duration-200">
-            Thoughts on iOS development, SwiftUI, and building better mobile
-            experiences.
+            Thoughts on everything going around me, mainly iOS developement, me pusuing music, and surviving life in general.
           </p>
 
-          <div className="space-y-8">
-            <article className="group hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200 p-4 -m-4 rounded-lg hover:scale-[1.005] transition-transform duration-200">
-              <Link href="/writing/coreml-ios-guide" className="block">
-                <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50 group-hover:text-gray-600 dark:group-hover:text-gray-300 mb-2 transition-colors duration-200">
-                  CoreML on iOS: A Complete Integration Guide
-                </h2>
-                <div className='text-xs text-gray-500 mb-3'>
-                  December 15, 2024 • 8 min read
+          {/* Filter Section */}
+          <div className="mb-8">
+            <h2 className="text-xs text-gray-500 dark:text-gray-400 uppercase mb-4">Sources</h2>
+            <div className="flex space-x-4 text-sm text-gray-900 dark:text-gray-50 mb-4">
+              {sources.map((source) => (
+                <button
+                  key={source}
+                  onClick={() => {
+                    setSelectedSource(source)
+                    setSelectedContentType("All") // Reset content type when source changes
+                  }}
+                  className={`${
+                    selectedSource === source ? "font-bold" : ""
+                  } hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-200`}
+                >
+                  {source}
+                </button>
+              ))}
+            </div>
+            
+            {/* Sub-filter for Kodeco */}
+            {selectedSource === "Kodeco" && (
+              <div className="mt-4">
+                <h3 className="text-xs text-gray-500 dark:text-gray-400 uppercase mb-2">Content Type</h3>
+                <div className="flex space-x-4 text-sm text-gray-900 dark:text-gray-50">
+                  {contentTypes.map((contentType) => (
+                    <button
+                      key={contentType}
+                      onClick={() => setSelectedContentType(contentType)}
+                      className={`${
+                        selectedContentType === contentType ? "font-bold" : ""
+                      } hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-200`}
+                    >
+                      {contentType}
+                    </button>
+                  ))}
                 </div>
-                <p className='text-sm text-gray-600 leading-relaxed mb-4 group-hover:text-gray-700 transition-colors duration-200'>
-                  Deep dive into integrating machine learning capabilities in
-                  iOS apps using CoreML framework. From model preparation to
-                  performance optimization, learn how to build intelligent
-                  mobile applications that leverage the power of on-device ML.
-                </p>
-                <div className='flex space-x-2'>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    CoreML
-                  </span>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    Machine Learning
-                  </span>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    iOS
-                  </span>
-                </div>
-              </Link>
-            </article>
-
-            <article className='group hover:bg-gray-50 transition-all duration-200 p-4 -m-4 rounded-lg'>
-              <Link href='/writing/swiftui-design-patterns' className='block'>
-                <h2 className='text-lg font-medium text-gray-900 group-hover:text-gray-600 mb-2 transition-colors duration-200'>
-                  SwiftUI Design Patterns for Scalable Apps
-                </h2>
-                <div className='text-xs text-gray-500 mb-3'>
-                  December 8, 2024 • 12 min read
-                </div>
-                <p className='text-sm text-gray-600 leading-relaxed mb-4 group-hover:text-gray-700 transition-colors duration-200'>
-                  Advanced SwiftUI patterns and architectural decisions that
-                  help build maintainable, scalable iOS applications. Explore
-                  MVVM, coordinators, dependency injection, and state management
-                  strategies that work in production.
-                </p>
-                <div className='flex space-x-2'>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    SwiftUI
-                  </span>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    Architecture
-                  </span>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    Design Patterns
-                  </span>
-                </div>
-              </Link>
-            </article>
-
-            <article className='group hover:bg-gray-50 transition-all duration-200 p-4 -m-4 rounded-lg'>
-              <Link href='/writing/dependency-injection-ios' className='block'>
-                <h2 className='text-lg font-medium text-gray-900 group-hover:text-gray-600 mb-2 transition-colors duration-200'>
-                  Dependency Injection in iOS: A Practical Guide
-                </h2>
-                <div className='text-xs text-gray-500 mb-3'>
-                  November 28, 2024 • 6 min read
-                </div>
-                <p className='text-sm text-gray-600 leading-relaxed mb-4 group-hover:text-gray-700 transition-colors duration-200'>
-                  Implementing clean dependency injection patterns in iOS
-                  applications for better testability and maintainability. Learn
-                  how to structure your code for scalability while keeping it
-                  simple and understandable.
-                </p>
-                <div className='flex space-x-2'>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    Dependency Injection
-                  </span>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    Clean Architecture
-                  </span>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    Testing
-                  </span>
-                </div>
-              </Link>
-            </article>
-
-            <article className='group hover:bg-gray-50 transition-all duration-200 p-4 -m-4 rounded-lg'>
-              <Link href='/writing/graphql-ios-apollo' className='block'>
-                <h2 className='text-lg font-medium text-gray-900 group-hover:text-gray-600 mb-2 transition-colors duration-200'>
-                  GraphQL on iOS: Modern API Integration with Apollo
-                </h2>
-                <div className='text-xs text-gray-500 mb-3'>
-                  November 15, 2024 • 9 min read
-                </div>
-                <p className='text-sm text-gray-600 leading-relaxed mb-4 group-hover:text-gray-700 transition-colors duration-200'>
-                  Master GraphQL implementation in iOS applications using Apollo
-                  iOS. Learn query optimization, caching strategies, and best
-                  practices for efficient data fetching in mobile apps.
-                </p>
-                <div className='flex space-x-2'>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    GraphQL
-                  </span>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    Apollo iOS
-                  </span>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    API Design
-                  </span>
-                </div>
-              </Link>
-            </article>
-
-            <article className='group hover:bg-gray-50 transition-all duration-200 p-4 -m-4 rounded-lg'>
-              <Link
-                href='/writing/ios-animations-core-animation'
-                className='block'
-              >
-                <h2 className='text-lg font-medium text-gray-900 group-hover:text-gray-600 mb-2 transition-colors duration-200'>
-                  Advanced iOS Animations: Beyond the Basics
-                </h2>
-                <div className='text-xs text-gray-500 mb-3'>
-                  October 30, 2024 • 7 min read
-                </div>
-                <p className='text-sm text-gray-600 leading-relaxed mb-4 group-hover:text-gray-700 transition-colors duration-200'>
-                  Creating delightful user experiences through advanced
-                  animation techniques in iOS. Explore Core Animation, custom
-                  transitions, and performance optimization for smooth, engaging
-                  interfaces.
-                </p>
-                <div className='flex space-x-2'>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    Animations
-                  </span>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    Core Animation
-                  </span>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    UX Design
-                  </span>
-                </div>
-              </Link>
-            </article>
-
-            <article className='group hover:bg-gray-50 transition-all duration-200 p-4 -m-4 rounded-lg'>
-              <Link href='/writing/ios-design-systems' className='block'>
-                <h2 className='text-lg font-medium text-gray-900 group-hover:text-gray-600 mb-2 transition-colors duration-200'>
-                  Building Design Systems for iOS Apps
-                </h2>
-                <div className='text-xs text-gray-500 mb-3'>
-                  October 12, 2024 • 8 min read
-                </div>
-                <p className='text-sm text-gray-600 leading-relaxed mb-4 group-hover:text-gray-700 transition-colors duration-200'>
-                  Creating consistent, scalable design systems for iOS
-                  applications. Learn how to build reusable components,
-                  establish design tokens, and maintain visual consistency
-                  across your mobile app ecosystem.
-                </p>
-                <div className='flex space-x-2'>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    Design Systems
-                  </span>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    iOS Design
-                  </span>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    Component Libraries
-                  </span>
-                </div>
-              </Link>
-            </article>
-
-            <article className='group hover:bg-gray-50 transition-all duration-200 p-4 -m-4 rounded-lg'>
-              <Link href='/writing/mastering-git-workflows' className='block'>
-                <h2 className='text-lg font-medium text-gray-900 group-hover:text-gray-600 mb-2 transition-colors duration-200'>
-                  Mastering Git: Workflows for iOS Development Teams
-                </h2>
-                <div className='text-xs text-gray-500 mb-3'>
-                  September 25, 2024 • 10 min read
-                </div>
-                <p className='text-sm text-gray-600 leading-relaxed mb-4 group-hover:text-gray-700 transition-colors duration-200'>
-                  Advanced Git workflows and best practices for iOS development
-                  teams. From branching strategies to code review processes,
-                  learn how to optimize your team's collaboration and code
-                  quality.
-                </p>
-                <div className='flex space-x-2'>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    Git
-                  </span>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    Team Collaboration
-                  </span>
-                  <span className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
-                    Development Workflows
-                  </span>
-                </div>
-              </Link>
-            </article>
+              </div>
+            )}
           </div>
+
+          <div className="space-y-8">
+            {filteredArticles.map((article) => {
+              const externalUrl = article.mediumUrl || article.kodecoUrl;
+              const externalSource = article.mediumUrl ? 'Medium' : article.kodecoUrl ? 'Kodeco' : null;
+              
+              return (
+                <article key={article.id} className="group hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200 p-4 -m-4 rounded-lg hover:scale-[1.005] transition-transform duration-200 cursor-pointer">
+                  <div>
+                    <Link href={externalUrl || `/writing/${article.id}`} className="block" target={externalUrl ? "_blank" : "_self"} rel={externalUrl ? "noopener noreferrer" : ""}>
+                      <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50 group-hover:text-gray-600 dark:group-hover:text-gray-300 mb-2 transition-colors duration-200">
+                        {article.title}
+                      </h2>
+                      <div className='text-xs text-gray-500 mb-3'>
+                        {article.date} • {article.readTime || 'Book'}
+                      </div>
+                      <p className='text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-200'>
+                        {article.excerpt}
+                      </p>
+                      <div className='flex space-x-2 mb-3'>
+                        {article.tags.map((tag, index) => (
+                          <span key={index} className='text-xs text-gray-500 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200'>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </Link>
+                    {externalSource && (
+                      <div className='text-xs text-blue-600 dark:text-blue-400 group-hover:text-blue-800 dark:group-hover:text-blue-300 transition-colors duration-200'>
+                        {externalSource === 'Kodeco' && article.contentType === 'Course' && 'Complete the full course on Kodeco →'}
+                        {externalSource === 'Kodeco' && article.contentType === 'Book' && 'Get the book on Kodeco →'}
+                        {externalSource === 'Kodeco' && article.contentType === 'Article' && 'Read full article on Kodeco →'}
+                        {externalSource === 'Medium' && 'Read full article on Medium →'}
+                      </div>
+                    )}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+
+          {filteredArticles.length === 0 && (
+            <div className="text-center text-gray-500 dark:text-gray-400 py-8">
+              No articles found for the selected filters.
+            </div>
+          )}
         </section>
 
         <section>
@@ -275,20 +185,20 @@ export default function Writing() {
       </main>
 
       {/* Footer */}
-      <footer className='border-t border-gray-200 py-8'>
+      <footer className='border-t border-gray-200 dark:border-gray-800 py-8'>
         <div className='max-w-2xl mx-auto px-8'>
           <div className='flex justify-between items-center text-xs text-gray-500'>
             <p>© 2024 Bhagat Singh</p>
             <div className='flex space-x-4'>
               <Link
                 href='/about'
-                className='hover:text-gray-900 transition-colors duration-200 hover:underline'
+                className='hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200 hover:underline'
               >
                 about
               </Link>
               <Link
                 href='mailto:bhagatsingh2297@gmail.com'
-                className='hover:text-gray-900 transition-colors duration-200 hover:underline'
+                className='hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200 hover:underline'
               >
                 contact
               </Link>
