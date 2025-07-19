@@ -1,0 +1,32 @@
+{
+  "talks": [
+    {
+      "id": 1,
+      "title": "Modularising Applications for Scale",
+      "date": "2020",
+      "venue": "SwiftIndia Conf 2020",
+      "description": "A talk about how to modularise your iOS applications for scale, covering the basics of modularisation, the tools you need, and the mindset you need to have.",
+      "tags": ["Modularisation", "iOS", "Swift"],
+      "thumbnail": {
+        "image": "https://img.youtube.com/vi/MK0SQNkrwho/hqdefault.jpg",
+        "text": "CoreML",
+        "gradient": "from-blue-500 to-purple-600"
+      },
+      "link": "https://www.youtube.com/watch?v=MK0SQNkrwho"
+    },
+    {
+      "id": 2,
+      "title": "Hacking your life in 24 hours",
+      "date": "2019",
+      "venue": "HackInOut Conference",
+      "description": "A talk about how to hack your life in 24 hours, covering the basics of hacking, the tools you need, and the mindset you need to have.",
+      "tags": ["Hacking","Hackathon", "Productivity"],
+      "thumbnail": {
+        "image": "https://img.youtube.com/vi/qO_IXS7ft6o/hqdefault.jpg",
+        "text": "Hacking",
+        "gradient": "from-green-500 to-teal-600"
+      },
+      "link": "https://www.youtube.com/watch?v=qO_IXS7ft6o"
+    }
+  ]
+} 

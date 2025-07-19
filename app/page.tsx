@@ -40,7 +40,7 @@ export default function Portfolio() {
               </Link>
               , give{" "}
               <Link
-                href="/"
+                href="/talks"
                 className="hover:underline text-gray-900 dark:text-gray-50 bg-gray-100 dark:bg-gray-800 px-1 rounded"
               >
                 tech talks
