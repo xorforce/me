@@ -12,6 +12,9 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    loader: 'default',
+    domains: [],
+    remotePatterns: [],
   },
 };
 

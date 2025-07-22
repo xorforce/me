@@ -5,7 +5,7 @@
             "name": "iPhone 16 Pro Max",
             "category": "Tech",
             "brand": "Apple",
-            "image": "/images/things/iphone.webp",
+            "image": "images/things/iphone.webp",
             "scale": 70
         },
         {
@@ -13,7 +13,7 @@
             "name": "MacBook Pro 14 M4 Pro",
             "category": "Tech",
             "brand": "Apple",
-            "image": "/images/things/macbook.webp",
+            "image": "images/things/macbook.webp",
             "scale": 85
         },
         {
@@ -21,7 +21,7 @@
             "name": "G402",
             "category": "Tech",
             "brand": "Logitech",
-            "image": "/images/things/402.webp",
+            "image": "images/things/402.webp",
             "scale": 60
         },
         {
@@ -29,7 +29,7 @@
             "name": "Airpods Max",
             "category": "Tech",
             "brand": "Apple",
-            "image": "/images/things/airpods.webp",
+            "image": "images/things/airpods.webp",
             "scale": 65
         },
         {
@@ -37,7 +37,7 @@
             "name": "S2725QC",
             "category": "Tech",
             "brand": "Dell",
-            "image": "/images/things/dell.png",
+            "image": "images/things/dell.png",
             "scale": 70
         },
         {
@@ -45,7 +45,7 @@
             "name": "K6",
             "category": "Tech",
             "brand": "Keychron",
-            "image": "/images/things/keychron.webp",
+            "image": "images/things/keychron.webp",
             "scale": 75
         },
         {
@@ -53,7 +53,7 @@
             "name": "ATH-M50x",
             "category": "Tech",
             "brand": "Audio Technica",
-            "image": "/images/things/ath.webp",
+            "image": "images/things/ath.webp",
             "scale": 70
         },
         {
@@ -61,7 +61,7 @@
             "name": "Lyra",
             "category": "Tech",
             "brand": "AKG",
-            "image": "/images/things/akg.png",
+            "image": "images/things/akg.png",
             "scale": 65
         },
         {
@@ -69,7 +69,7 @@
             "name": "PlayStation 5",
             "category": "Tech",
             "brand": "Sony",
-            "image": "/images/things/ps5.png",
+            "image": "images/things/ps5.png",
             "scale": 80
         },
         {
@@ -77,7 +77,7 @@
             "name": "Killburn II",
             "category": "Tech",
             "brand": "Marshall",
-            "image": "/images/things/marshall.webp",
+            "image": "images/things/marshall.webp",
             "scale": 70
         },
         {
@@ -85,7 +85,7 @@
             "name": "Frame TV 4K",
             "category": "Tech",
             "brand": "Samsung",
-            "image": "/images/things/tv.png",
+            "image": "images/things/tv.png",
             "scale": 100
         },
         {
@@ -93,7 +93,7 @@
             "name": "DDJ-400",
             "category": "Tech",
             "brand": "Pioneer",
-            "image": "/images/things/ddj.png",
+            "image": "images/things/ddj.png",
             "scale": 75
         },
         {
@@ -101,7 +101,7 @@
             "name": "Be@rBrick 400%",
             "category": "Home",
             "brand": "Be@rBrick",
-            "image": "/images/things/bearbrick.webp",
+            "image": "images/things/bearbrick.webp",
             "scale": 80
         },
         {
@@ -109,7 +109,7 @@
             "name": "Funko Pop! 923",
             "category": "Home",
             "brand": "Funko",
-            "image": "/images/things/funko_923.webp",
+            "image": "images/things/funko_923.webp",
             "scale": 60
         },
         {
@@ -117,7 +117,7 @@
             "name": "Funko Pop! 580",
             "category": "Home",
             "brand": "Funko",
-            "image": "/images/things/funko_580.png",
+            "image": "images/things/funko_580.png",
             "scale": 70
         },
         {
@@ -125,7 +125,7 @@
             "name": "Air Jordan 4 'Fire Red'",
             "category": "Sneakers",
             "brand": "Nike",
-            "image": "/images/things/j4-red.png",
+            "image": "images/things/j4-red.png",
             "scale": 70
         },
         {
@@ -133,7 +133,7 @@
             "name": "Air Jordan 4 'Military Black'",
             "category": "Sneakers",
             "brand": "Nike",
-            "image": "/images/things/j4-black.jpg",
+            "image": "images/things/j4-black.jpg",
             "scale": 90
         },
         {
@@ -141,7 +141,7 @@
             "name": "Air Jordan 4 'Oreo'",
             "category": "Sneakers",
             "brand": "Nike",
-            "image": "/images/things/j4-oreo.webp",
+            "image": "images/things/j4-oreo.webp",
             "scale": 70
         },
         {
@@ -149,7 +149,7 @@
             "name": "Air Jordan 4 'Bred Re-imagined'",
             "category": "Sneakers",
             "brand": "Nike",
-            "image": "/images/things/j4-bred.png",
+            "image": "images/things/j4-bred.png",
             "scale": 70
         },
         {
@@ -157,7 +157,7 @@
             "name": "Air Jordan 1 High OG 'Bloodline'",
             "category": "Sneakers",
             "brand": "Nike",
-            "image": "/images/things/j1-bloodline.webp",
+            "image": "images/things/j1-bloodline.webp",
             "scale": 70
         },
         {
@@ -165,7 +165,7 @@
             "name": "BB 4000 'Diamond Dollar'",
             "category": "Sneakers",
             "brand": "Reebox x BBC x Ice Cream",
-            "image": "/images/things/reebok-bbc.png",
+            "image": "images/things/reebok-bbc.png",
             "scale": 70
         }
     ]

@@ -112,11 +112,12 @@ export default function Things() {
               <div className="bg-gray-100 dark:bg-gray-800 flex items-center justify-center aspect-square overflow-hidden rounded-lg">
                 <div className="flex items-center justify-center" style={{ width: `${product.scale || 70}%`, height: `${product.scale || 70}%` }}>
                   <Image
-                    src={product.image || "/placeholder.svg"}
+                    src={product.image || "placeholder.svg"}
                     alt={product.name}
                     width={300}
                     height={300}
                     className="w-full h-full object-contain object-center"
+                    unoptimized={true}
                   />
                 </div>
               </div>

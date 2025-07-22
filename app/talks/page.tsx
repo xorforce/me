@@ -108,6 +108,7 @@ export default function Talks() {
                                 fill
                                 className='object-cover'
                                 sizes="192px"
+                                unoptimized={true}
                               />
                             </div>
                           ) : (
