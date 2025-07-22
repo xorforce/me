@@ -1,0 +1,114 @@
+{
+  "projects": [
+    {
+      "id": "me",
+      "title": "bhagat.zone",
+      "description": "A minimal, responsive portfolio website built with Next.js and TypeScript. Features dark mode, smooth animations, and a clean design. Vibe coded with Claude and Cursor.",
+      "language": "TypeScript",
+      "url": "https://github.com/xorforce/me",
+      "category": "web",
+      "updated": "Jul 22, 2025"
+    },
+    {
+      "id": "swift-examples",
+      "title": "Swift Examples & Patterns",
+      "description": "A comprehensive collection of iOS development examples, design patterns, and best practices. Includes MVVM implementations, networking patterns, UI components, and architectural examples.",
+      "language": "Swift",
+      "url": "https://github.com/xorforce/swift-examples",
+      "category": "ios",
+      "updated": "May 26, 2019"
+    },
+
+    
+   
+
+
+    {
+      "id": "FacebookLikeAnimation",
+      "title": "Facebook Like Animation",
+      "description": "iOS implementation of Facebook's like button animation with smooth transitions and interactive feedback.",
+      "language": "Swift",
+      "url": "https://github.com/xorforce/FacebookLikeAnimation",
+      "category": "ios",
+      "updated": "Oct 2, 2018"
+    },
+
+
+
+    {
+      "id": "MoodyV2",
+      "title": "Moody V2",
+      "description": "Updated version of Moody app, featuring enhanced mood tracking and analytics capabilities.",
+      "language": "Swift",
+      "url": "https://github.com/xorforce/MoodyV2",
+      "category": "ios",
+      "updated": "Jun 13, 2018"
+    },
+
+    {
+      "id": "RajasthanITDay",
+      "title": "Rajasthan IT Day",
+      "description": "Event management and information platform for Rajasthan IT Day celebrations and tech community events.",
+      "language": "JavaScript",
+      "url": "https://github.com/xorforce/RajasthanITDay",
+      "category": "community",
+      "updated": "Mar 20, 2018"
+    },
+    {
+      "id": "SnowMan",
+      "title": "SnowMan",
+      "description": "A creative iOS application featuring snowman-themed interactions and animations.",
+      "language": "Swift",
+      "url": "https://github.com/xorforce/SnowMan",
+      "category": "ios",
+      "updated": "Mar 14, 2018"
+    },
+    {
+      "id": "GIF-Demo",
+      "title": "GIF Demo",
+      "description": "A guide to use GIFs in an iOS Application. Comprehensive tutorial and examples for implementing animated GIFs.",
+      "language": "Swift",
+      "url": "https://github.com/xorforce/GIF-Demo",
+      "category": "ios",
+      "updated": "Feb 11, 2018"
+    },
+    {
+      "id": "CoreML-Demo",
+      "title": "CoreML Demo",
+      "description": "Demonstration of Core ML integration in iOS applications, showcasing machine learning capabilities on Apple devices.",
+      "language": "Swift",
+      "url": "https://github.com/xorforce/CoreML-Demo",
+      "category": "ios",
+      "updated": "Dec 2, 2017"
+    },
+
+    {
+      "id": "iOS_By_Example",
+      "title": "iOS By Example",
+      "description": "Simple isolated iOS apps for upcoming developers. Practical examples demonstrating iOS development concepts and patterns.",
+      "language": "Swift",
+      "url": "https://github.com/xorforce/iOS_By_Example",
+      "category": "ios",
+      "updated": "Nov 26, 2017"
+    },
+    {
+      "id": "CodeFetch-Alexa-Skill",
+      "title": "CodeFetch Alexa Skill",
+      "description": "Amazon Alexa skill for fetching and displaying code snippets and programming information through voice commands.",
+      "language": "Python",
+      "url": "https://github.com/xorforce/CodeFetch-Alexa-Skill",
+      "category": "ai",
+      "updated": "Nov 20, 2017"
+    },
+
+    {
+      "id": "ShakeMe-iOS",
+      "title": "ShakeMe iOS",
+      "description": "iOS application that responds to device shaking gestures with interactive animations and feedback.",
+      "language": "Swift",
+      "url": "https://github.com/xorforce/ShakeMe-iOS",
+      "category": "ios",
+      "updated": "Oct 31, 2017"
+    }
+  ]
+} 
