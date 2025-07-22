@@ -77,9 +77,8 @@ export default function About() {
             </p>
 
             <p className='hover:text-gray-800 transition-colors duration-200'>
-              When I'm not coding, I enjoy speaking at conferences, organizing
-              Swift India Group meetups, and contributing to the iOS development
-              community through articles, books, and courses.
+              When I'm not coding, I like to hang out with my friends, play some FPS games on my PlayStation, or spin up some new Fred Again tunes for my friends. 
+              You can also find me playing badminton, or just devouring a large portion of French Fries along with an ice-cold latte.
             </p>
           </div>
         </section>
@@ -180,50 +179,6 @@ export default function About() {
         </section>
 
         <section className='mb-16'>
-          <h2 className='text-lg font-medium text-gray-900 mb-6'>Skills</h2>
-
-          <div className='grid grid-cols-2 gap-6 text-sm'>
-            <div className='hover:bg-gray-50 transition-colors duration-200 p-3 -m-3 rounded-lg'>
-              <h3 className='font-medium text-gray-900 mb-3'>
-                iOS Development
-              </h3>
-              <ul className='space-y-1 text-gray-600'>
-                <li className='hover:text-gray-800 transition-colors duration-200'>
-                  Swift / SwiftUI
-                </li>
-                <li className='hover:text-gray-800 transition-colors duration-200'>
-                  UIKit
-                </li>
-                <li className='hover:text-gray-800 transition-colors duration-200'>
-                  CoreML / Vision
-                </li>
-                <li className='hover:text-gray-800 transition-colors duration-200'>
-                  GraphQL
-                </li>
-              </ul>
-            </div>
-
-            <div className='hover:bg-gray-50 transition-colors duration-200 p-3 -m-3 rounded-lg'>
-              <h3 className='font-medium text-gray-900 mb-3'>Tools & Others</h3>
-              <ul className='space-y-1 text-gray-600'>
-                <li className='hover:text-gray-800 transition-colors duration-200'>
-                  Xcode
-                </li>
-                <li className='hover:text-gray-800 transition-colors duration-200'>
-                  Git
-                </li>
-                <li className='hover:text-gray-800 transition-colors duration-200'>
-                  Design Systems
-                </li>
-                <li className='hover:text-gray-800 transition-colors duration-200'>
-                  Dev Tooling
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section className='mb-16'>
           <h2 className='text-lg font-medium text-gray-900 mb-6'>
             Education & Achievements
           </h2>
@@ -272,12 +227,7 @@ export default function About() {
                   bhagatsingh2297@gmail.com
                 </Link>
               </p>
-              <p>
-                <span className='text-gray-900'>Phone:</span>{' '}
-                <span className='hover:text-gray-800 transition-colors duration-200'>
-                  +91 9650980619
-                </span>
-              </p>
+              
               <p>
                 <span className='text-gray-900'>LinkedIn:</span>{' '}
                 <Link

@@ -61,7 +61,7 @@ export default function Portfolio() {
               </Link>
               . know more{" "}
               <Link
-                href="/"
+                href="/about"
                 className="hover:underline text-gray-900 dark:text-gray-50 bg-gray-100 dark:bg-gray-800 px-1 rounded"
               >
                 about me

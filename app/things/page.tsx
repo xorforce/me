@@ -11,7 +11,7 @@ export default function Things() {
         name: "MacBook Pro 16\"",
         category: "Tech",
         brand: "Apple",
-        image: "/placeholder.svg?height=300&width=300",
+        image: "https://images.soleretriever.com/4c35670d-86a3-4de3-a53a-25dd51522ba7.png?width=768&quality=90&fit=contain 1x, https://images.soleretriever.com/4c35670d-86a3-4de3-a53a-25dd51522ba7.png?width=1600&quality=90&fit=contain",
       },
       {
         id: 2,
