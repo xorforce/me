@@ -151,6 +151,22 @@
             "brand": "Nike",
             "image": "/images/things/j4-bred.png",
             "scale": 70
+        },
+        {
+            "id": 20,
+            "name": "Air Jordan 1 High OG 'Bloodline'",
+            "category": "Sneakers",
+            "brand": "Nike",
+            "image": "/images/things/j1-bloodline.webp",
+            "scale": 70
+        },
+        {
+            "id": 21,
+            "name": "BB 4000 'Diamond Dollar'",
+            "category": "Sneakers",
+            "brand": "Reebox x BBC x Ice Cream",
+            "image": "/images/things/reebok-bbc.png",
+            "scale": 70
         }
     ]
 }
