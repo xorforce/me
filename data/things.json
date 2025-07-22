@@ -1,0 +1,156 @@
+{
+    "things": [
+        {
+            "id": 1,
+            "name": "iPhone 16 Pro Max",
+            "category": "Tech",
+            "brand": "Apple",
+            "image": "/images/things/iphone.webp",
+            "scale": 70
+        },
+        {
+            "id": 2,
+            "name": "MacBook Pro 14 M4 Pro",
+            "category": "Tech",
+            "brand": "Apple",
+            "image": "/images/things/macbook.webp",
+            "scale": 85
+        },
+        {
+            "id": 3,
+            "name": "G402",
+            "category": "Tech",
+            "brand": "Logitech",
+            "image": "/images/things/402.webp",
+            "scale": 60
+        },
+        {
+            "id": 4,
+            "name": "Airpods Max",
+            "category": "Tech",
+            "brand": "Apple",
+            "image": "/images/things/airpods.webp",
+            "scale": 65
+        },
+        {
+            "id": 5,
+            "name": "S2725QC",
+            "category": "Tech",
+            "brand": "Dell",
+            "image": "/images/things/dell.png",
+            "scale": 70
+        },
+        {
+            "id": 6,
+            "name": "K6",
+            "category": "Tech",
+            "brand": "Keychron",
+            "image": "/images/things/keychron.webp",
+            "scale": 75
+        },
+        {
+            "id": 7,
+            "name": "ATH-M50x",
+            "category": "Tech",
+            "brand": "Audio Technica",
+            "image": "/images/things/ath.webp",
+            "scale": 70
+        },
+        {
+            "id": 8,
+            "name": "Lyra",
+            "category": "Tech",
+            "brand": "AKG",
+            "image": "/images/things/akg.png",
+            "scale": 65
+        },
+        {
+            "id": 9,
+            "name": "PlayStation 5",
+            "category": "Tech",
+            "brand": "Sony",
+            "image": "/images/things/ps5.png",
+            "scale": 80
+        },
+        {
+            "id": 10,
+            "name": "Killburn II",
+            "category": "Tech",
+            "brand": "Marshall",
+            "image": "/images/things/marshall.webp",
+            "scale": 70
+        },
+        {
+            "id": 11,
+            "name": "Frame TV 4K",
+            "category": "Tech",
+            "brand": "Samsung",
+            "image": "/images/things/tv.png",
+            "scale": 100
+        },
+        {
+            "id": 12,
+            "name": "DDJ-400",
+            "category": "Tech",
+            "brand": "Pioneer",
+            "image": "/images/things/ddj.png",
+            "scale": 75
+        },
+        {
+            "id": 13,
+            "name": "Be@rBrick 400%",
+            "category": "Home",
+            "brand": "Be@rBrick",
+            "image": "/images/things/bearbrick.webp",
+            "scale": 80
+        },
+        {
+            "id": 14,
+            "name": "Funko Pop! 923",
+            "category": "Home",
+            "brand": "Funko",
+            "image": "/images/things/funko_923.webp",
+            "scale": 60
+        },
+        {
+            "id": 15,
+            "name": "Funko Pop! 580",
+            "category": "Home",
+            "brand": "Funko",
+            "image": "/images/things/funko_580.png",
+            "scale": 70
+        },
+        {
+            "id": 16,
+            "name": "Air Jordan 4 'Fire Red'",
+            "category": "Sneakers",
+            "brand": "Nike",
+            "image": "/images/things/j4-red.png",
+            "scale": 70
+        },
+        {
+            "id": 17,
+            "name": "Air Jordan 4 'Military Black'",
+            "category": "Sneakers",
+            "brand": "Nike",
+            "image": "/images/things/j4-black.jpg",
+            "scale": 90
+        },
+        {
+            "id": 18,
+            "name": "Air Jordan 4 'Oreo'",
+            "category": "Sneakers",
+            "brand": "Nike",
+            "image": "/images/things/j4-oreo.webp",
+            "scale": 70
+        },
+        {
+            "id": 19,
+            "name": "Air Jordan 4 'Bred Re-imagined'",
+            "category": "Sneakers",
+            "brand": "Nike",
+            "image": "/images/things/j4-bred.png",
+            "scale": 70
+        }
+    ]
+}

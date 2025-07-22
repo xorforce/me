@@ -29,7 +29,18 @@ export default function Writing() {
   return (
     <div className="min-h-screen bg-background font-mono dark:bg-gray-950">
       {/* Navigation */}
-      <nav className="flex items-center justify-end px-8 py-6 max-w-2xl mx-auto text-sm">
+      <nav className="flex items-center justify-between px-8 py-6 max-w-2xl mx-auto text-sm">
+        {/* Back Arrow */}
+        <Button
+          variant="ghost"
+          size="sm"
+          className="h-auto p-0 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-transparent"
+        >
+          <Link href="/" className="hover:underline flex items-center">
+            ← back
+          </Link>
+        </Button>
+        
         <div className="flex items-center space-x-4 text-xs">
           <Button
             variant="ghost"

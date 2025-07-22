@@ -68,7 +68,7 @@ export default function Portfolio() {
               </Link>
               {" "} or see what weird{" "}
               <Link
-                href="/"
+                href="/things"
                 className="hover:underline text-gray-900 dark:text-gray-50 bg-gray-100 dark:bg-gray-800 px-1 rounded"
               >
                 things I collect
@@ -78,12 +78,7 @@ export default function Portfolio() {
           </section>
         </div>
       </main>
-      {/* Footer */}
-      <footer className="py-8 text-center">
-        <p className="text-xs text-gray-500 dark:text-gray-400">
-          This website is being vibe coded and is WIP. All data that you see here might or might not be true.
-        </p>
-      </footer>
+      
     </div>
   )
 }
