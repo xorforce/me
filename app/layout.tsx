@@ -25,6 +25,7 @@ export default function RootLayout({
     <html lang="en" className={fontVariables} suppressHydrationWarning>
       <head>
         <style dangerouslySetInnerHTML={{ __html: css }} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className={fontClasses.primary}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>

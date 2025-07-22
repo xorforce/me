@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useMemo, useEffect } from "react"
-import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import thingsData from "@/data/things.json"
@@ -111,13 +110,10 @@ export default function Things() {
             <div key={product.id} className="flex flex-col">
               <div className="bg-gray-100 dark:bg-gray-800 flex items-center justify-center aspect-square overflow-hidden rounded-lg">
                 <div className="flex items-center justify-center" style={{ width: `${product.scale || 70}%`, height: `${product.scale || 70}%` }}>
-                  <Image
-                    src={product.image || "placeholder.svg"}
+                  <img
+                    src={product.image || "/placeholder.svg"}
                     alt={product.name}
-                    width={300}
-                    height={300}
                     className="w-full h-full object-contain object-center"
-                    unoptimized={true}
                   />
                 </div>
               </div>

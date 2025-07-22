@@ -7,7 +7,7 @@ export default function Portfolio() {
     <div className="min-h-screen bg-background font-mono dark:bg-gray-950 flex flex-col">
       {/* Main Content - Centered */}
       <main className="flex-1 flex items-center justify-center">
-        <div className="max-w-2xl mx-auto px-4 sm:px-8 py-12 animate-in fade-in duration-500 text-center">
+        <div className="max-w-2xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16 py-12 animate-in fade-in duration-500 text-center">
           {/* Hero Section */}
           <section className="mb-16">
             <h1 className="text-2xl font-medium text-gray-900 dark:text-gray-50 mb-2 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300 hover:scale-[1.01] transition-transform duration-200">
