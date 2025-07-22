@@ -16,8 +16,6 @@ const nextConfig = {
     domains: [],
     remotePatterns: [],
   },
-  // Ensure static assets are copied correctly
-  distDir: 'out',
 };
 
 export default nextConfig;
