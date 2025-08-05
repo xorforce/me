@@ -1,6 +1,15 @@
 {
   "projects": [
     {
+      "id": "f1-countdown",
+      "title": "F1 Race Countdown Bot",
+      "description": "An automated Python bot that posts daily Formula 1 race countdown tweets with visual progress bars. Features Discord notifications, smart season handling, and robust error handling with Fibonacci retry intervals.",
+      "language": "Python",
+      "url": "https://github.com/xorforce/f1-countdown",
+      "category": "automation",
+      "updated": "Jan 15, 2025"
+    },
+    {
       "id": "me",
       "title": "bhagat.zone",
       "description": "A minimal, responsive portfolio website built with Next.js and TypeScript. Features dark mode, smooth animations, and a clean design. Vibe coded with Claude and Cursor.",
