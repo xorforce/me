@@ -5,193 +5,10 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import MapComponent from "@/components/Map"
 import { useState, useCallback } from "react"
+import placesData from "@/data/places.json"
 
-// Sample data - updated with more places
-const visitedPlaces = [
-  // San Francisco
-  {
-    id: "blue-bottle",
-    name: "Blue Bottle Coffee",
-    city: "San Francisco",
-    country: "USA",
-    coordinates: { lat: 37.7749, lng: -122.4194 },
-    category: "coffee",
-    description: "Amazing pour-over coffee with a minimalist aesthetic",
-    visited: "2024"
-  },
-  {
-    id: "golden-gate",
-    name: "Golden Gate Bridge",
-    city: "San Francisco",
-    country: "USA",
-    coordinates: { lat: 37.8199, lng: -122.4783 },
-    category: "attraction",
-    description: "Iconic suspension bridge spanning the Golden Gate",
-    visited: "2024"
-  },
-  {
-    id: "fishermans-wharf",
-    name: "Fisherman's Wharf",
-    city: "San Francisco",
-    country: "USA",
-    coordinates: { lat: 37.8080, lng: -122.4177 },
-    category: "attraction",
-    description: "Historic waterfront area with seafood restaurants",
-    visited: "2024"
-  },
-  {
-    id: "alcatraz",
-    name: "Alcatraz Island",
-    city: "San Francisco",
-    country: "USA",
-    coordinates: { lat: 37.8270, lng: -122.4230 },
-    category: "attraction",
-    description: "Famous former federal prison on an island",
-    visited: "2024"
-  },
-  {
-    id: "chinatown",
-    name: "Chinatown",
-    city: "San Francisco",
-    country: "USA",
-    coordinates: { lat: 37.7941, lng: -122.4079 },
-    category: "market",
-    description: "Largest Chinatown outside of Asia",
-    visited: "2024"
-  },
-  {
-    id: "pier-39",
-    name: "Pier 39",
-    city: "San Francisco",
-    country: "USA",
-    coordinates: { lat: 37.8087, lng: -122.4098 },
-    category: "attraction",
-    description: "Popular tourist destination with sea lions",
-    visited: "2024"
-  },
-  // Seattle
-  {
-    id: "space-needle",
-    name: "Space Needle",
-    city: "Seattle",
-    country: "USA",
-    coordinates: { lat: 47.6205, lng: -122.3493 },
-    category: "attraction",
-    description: "Iconic observation tower and landmark",
-    visited: "2024"
-  },
-  {
-    id: "pike-place",
-    name: "Pike Place Market",
-    city: "Seattle",
-    country: "USA",
-    coordinates: { lat: 47.6097, lng: -122.3421 },
-    category: "market",
-    description: "Historic public market overlooking Elliott Bay",
-    visited: "2024"
-  },
-  {
-    id: "starbucks-reserve",
-    name: "Starbucks Reserve Roastery",
-    city: "Seattle",
-    country: "USA",
-    coordinates: { lat: 47.6163, lng: -122.3556 },
-    category: "coffee",
-    description: "Premium coffee experience and roastery",
-    visited: "2024"
-  },
-  {
-    id: "chihuly-garden",
-    name: "Chihuly Garden and Glass",
-    city: "Seattle",
-    country: "USA",
-    coordinates: { lat: 47.6204, lng: -122.3511 },
-    category: "attraction",
-    description: "Glass art museum and garden",
-    visited: "2024"
-  },
-  {
-    id: "kerry-park",
-    name: "Kerry Park",
-    city: "Seattle",
-    country: "USA",
-    coordinates: { lat: 47.6304, lng: -122.3654 },
-    category: "attraction",
-    description: "Best view of Seattle skyline and Space Needle",
-    visited: "2024"
-  },
-  {
-    id: "fremont-brewing",
-    name: "Fremont Brewing",
-    city: "Seattle",
-    country: "USA",
-    coordinates: { lat: 47.6492, lng: -122.3513 },
-    category: "food",
-    description: "Local craft brewery with great beer garden",
-    visited: "2024"
-  },
-  // Hong Kong
-  {
-    id: "victoria-peak",
-    name: "Victoria Peak",
-    city: "Hong Kong",
-    country: "Hong Kong",
-    coordinates: { lat: 22.2783, lng: 114.1747 },
-    category: "attraction",
-    description: "Highest point on Hong Kong Island with stunning views",
-    visited: "2024"
-  },
-  {
-    id: "central-market",
-    name: "Central Market",
-    city: "Hong Kong",
-    country: "Hong Kong",
-    coordinates: { lat: 22.2789, lng: 114.1745 },
-    category: "market",
-    description: "Historic market building with local vendors",
-    visited: "2024"
-  },
-  {
-    id: "temple-street",
-    name: "Temple Street Night Market",
-    city: "Hong Kong",
-    country: "Hong Kong",
-    coordinates: { lat: 22.3193, lng: 114.1694 },
-    category: "market",
-    description: "Famous night market with street food and souvenirs",
-    visited: "2024"
-  },
-  {
-    id: "dim-sum",
-    name: "Tim Ho Wan",
-    city: "Hong Kong",
-    country: "Hong Kong",
-    coordinates: { lat: 22.3193, lng: 114.1694 },
-    category: "food",
-    description: "World's cheapest Michelin-starred dim sum",
-    visited: "2024"
-  },
-  {
-    id: "hong-kong-cafe",
-    name: "Australian Dairy Company",
-    city: "Hong Kong",
-    country: "Hong Kong",
-    coordinates: { lat: 22.3193, lng: 114.1694 },
-    category: "food",
-    description: "Famous for scrambled eggs and milk tea",
-    visited: "2024"
-  },
-  {
-    id: "coffee-academy",
-    name: "Cupping Room",
-    city: "Hong Kong",
-    country: "Hong Kong",
-    coordinates: { lat: 22.3193, lng: 114.1694 },
-    category: "coffee",
-    description: "Specialty coffee shop with award-winning baristas",
-    visited: "2024"
-  }
-]
+// Get places from JSON data
+const visitedPlaces = placesData.places
 
 const categories = [
   { name: "Coffee Shops", color: "bg-amber-500", count: 3 },
@@ -251,6 +68,25 @@ export default function MapPage() {
   const [selectedPlace, setSelectedPlace] = useState<any>(null)
   const [mapInstance, setMapInstance] = useState<google.maps.Map | null>(null)
   const uniqueCities = getUniqueCities()
+  
+  // Determine most recently visited city's coordinates
+  const latestCityCenter = (() => {
+    // Parse visited year (assuming YYYY) and pick max
+    let latestYear = -Infinity
+    let latestCoords: { lat: number; lng: number } | null = null
+    const seenCityCountry = new Set<string>()
+    for (const place of visitedPlaces) {
+      const year = Number(String(place.visited).slice(0, 4))
+      if (!Number.isFinite(year)) continue
+      const key = `${place.city},${place.country}`
+      if (year > latestYear || (year === latestYear && !seenCityCountry.has(key))) {
+        latestYear = year
+        latestCoords = { lat: place.coordinates.lat, lng: place.coordinates.lng }
+        seenCityCountry.add(key)
+      }
+    }
+    return latestCoords
+  })()
 
   const handlePlaceClick = useCallback((place: any) => {
     setSelectedPlace(place)
@@ -286,6 +122,8 @@ export default function MapPage() {
           places={visitedPlaces} 
           onPlaceClick={handlePlaceClick}
           onMapReady={handleMapReady}
+          defaultCenter={selectedPlace ? undefined : latestCityCenter ?? undefined}
+          defaultZoom={12}
         />
       </div>
 

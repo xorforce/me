@@ -21,6 +21,8 @@ interface MapProps {
   places: Place[]
   onPlaceClick?: (place: Place) => void
   onMapReady?: (map: google.maps.Map) => void
+  defaultCenter?: { lat: number; lng: number }
+  defaultZoom?: number
 }
 
 // Generate colored SVG pin for each category
@@ -46,7 +48,7 @@ const categoryColors = {
   market: '#10b981'
 }
 
-export default function MapComponent({ places, onPlaceClick, onMapReady }: MapProps) {
+export default function MapComponent({ places, onPlaceClick, onMapReady, defaultCenter, defaultZoom = 12 }: MapProps) {
   const mapRef = useRef<HTMLDivElement>(null)
   const mapInstanceRef = useRef<google.maps.Map | null>(null)
   const markersRef = useRef<google.maps.Marker[]>([])
@@ -75,12 +77,18 @@ export default function MapComponent({ places, onPlaceClick, onMapReady }: MapPr
           return
         }
 
-        const bounds = new google.maps.LatLngBounds()
-        places.forEach(place => bounds.extend(new google.maps.LatLng(place.coordinates.lat, place.coordinates.lng)))
+        let initialCenter: google.maps.LatLngLiteral | undefined
+        if (defaultCenter) {
+          initialCenter = { lat: defaultCenter.lat, lng: defaultCenter.lng }
+        } else {
+          const bounds = new google.maps.LatLngBounds()
+          places.forEach(place => bounds.extend(new google.maps.LatLng(place.coordinates.lat, place.coordinates.lng)))
+          initialCenter = bounds.getCenter().toJSON()
+        }
 
         const googleMap = new google.maps.Map(mapRef.current, {
-          center: bounds.getCenter(),
-          zoom: 10,
+          center: initialCenter,
+          zoom: defaultCenter ? defaultZoom : 10,
           styles: [
             {
               featureType: 'poi',
@@ -98,7 +106,11 @@ export default function MapComponent({ places, onPlaceClick, onMapReady }: MapPr
           fullscreenControl: false
         })
         mapInstanceRef.current = googleMap
-        googleMap.fitBounds(bounds, 50)
+        if (!defaultCenter) {
+          const bounds = new google.maps.LatLngBounds()
+          places.forEach(place => bounds.extend(new google.maps.LatLng(place.coordinates.lat, place.coordinates.lng)))
+          googleMap.fitBounds(bounds, 50)
+        }
         
         // Call onMapReady callback
         if (onMapReady) {
@@ -123,13 +135,44 @@ export default function MapComponent({ places, onPlaceClick, onMapReady }: MapPr
 
           const infoWindow = new google.maps.InfoWindow({
             content: `
-              <div style="padding: 8px; max-width: 200px;">
-                <h3 style="margin: 0 0 4px 0; font-weight: bold;">${place.name}</h3>
-                <p style="margin: 0 0 4px 0; color: #666;">${place.city}, ${place.country}</p>
-                <p style="margin: 0 0 4px 0; font-size: 12px;">${place.description}</p>
-                <p style="margin: 0; font-size: 11px; color: #999;">Visited: ${place.visited}</p>
+              <style>
+                .gm-style .gm-style-iw-c button {
+                  width: 18px !important;
+                  height: 18px !important;
+                  top: 10px !important;
+                  right: 6px !important;
+                  background: rgba(0,0,0,0.15) !important;
+                  border-radius: 50% !important;
+                  border: none !important;
+                  color: #555 !important;
+                  font-size: 11px !important;
+                  font-weight: bold !important;
+                  line-height: 1 !important;
+                  display: flex !important;
+                  align-items: center !important;
+                  justify-content: center !important;
+                  cursor: pointer !important;
+                  z-index: 1000 !important;
+                }
+                .gm-style .gm-style-iw-c button:hover {
+                  background: rgba(0,0,0,0.25) !important;
+                  color: #333 !important;
+                }
+                .gm-style .gm-style-iw-c {
+                  padding: 0 !important;
+                }
+                .gm-style .gm-style-iw-d {
+                  overflow: visible !important;
+                }
+              </style>
+              <div style="padding: 8px; max-width: 220px; font-family: 'Nunito', sans-serif; position: relative;">
+                <h3 style="margin: 0 0 6px 0; font-weight: 600; font-size: 14px; color: #1f2937;">${place.name}</h3>
+                <p style="margin: 0 0 6px 0; color: #6b7280; font-size: 12px;">${place.city}, ${place.country}</p>
+                <p style="margin: 0 0 6px 0; font-size: 12px; color: #374151; line-height: 1.4;">${place.description}</p>
+                <p style="margin: 0; font-size: 11px; color: #9ca3af;">Visited: ${place.visited}</p>
               </div>
-            `
+            `,
+            pixelOffset: new google.maps.Size(0, -10)
           })
 
           marker.addListener('click', () => {
