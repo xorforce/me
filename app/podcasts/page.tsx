@@ -64,21 +64,21 @@ export default function Podcasts() {
       {/* Main Content */}
       <main className='max-w-2xl mx-auto px-8 py-12 animate-in fade-in duration-500'>
         <section className='mb-16'>
-          <h1 className='text-2xl font-medium text-gray-900 mb-4 hover:text-gray-700 transition-colors duration-300'>
+          <h1 className='text-2xl font-medium text-gray-900 dark:text-gray-50 mb-4 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300'>
             Podcasts
           </h1>
-          <p className='text-sm text-gray-600 leading-relaxed mb-4 hover:text-gray-800 transition-colors duration-200'>
+          <p className='text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4 hover:text-gray-800 dark:hover:text-gray-300 transition-colors duration-200'>
             Conversations about iOS development, mobile app architecture, and
             the future of mobile technology.
           </p>
 
           <div className='mb-8'>
-            <p className='text-xs text-gray-500 hover:text-gray-700 transition-colors duration-200'>
+            <p className='text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-200'>
               Want to have me on your podcast?{' '}
               <Button
                 variant='ghost'
                 size='sm'
-                className='h-auto p-0 text-xs text-gray-500 hover:text-gray-900 hover:bg-transparent'
+                className='h-auto p-0 text-xs text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-transparent'
               >
                 <Link href='mailto:bhagatsingh2297@gmail.com' className='hover:underline'>
                   Get in touch
@@ -89,7 +89,7 @@ export default function Podcasts() {
 
           <div className='space-y-8'>
             {podcastsData.podcasts.map((podcast) => (
-              <Card key={podcast.id} className='group hover:bg-gray-50 transition-all duration-200 border-none shadow-none'>
+              <Card key={podcast.id} className='group hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200 border-none shadow-none hover:scale-[1.005] transition-transform duration-200'>
                 <CardContent className='p-0'>
                   <Link 
                     href={podcast.link} 
@@ -118,10 +118,10 @@ export default function Podcasts() {
                           )}
                         </div>
                         <div className='flex-1 min-w-0'>
-                          <h2 className='text-lg font-medium text-gray-900 group-hover:text-gray-600 mb-2 transition-colors duration-200'>
+                          <h2 className='text-lg font-medium text-gray-900 dark:text-gray-50 group-hover:text-gray-600 dark:group-hover:text-gray-300 mb-2 transition-colors duration-200'>
                             {podcast.title}
                           </h2>
-                          <div className='flex items-center gap-4 text-xs text-gray-500'>
+                          <div className='flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400'>
                             <div className='flex items-center gap-1'>
                               <Calendar className='w-3 h-3' />
                               <span>{podcast.date}</span>
@@ -138,18 +138,18 @@ export default function Podcasts() {
                         </div>
                       </div>
                       <div>
-                        <p className='text-sm text-gray-600 leading-relaxed mb-4 group-hover:text-gray-700 transition-colors duration-200'>
+                        <p className='text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-200'>
                           {podcast.description}
                         </p>
                         <div className='flex items-center justify-between'>
                           <div className='flex space-x-2'>
                             {podcast.tags.map((tag, index) => (
-                              <span key={index} className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors duration-200'>
+                              <span key={index} className='text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200'>
                                 {tag}
                               </span>
                             ))}
                           </div>
-                          <ExternalLink className='w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-200' />
+                          <ExternalLink className='w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors duration-200' />
                         </div>
                       </div>
                     </div>
@@ -162,15 +162,15 @@ export default function Podcasts() {
       </main>
 
       {/* Footer */}
-      <footer className='border-t border-gray-200 py-8'>
+      <footer className='border-t border-gray-200 dark:border-gray-800 py-8'>
         <div className='max-w-2xl mx-auto px-8'>
-          <div className='flex justify-between items-center text-xs text-gray-500'>
+          <div className='flex justify-between items-center text-xs text-gray-500 dark:text-gray-400'>
             <p>© 2024 Bhagat Singh</p>
             <div className='flex space-x-4'>
               <Button
                 variant='ghost'
                 size='sm'
-                className='h-auto p-0 text-xs text-gray-500 hover:text-gray-900 hover:bg-transparent'
+                className='h-auto p-0 text-xs text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-transparent'
               >
                 <Link href='/about' className='hover:underline'>
                   about
@@ -179,7 +179,7 @@ export default function Podcasts() {
               <Button
                 variant='ghost'
                 size="sm"
-                className='h-auto p-0 text-xs text-gray-500 hover:text-gray-900 hover:bg-transparent'
+                className='h-auto p-0 text-xs text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-transparent'
               >
                 <Link
                   href='mailto:bhagatsingh2297@gmail.com'

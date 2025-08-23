@@ -72,14 +72,14 @@ export default function About() {
               create better mobile applications.
             </p>
 
-            <p className='hover:text-gray-800 transition-colors duration-200'>
+            <p className='hover:text-gray-800 dark:hover:text-gray-300 transition-colors duration-200'>
               Currently working at PhonePe on the "App Excellence" team, owning
               the App Home page and horizontal tasks such as the design system
               and dev tooling. I was also the founding iOS Engineer for
               "Pincode," an e-commerce app using SwiftUI on the ONDC network.
             </p>
 
-            <p className='hover:text-gray-800 transition-colors duration-200'>
+            <p className='hover:text-gray-800 dark:hover:text-gray-300 transition-colors duration-200'>
               My journey in iOS development started in 2017, and I've had the
               privilege of working with companies like Zomato and PhonePe,
               building features that serve millions of users. I'm also a
@@ -87,8 +87,8 @@ export default function About() {
               specialist.
             </p>
 
-            <p className='hover:text-gray-800 transition-colors duration-200'>
-              When I'm not coding, I like to hang out with my friends, play some FPS games on my PlayStation, or spin up some new Fred Again tunes for my friends. 
+            <p className='hover:text-gray-800 dark:hover:text-gray-300 transition-colors duration-200'>
+              When I'm not coding, I like to hang out with my friends, play some FPS games on my PlayStation, or spin up some new Fred Again tunes for my friends.
               You can also find me playing badminton, or just devouring a large portion of French Fries along with an ice-cold latte.
             </p>
           </div>
@@ -103,85 +103,85 @@ export default function About() {
                 <h3 className="text-sm font-medium text-gray-900 dark:text-gray-50">
                   iOS Engineer
                 </h3>
-                <span className='text-xs text-gray-500'>
+                <span className='text-xs text-gray-500 dark:text-gray-400'>
                   Aug 2019 - Present
                 </span>
               </div>
-              <p className='text-xs text-gray-600 mb-1'>PhonePe, Bengaluru</p>
-              <p className='text-sm text-gray-600 leading-relaxed mb-2'>
+              <p className='text-xs text-gray-600 dark:text-gray-400 mb-1'>PhonePe, Bengaluru</p>
+              <p className='text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-2'>
                 Working on the "App Excellence" team owning the App Home page,
                 and horizontal tasks such as the design system and dev tooling.
               </p>
-              <p className='text-sm text-gray-600 leading-relaxed mb-2'>
+              <p className='text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-2'>
                 Founding iOS Engineer for "Pincode," an e-commerce app using
                 SwiftUI on the ONDC network (2022-2024).
               </p>
-              <p className='text-sm text-gray-600 leading-relaxed'>
+              <p className='text-sm text-gray-600 dark:text-gray-400 leading-relaxed'>
                 Developed the "Stores" section to enhance local store
                 interactions (2019-2022).
               </p>
             </div>
 
-            <div className='hover:bg-gray-50 transition-colors duration-200 p-3 -m-3 rounded-lg'>
+            <div className='hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 p-3 -m-3 rounded-lg hover:scale-[1.005] transition-transform duration-200'>
               <div className='flex justify-between items-start mb-2'>
-                <h3 className='text-sm font-medium text-gray-900'>
+                <h3 className='text-sm font-medium text-gray-900 dark:text-gray-50'>
                   iOS Engineer
                 </h3>
-                <span className='text-xs text-gray-500'>
+                <span className='text-xs text-gray-500 dark:text-gray-400'>
                   Jul 2018 - Jul 2019
                 </span>
               </div>
-              <p className='text-xs text-gray-600 mb-1'>Zomato, Gurugram</p>
-              <p className='text-sm text-gray-600 leading-relaxed'>
+              <p className='text-xs text-gray-600 dark:text-gray-400 mb-1'>Zomato, Gurugram</p>
+              <p className='text-sm text-gray-600 dark:text-gray-400 leading-relaxed'>
                 Worked on improving the Online Ordering experience of the app
                 while building features like Self Pickup, and the loyalty
                 program "Gold".
               </p>
             </div>
 
-            <div className='hover:bg-gray-50 transition-colors duration-200 p-3 -m-3 rounded-lg'>
+            <div className='hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 p-3 -m-3 rounded-lg hover:scale-[1.005] transition-transform duration-200'>
               <div className='flex justify-between items-start mb-2'>
-                <h3 className='text-sm font-medium text-gray-900'>
+                <h3 className='text-sm font-medium text-gray-900 dark:text-gray-50'>
                   Contributor
                 </h3>
-                <span className='text-xs text-gray-500'>
+                <span className='text-xs text-gray-500 dark:text-gray-400'>
                   Apr 2017 - Present
                 </span>
               </div>
-              <p className='text-xs text-gray-600 mb-1'>Kodeco (Remote)</p>
-              <p className='text-sm text-gray-600 leading-relaxed'>
+              <p className='text-xs text-gray-600 dark:text-gray-400 mb-1'>Kodeco (Remote)</p>
+              <p className='text-sm text-gray-600 dark:text-gray-400 leading-relaxed'>
                 Contributing on the iOS team as a content specialist in
                 articles, books and courses.
               </p>
             </div>
 
-            <div className='hover:bg-gray-50 transition-colors duration-200 p-3 -m-3 rounded-lg'>
+            <div className='hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 p-3 -m-3 rounded-lg hover:scale-[1.005] transition-transform duration-200'>
               <div className='flex justify-between items-start mb-2'>
-                <h3 className='text-sm font-medium text-gray-900'>
+                <h3 className='text-sm font-medium text-gray-900 dark:text-gray-50'>
                   iOS Intern
                 </h3>
-                <span className='text-xs text-gray-500'>
+                <span className='text-xs text-gray-500 dark:text-gray-400'>
                   Oct 2017 - Jan 2018
                 </span>
               </div>
-              <p className='text-xs text-gray-600 mb-1'>Zomato, Gurugram</p>
-              <p className='text-sm text-gray-600 leading-relaxed'>
+              <p className='text-xs text-gray-600 dark:text-gray-400 mb-1'>Zomato, Gurugram</p>
+              <p className='text-sm text-gray-600 dark:text-gray-400 leading-relaxed'>
                 Started my iOS development journey as an intern, learning the
                 fundamentals of mobile app development.
               </p>
             </div>
 
-            <div className='hover:bg-gray-50 transition-colors duration-200 p-3 -m-3 rounded-lg'>
+            <div className='hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 p-3 -m-3 rounded-lg hover:scale-[1.005] transition-transform duration-200'>
               <div className='flex justify-between items-start mb-2'>
-                <h3 className='text-sm font-medium text-gray-900'>Organiser</h3>
-                <span className='text-xs text-gray-500'>
+                <h3 className='text-sm font-medium text-gray-900 dark:text-gray-50'>Organiser</h3>
+                <span className='text-xs text-gray-500 dark:text-gray-400'>
                   Oct 2018 - Present
                 </span>
               </div>
-              <p className='text-xs text-gray-600 mb-1'>
+              <p className='text-xs text-gray-600 dark:text-gray-400 mb-1'>
                 Swift India Group, Gurugram
               </p>
-              <p className='text-sm text-gray-600 leading-relaxed'>
+              <p className='text-sm text-gray-600 dark:text-gray-400 leading-relaxed'>
                 Organizing meetups and events for the iOS development community
                 in India.
               </p>
@@ -190,24 +190,24 @@ export default function About() {
         </section>
 
         <section className='mb-16'>
-          <h2 className='text-lg font-medium text-gray-900 mb-6'>
+          <h2 className='text-lg font-medium text-gray-900 dark:text-gray-50 mb-6'>
             Education & Achievements
           </h2>
 
           <div className='space-y-4 text-sm'>
-            <div className='hover:bg-gray-50 transition-colors duration-200 p-3 -m-3 rounded-lg'>
-              <h3 className='font-medium text-gray-900 mb-1'>
+            <div className='hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 p-3 -m-3 rounded-lg hover:scale-[1.005] transition-transform duration-200'>
+              <h3 className='font-medium text-gray-900 dark:text-gray-50 mb-1'>
                 B.Tech (Computer Science)
               </h3>
-              <p className='text-xs text-gray-600 mb-2'>GGSIPU</p>
-              <p className='text-xs text-gray-600'>
+              <p className='text-xs text-gray-600 dark:text-gray-400 mb-2'>GGSIPU</p>
+              <p className='text-xs text-gray-600 dark:text-gray-400'>
                 iOS Engineer Nanodegree - Udacity
               </p>
             </div>
 
-            <div className='hover:bg-gray-50 transition-colors duration-200 p-3 -m-3 rounded-lg'>
-              <h3 className='font-medium text-gray-900 mb-2'>Hackathon Wins</h3>
-              <ul className='space-y-1 text-xs text-gray-600'>
+            <div className='hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 p-3 -m-3 rounded-lg hover:scale-[1.005] transition-transform duration-200'>
+              <h3 className='font-medium text-gray-900 dark:text-gray-50 mb-2'>Hackathon Wins</h3>
+              <ul className='space-y-1 text-xs text-gray-600 dark:text-gray-400'>
                 <li>
                   Winner - mhacksX, mhacksX nano, vortexIITD, yobiHackTheClimate
                 </li>
@@ -219,10 +219,10 @@ export default function About() {
         </section>
 
         <section>
-          <h2 className='text-lg font-medium text-gray-900 mb-6'>Contact</h2>
+          <h2 className='text-lg font-medium text-gray-900 dark:text-gray-50 mb-6'>Contact</h2>
 
-          <div className='text-sm text-gray-600 leading-relaxed'>
-            <p className='mb-4 hover:text-gray-800 transition-colors duration-200'>
+          <div className='text-sm text-gray-600 dark:text-gray-400 leading-relaxed'>
+            <p className='mb-4 hover:text-gray-800 dark:hover:text-gray-300 transition-colors duration-200'>
               I'm always interested in hearing about new projects and
               opportunities in iOS development. Feel free to reach out if you'd
               like to work together or discuss mobile development.
@@ -230,38 +230,38 @@ export default function About() {
 
             <div className='space-y-2'>
               <p>
-                <span className='text-gray-900'>Email:</span>{' '}
+                <span className='text-gray-900 dark:text-gray-50'>Email:</span>{' '}
                 <Link
                   href='mailto:bhagatsingh2297@gmail.com'
-                  className='hover:text-gray-900 transition-colors duration-200 hover:underline'
+                  className='hover:text-gray-900 dark:hover:text-gray-50 transition-colors duration-200 hover:underline'
                 >
                   bhagatsingh2297@gmail.com
                 </Link>
               </p>
-              
+
               <p>
-                <span className='text-gray-900'>LinkedIn:</span>{' '}
+                <span className='text-gray-900 dark:text-gray-50'>LinkedIn:</span>{' '}
                 <Link
                   href='https://linkedin.com/in/ibhagatsingh'
-                  className='hover:text-gray-900 transition-colors duration-200 hover:underline'
+                  className='hover:text-gray-900 dark:hover:text-gray-50 transition-colors duration-200 hover:underline'
                 >
                   linkedin.com/in/ibhagatsingh
                 </Link>
               </p>
               <p>
-                <span className='text-gray-900'>Twitter:</span>{' '}
+                <span className='text-gray-900 dark:text-gray-50'>Twitter:</span>{' '}
                 <Link
                   href='https://twitter.com/soulful_swift'
-                  className='hover:text-gray-900 transition-colors duration-200 hover:underline'
+                  className='hover:text-gray-900 dark:hover:text-gray-50 transition-colors duration-200 hover:underline'
                 >
                   @soulful_swift
                 </Link>
               </p>
               <p>
-                <span className='text-gray-900'>GitHub:</span>{' '}
+                <span className='text-gray-900 dark:text-gray-50'>GitHub:</span>{' '}
                 <Link
                   href='https://github.com/xorforce'
-                  className='hover:text-gray-900 transition-colors duration-200 hover:underline'
+                  className='hover:text-gray-900 dark:hover:text-gray-50 transition-colors duration-200 hover:underline'
                 >
                   github.com/xorforce
                 </Link>
@@ -272,20 +272,20 @@ export default function About() {
       </main>
 
       {/* Footer */}
-      <footer className='border-t border-gray-200 py-8'>
+      <footer className='border-t border-gray-200 dark:border-gray-800 py-8'>
         <div className='max-w-2xl mx-auto px-8'>
-          <div className='flex justify-between items-center text-xs text-gray-500'>
+          <div className='flex justify-between items-center text-xs text-gray-500 dark:text-gray-400'>
             <p>© 2024 Bhagat Singh</p>
             <div className='flex space-x-4'>
               <Link
                 href='/about'
-                className='hover:text-gray-900 transition-colors duration-200 hover:underline'
+                className='hover:text-gray-900 dark:hover:text-gray-50 transition-colors duration-200 hover:underline'
               >
                 about
               </Link>
               <Link
                 href='mailto:bhagatsingh2297@gmail.com'
-                className='hover:text-gray-900 transition-colors duration-200 hover:underline'
+                className='hover:text-gray-900 dark:hover:text-gray-50 transition-colors duration-200 hover:underline'
               >
                 contact
               </Link>
