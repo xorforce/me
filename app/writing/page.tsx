@@ -150,9 +150,9 @@ export default function Writing() {
                       <p className='text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-200'>
                         {article.excerpt}
                       </p>
-                      <div className='flex space-x-2 mb-3'>
+                      <div className='flex flex-wrap gap-2 mb-3'>
                         {article.tags.map((tag, index) => (
-                          <span key={index} className='text-xs text-gray-600 dark:text-gray-300 bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-colors duration-200'>
+                          <span key={index} className='text-xs text-gray-600 dark:text-gray-300 bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-colors duration-200 whitespace-nowrap'>
                             {tag}
                           </span>
                         ))}
