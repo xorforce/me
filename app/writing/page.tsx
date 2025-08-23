@@ -152,7 +152,7 @@ export default function Writing() {
                       </p>
                       <div className='flex space-x-2 mb-3'>
                         {article.tags.map((tag, index) => (
-                          <span key={index} className='text-xs text-gray-500 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200'>
+                          <span key={index} className='text-xs text-gray-600 dark:text-gray-300 bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-colors duration-200'>
                             {tag}
                           </span>
                         ))}
