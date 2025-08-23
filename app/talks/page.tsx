@@ -98,21 +98,21 @@ export default function Talks() {
                     rel="noopener noreferrer"
                   >
                     <div className='space-y-4'>
-                      <div className='flex gap-6'>
+                      <div className='flex flex-col sm:flex-row gap-4 sm:gap-6'>
                         <div className='flex-shrink-0'>
                           {talk.thumbnail.image ? (
-                            <div className='w-48 h-28 relative rounded-lg overflow-hidden'>
+                            <div className='w-full sm:w-48 h-32 sm:h-28 relative rounded-lg overflow-hidden'>
                               <Image
                                 src={talk.thumbnail.image}
                                 alt={talk.title}
                                 fill
                                 className='object-cover'
-                                sizes="192px"
+                                sizes="(max-width: 640px) 100vw, 192px"
                                 unoptimized={true}
                               />
                             </div>
                           ) : (
-                            <div className={`w-48 h-28 bg-gradient-to-br ${talk.thumbnail.gradient} rounded-lg flex items-center justify-center text-white font-medium text-sm`}>
+                            <div className={`w-full sm:w-48 h-32 sm:h-28 bg-gradient-to-br ${talk.thumbnail.gradient} rounded-lg flex items-center justify-center text-white font-medium text-sm`}>
                               {talk.thumbnail.text}
                             </div>
                           )}
@@ -121,7 +121,7 @@ export default function Talks() {
                           <h2 className='text-lg font-medium text-gray-900 dark:text-gray-50 group-hover:text-gray-600 dark:group-hover:text-gray-300 mb-2 transition-colors duration-200'>
                             {talk.title}
                           </h2>
-                          <div className='flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400'>
+                          <div className='flex flex-wrap items-center gap-2 sm:gap-4 text-xs text-gray-500 dark:text-gray-400'>
                             <div className='flex items-center gap-1'>
                               <Calendar className='w-3 h-3' />
                               <span>{talk.date}</span>
