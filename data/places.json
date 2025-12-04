@@ -1,0 +1,99 @@
+[
+  {
+    "id": "tokyo",
+    "city": "Tokyo",
+    "country": "Japan",
+    "coordinates": { "lat": 35.6762, "lng": 139.6503 },
+    "description": "Neon-soaked neighborhoods layered over centuries of craftsmanship and culinary obsession.",
+    "recommendations": {
+      "food": [
+        "Queue early for omakase at Sushi Dai in Toyosu Market.",
+        "Warm up with tantanmen at Nakiryu, one of Tokyo's few Michelin ramen shops.",
+        "Dessert crawl through the depachika food halls beneath Ginza's grand department stores."
+      ],
+      "shopping": [
+        "Wander the back streets of Daikanyama for design-forward boutiques and coffee labs.",
+        "Hit the menswear wonderland at BEAMS and United Arrows in Harajuku.",
+        "Scout Akihabara's retro game shops for mint-condition classics."
+      ],
+      "sightseeing": [
+        "Catch sunset at Roppongi's Mori Tower sky deck.",
+        "Take the Chuo Line to Mitaka for the Studio Ghibli Museum.",
+        "Spend a quiet morning at Meiji Jingu before the city wakes."
+      ]
+    }
+  },
+  {
+    "id": "copenhagen",
+    "city": "Copenhagen",
+    "country": "Denmark",
+    "coordinates": { "lat": 55.6761, "lng": 12.5683 },
+    "description": "Scandinavian minimalism, canal-side hygge, and bicycles somehow everywhere at once.",
+    "recommendations": {
+      "food": [
+        "Book far ahead for a long lunch at Geranium or Alchemist.",
+        "Grab a smørrebrød board at Café Norden off Strøget.",
+        "Sip natural wine and snacks at Den Vandrette by the harbor."
+      ],
+      "shopping": [
+        "Tour the design exhibits at Danish Architecture Center, then head to Hay House.",
+        "Pick up ceramics and textiles in the Vesterbro creatives district.",
+        "Bike to Jægersborggade for curated vintage and specialty roasters."
+      ],
+      "sightseeing": [
+        "Climb the spiral of Church of Our Saviour for a panoramic city sweep.",
+        "Float through Nyhavn's pastel harbor with a warm kanelsnegl in hand.",
+        "Spend an afternoon at Louisiana Museum of Modern Art by the sea."
+      ]
+    }
+  },
+  {
+    "id": "cape-town",
+    "city": "Cape Town",
+    "country": "South Africa",
+    "coordinates": { "lat": -33.9249, "lng": 18.4241 },
+    "description": "Table Mountain drama, ocean breezes, and a creative scene stretching from Woodstock to the Winelands.",
+    "recommendations": {
+      "food": [
+        "Lunch at The Pot Luck Club overlooking Woodstock's street art.",
+        "Trail coffee and pastries at Truth Coffee Roasting, steampunk and all.",
+        "Drive to Stellenbosch for a tasting menu at Delaire Graff Estate."
+      ],
+      "shopping": [
+        "Browse local makers at the Watershed near the V&A Waterfront.",
+        "Score contemporary African design at Oranjezicht City Farm Market.",
+        "Hunt for vinyl at Mabu Vinyl in the heart of the city."
+      ],
+      "sightseeing": [
+        "Cable car up Table Mountain for sunrise, hike down via Platteklip Gorge.",
+        "Road trip Chapman’s Peak Drive hugging dramatic cliffs.",
+        "Take the ferry to Robben Island for living history."
+      ]
+    }
+  },
+  {
+    "id": "mexico-city",
+    "city": "Mexico City",
+    "country": "Mexico",
+    "coordinates": { "lat": 19.4326, "lng": -99.1332 },
+    "description": "Color-splashed barrios, progressive cuisine, and museums tucked into every leafy plaza.",
+    "recommendations": {
+      "food": [
+        "Reserve a late seating at Pujol for the legendary mole madre course.",
+        "Street taco crawl through Condesa and Roma after dark.",
+        "Coffee hop between Quentin Café and Cardinal Casa de Café."
+      ],
+      "shopping": [
+        "Check out fashion and design pop-ups at LagoAlgo by the lake.",
+        "Hunt artisan crafts at La Ciudadela market.",
+        "Visit HUSET in Roma Norte for plant-forward home goods and gifts."
+      ],
+      "sightseeing": [
+        "Lose yourself in the murals of Palacio de Bellas Artes.",
+        "Spend golden hour floating on the canals of Xochimilco.",
+        "Day trip to Teotihuacan for sunrise over the pyramids."
+      ]
+    }
+  }
+]
+

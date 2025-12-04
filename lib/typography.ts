@@ -193,10 +193,10 @@ export const fontClasses = {
 // Generate CSS variables for use in globals.css
 export function getCSSVariables() {
   return {
-    '--font-primary': typography.primary.variable.replace('--font-', 'var(--font-') + ')',
-    '--font-secondary': typography.secondary.variable.replace('--font-', 'var(--font-') + ')',
-    '--font-mono': typography.mono.variable.replace('--font-', 'var(--font-') + ')',
-    '--font-display': typography.display.variable.replace('--font-', 'var(--font-') + ')',
+    '--font-primary': `var(${typography.primary.variable})`,
+    '--font-secondary': `var(${typography.secondary.variable})`,
+    '--font-mono': `var(${typography.mono.variable})`,
+    '--font-display': `var(${typography.display.variable})`,
   };
 }
 
