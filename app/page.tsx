@@ -52,6 +52,13 @@ export default function Portfolio() {
               >
                 podcasts
               </Link>
+              ,{" "}
+              <Link
+                href="/djing"
+                className="hover:underline text-gray-900 dark:text-gray-50 bg-gray-100 dark:bg-gray-800 px-1 rounded"
+              >
+                dj
+              </Link>
               , and work on{" "}
               <Link
                 href="/projects"
