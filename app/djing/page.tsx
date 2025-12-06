@@ -221,16 +221,17 @@ export default function DJing() {
                 <CardContent className="p-0">
                   <div className="p-4">
                     {/* Embed */}
-                    <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800">
+                    <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800" style={{ minHeight: mix.platform === "mixcloud" ? "120px" : "300px" }}>
                       <iframe
                         src={mix.embedUrl}
                         width="100%"
                         height={mix.platform === "soundcloud" ? "300" : mix.platform === "mixcloud" ? "120" : "120"}
                         frameBorder="0"
+                        scrolling="no"
                         allow={mix.platform === "mixcloud" ? "encrypted-media; fullscreen; autoplay; idle-detection; speaker-selection; web-share;" : "autoplay"}
                         allowFullScreen
-                        loading="lazy"
                         title={mix.title || "Mix embed"}
+                        style={{ border: "none", display: "block" }}
                         className="w-full"
                       />
                     </div>
