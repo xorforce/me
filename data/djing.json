@@ -1,0 +1,63 @@
+{
+  "socialLinks": {
+    "instagram": "https://instagram.com/udtaa_punjabi",
+    "mixcloud": "https://www.mixcloud.com/noise_complaint/",
+    "soundcloud": "https://soundcloud.com/noisecomplaint-28",
+    "epk": "https://drive.google.com/drive/folders/1hdXPI4er9G84OxIuYtMC97wc0_grHlUL?usp=drive_link"
+  },
+  "spotifyEmbed": {
+    "playlistId": "your-playlist-id",
+    "type": "playlist"
+  },
+  "mixes": [
+    {
+      "id": 1,
+      "title": "Sound of Noise - 001",
+      "date": "16/11/2025",
+      "platform": "mixcloud",
+      "embedUrl": "https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Fnoise_complaint%2Fsound-of-noise-001%2F",
+      "description": "First installment of the Sound of Noise series. A collection of tracks that are a mix of disco music influenced by Fran Deeper"
+    }
+  ],
+  "gigs": [
+    {
+      "id": 1,
+      "eventTitle": "Somad Select Sundaze 5th Year Anniversary Showcase",
+      "venue": "Amicci, Indiranagar",
+      "location": "Bengaluru, India",
+      "date": "07/12/2025",
+      "time": "16:00 - 22:00",
+      "eventLink": "https://www.district.in/events/somad-select-sundaze-5th-year-anniversary-showcase-ft-kampai-og-shez-rasa-makaan-ira-bb-anish-noise-complaint-dec7-2025-buy-tickets?disableSSR=true&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn7GSXsCUgDHYywWG1XZpKZkZ-FdW0O5uuI8B_FNtrA80_sqGXddG2wBqztLY_aem_vBiwfKo3bijOfbf1sLi9Aw"
+    },
+    {
+      "id": 2,
+      "eventTitle": "Dynamite Disco Club",
+      "venue": "The Burrow, Gandhi Nagar",
+      "location": "Bengaluru, India",
+      "date": "08/11/2025",
+      "time": "20:00 - 20:30",
+      "eventLink": "https://sortmyscene.com/event/dynamite-disco-club-ft-stalvart-john-discokid-ravy-the-burrow-bangalore-nov-08-2025"
+    }
+  ],
+  "photos": [
+    {
+      "id": 1,
+      "url": "/images/djing/DDC-Nov.jpg",
+      "alt": "DJ set at venue",
+      "date": "2024-11-15"
+    },
+    {
+        "id": 2,
+        "url": "/images/djing/DDC-Nov(1).jpg",
+        "alt": "DJ set at venue",
+        "date": "2024-11-15"
+      },
+      {
+        "id": 3,
+        "url": "/images/djing/DDC-Nov(2).jpg",
+        "alt": "DJ set at venue",
+        "date": "2024-11-15"
+      }
+  ]
+}
+
