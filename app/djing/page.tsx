@@ -210,26 +210,6 @@ export default function DJing() {
           </div>
         </section>
 
-        {/* Spotify Embed - What I'm Playing Now */}
-        {djingData.spotifyEmbed.playlistId && djingData.spotifyEmbed.playlistId !== "your-playlist-id" && (
-          <section className="mb-16">
-            <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50 mb-4 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300">
-              What I'm Playing Nowadays
-            </h2>
-            <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 p-4">
-              <iframe
-                src={`https://open.spotify.com/embed/${djingData.spotifyEmbed.type}/${djingData.spotifyEmbed.playlistId}?utm_source=generator&theme=0`}
-                width="100%"
-                height="352"
-                frameBorder="0"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-                className="rounded-lg"
-              />
-            </div>
-          </section>
-        )}
-
         {/* Mixes Section */}
         <section className="mb-16">
           <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50 mb-6 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300">
@@ -249,6 +229,8 @@ export default function DJing() {
                         frameBorder="0"
                         allow={mix.platform === "mixcloud" ? "encrypted-media; fullscreen; autoplay; idle-detection; speaker-selection; web-share;" : "autoplay"}
                         allowFullScreen
+                        loading="lazy"
+                        title={mix.title || "Mix embed"}
                         className="w-full"
                       />
                     </div>
