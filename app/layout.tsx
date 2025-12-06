@@ -26,10 +26,6 @@ export default function RootLayout({
       <head>
         <style dangerouslySetInnerHTML={{ __html: css }} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-          httpEquiv="Content-Security-Policy"
-          content="frame-src https://player-widget.mixcloud.com https://w.soundcloud.com https://open.spotify.com https://www.mixcloud.com https://api.mixcloud.com https://www.soundcloud.com https://soundcloud.com;"
-        />
       </head>
       <body className={fontClasses.primary}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
