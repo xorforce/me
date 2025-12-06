@@ -228,7 +228,7 @@ export default function DJing() {
                         height={mix.platform === "soundcloud" ? "300" : mix.platform === "mixcloud" ? "120" : "120"}
                         frameBorder="0"
                         scrolling="no"
-                        allow={mix.platform === "mixcloud" ? "encrypted-media; fullscreen; autoplay; idle-detection; speaker-selection; web-share;" : "autoplay"}
+                        allow={mix.platform === "mixcloud" ? "encrypted-media; fullscreen; autoplay;" : "autoplay"}
                         allowFullScreen
                         title={mix.title || "Mix embed"}
                         style={{ border: "none", display: "block" }}
