@@ -27,46 +27,22 @@ export const typography = {
 
 ## 🎨 Available Fonts
 
-### Google Fonts (Ready to Use)
-- `fonts.inter` - Modern, clean sans-serif
-- `fonts.outfit` - Geometric sans-serif
-- `fonts.spaceGrotesk` - Quirky, friendly sans-serif
+### Google Fonts
 - `fonts.jetbrainsMono` - Developer-friendly monospace
-- `fonts.playfairDisplay` - Elegant serif for headings
 
-### Custom Fonts
-- `fonts.chillax` - Your current custom font
-- `fonts.satoshi` - Alternative custom font (add font files to use)
+### Custom Font
+- `fonts.chillax` - Primary custom font
 
 ## 🔄 Quick Font Changes
-
-### Switch to Modern & Clean
-```typescript
-export const typography = {
-  primary: fonts.inter,
-  secondary: fonts.inter,
-  mono: fonts.jetbrainsMono,
-  display: fonts.outfit,
-};
-```
 
 ### Use a Single Font Everywhere
 ```typescript
 export const typography = {
-  primary: fonts.spaceGrotesk,
-  secondary: fonts.spaceGrotesk,
+  primary: fonts.chillax,
+  secondary: fonts.chillax,
   mono: fonts.jetbrainsMono,
-  display: fonts.spaceGrotesk,
+  display: fonts.chillax,
 };
-```
-
-### Use Font Presets
-```typescript
-export const typography = fontPresets.modern;
-// or
-export const typography = fontPresets.classic;
-// or
-export const typography = fontPresets.quirky;
 ```
 
 ## 🛠️ How It Works
@@ -190,28 +166,6 @@ All Components (Uses font-* classes)
 2. **Use WOFF2 Format**: Best compression for modern browsers
 3. **Subset Fonts**: Only load needed character sets
 4. **Limit Font Weights**: Only include weights you use
-
-## 🎯 Common Patterns
-
-### Brand Consistency
-```typescript
-export const typography = {
-  primary: fonts.inter,
-  secondary: fonts.inter,
-  mono: fonts.jetbrainsMono,
-  display: fonts.inter, // Same as primary for consistency
-};
-```
-
-### Typography Hierarchy
-```typescript
-export const typography = {
-  primary: fonts.inter,        // Clean body text
-  secondary: fonts.outfit,     // Distinctive headings
-  mono: fonts.jetbrainsMono,   // Code blocks
-  display: fonts.playfairDisplay, // Elegant titles
-};
-```
 
 ## 🎨 Current Configuration
 
