@@ -1,0 +1,139 @@
+{
+  "intro": "A quiet log of objects that found a place in my life.",
+  "updated": "2026-02-04",
+  "items": [
+    {
+      "type": "Purchased",
+      "brand": "Sneaker Freaker",
+      "name": "Issue 46",
+      "img": "/images/inventory/sf-46.png"
+    },
+    {
+      "type": "Purchased",
+      "brand": "Sneaker Freaker",
+      "name": "Issue 44",
+      "img": "/images/inventory/sf-44.png"
+    },
+    {
+      "type": "Purchased",
+      "brand": "Nerf!",
+      "name": "Elite Slyshot 2.0",
+      "img": "/images/inventory/nerf.webp"
+    },
+    {
+      "type": "Purchased",
+      "brand": "Meta x Ray-Ban",
+      "name": "Wayfarer",
+      "img": "/images/inventory/meta-rb.webp"
+    },
+    {
+      "type": "Purchased",
+      "brand": "Apple",
+      "name": "AirPods Max",
+      "img": "/images/inventory/ap-max.png"
+    },
+    {
+      "type": "Purchased",
+      "brand": "Sneaker Freaker",
+      "name": "Soled Out",
+      "img": "/images/inventory/soled-out.webp"
+    },
+    {
+      "type": "Purchased",
+      "brand": "Nike",
+      "name": "Dunk Low 'Community Garden'",
+      "img": "/images/inventory/nike-cg.png"
+    },
+    {
+      "type": "Purchased",
+      "brand": "Samsonite x New Balance",
+      "name": "Spinner 55",
+      "img": "/images/inventory/samsonite-55.png"
+    },
+    {
+      "type": "Purchased",
+      "brand": "Samsonite x New Balance",
+      "name": "Spinner 75",
+      "img": "/images/inventory/samsonite-75.png"
+    },
+    {
+      "type": "Purchased",
+      "brand": "Hydaway",
+      "name": "Travel Pack",
+      "img": "/images/inventory/hydaway.png"
+    },
+    {
+      "type": "Purchased",
+      "brand": "GearAid",
+      "name": "Heroclip",
+      "img": "/images/inventory/gear-aid.png"
+    },
+    {
+      "type": "Gifted",
+      "brand": "Marshall",
+      "name": "Killburn II",
+      "img": "/images/inventory/marshall.webp"
+    },
+    {
+      "type": "Purchased",
+      "brand": "Nike x Travis Scott",
+      "name": "Air Jordan 1 Low 'Cactus Jack'",
+      "img": "/images/inventory/nike-ts.png"
+    },
+    
+    {
+      "type": "Purchased",
+      "brand": "Oral-B",
+      "name": "IO-8",
+      "img": "/images/inventory/oralb.webp"
+    },
+    {
+      "type": "Purchased",
+      "brand": "Yonex",
+      "name": "Nanoflare 1000 Tour",
+      "img": "/images/inventory/yonex.png"
+    },
+    {
+      "type": "Purchased",
+      "brand": "Lego x Nike",
+      "name": "Dunk",
+      "img": "/images/inventory/lego-nike.jpg"
+    },
+    {
+      "type": "Purchased",
+      "brand": "New Balance",
+      "name": "740",
+      "img": "/images/inventory/nb-740.webp"
+    },
+    {
+      "type": "Purchased",
+      "brand": "Brew",
+      "name": "Metric 'Retro'",
+      "img": "/images/inventory/brew-metric.webp"
+    },
+    {
+      "type": "Purchased",
+      "brand": "Coach",
+      "name": "Sprint Backpack",
+      "img": "/images/inventory/coach-bp.webp"
+    },
+    {
+      "type": "Purchased",
+      "brand": "Patagonia",
+      "name": "Terravia Mini",
+      "img": "/images/inventory/pata-t.png"
+    },
+    {
+      "type": "Purchased",
+      "brand": "Amazfit",
+      "name": "Helio Strap",
+      "img": "/images/inventory/helio.png"
+    },
+    {
+      "type": "Purchased",
+      "brand": "Loop",
+      "name": "Engage Equinox",
+      "img": "/images/inventory/loop.png"
+    }
+  ]
+}

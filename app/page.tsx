@@ -66,21 +66,28 @@ export default function Portfolio() {
               >
                 projects
               </Link>
-              . know more{" "}
+              . Know more{" "}
               <Link
                 href="/about"
                 className="hover:underline text-gray-900 dark:text-gray-50 bg-gray-100 dark:bg-gray-800 px-1 rounded"
               >
                 about me
               </Link>
-              {" "} or see what weird{" "}
+              {""}, peek at the{" "}
               <Link
-                href="/things"
+                href="/uses"
                 className="hover:underline text-gray-900 dark:text-gray-50 bg-gray-100 dark:bg-gray-800 px-1 rounded"
               >
-                things I collect
+                things I use
               </Link>
-              .
+              {" "}or dive into my{" "}
+              <Link
+                href="/inventory"
+                className="hover:underline text-gray-900 dark:text-gray-50 bg-gray-100 dark:bg-gray-800 px-1 rounded"
+              >
+                inventory.
+              </Link>
+              
             </p>
           </section>
         </div>

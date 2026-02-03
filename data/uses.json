@@ -1,0 +1,110 @@
+{
+  "updated": "Feb 2026",
+  "intro": "A running list of the hardware, software, and services I rely on to build, write, and stay organized.",
+  "sections": [
+    {
+      "title": "Hardware",
+      "description": "Daily drivers and peripherals.",
+      "items": [
+        {
+          "name": "MacBook Pro 14-inch (M4 Pro)",
+          "note": "Primary dev machine for everything that I do."
+        },
+        {
+          "name": "iPhone 17 Pro Max",
+          "note": "Daily driver and more than enough for a quick capture."
+        },
+        {
+          "name": "Keychron K8 Pro",
+          "note": "Mechanical keyboard for long sessions. Blue Switches. Click-clacky af."
+        },
+        {
+          "name": "Logitech G402",
+          "note": "Got this as a gift back when I used to grind CSGO. Still going strong."
+        },
+        {
+          "name": "Apple Trackpad",
+          "note": "For all the stuff that the mouse cannot do."
+        },
+        {
+          "name": "Apple Earpods",
+          "note": "Yes, you read that right. I use Apple Earpods. They are the best in the market. Period."
+        },
+        {
+          "name": "Dell S2725QC",
+          "note": "4K monitor. USB-C PD Charging. 120Hz. More than enough for my needs."
+        },
+        {
+          "name": "Satechi Thunderbolt 4 Dock",
+          "note": "This enables a one-cable switchout between my work and home setup, and keeps my desk clean."
+        },
+        {
+          "name": "AKG Lyra",
+          "note": "Good mic for any calls, recordings or podcasts that I do."
+        },
+        {
+          "name": "Lumina 4K Webcam",
+          "note": "Great webcam for WFH calls. I funded the project on Kickstarter."
+        }
+      ]
+    },
+    {
+      "title": "Desk and office",
+      "description": "Comfort and focus upgrades.",
+      "items": [
+        {
+          "name": "Ikea Trotten desk",
+          "note": "Great, spacious and a subtle desk to suit my needs."
+        },
+        {
+          "name": "Herman Miller Mirra",
+          "note": "After using a gaming chair for years, I switched to this and it has been good for my aging back."
+        },
+        {
+          "name": "Ikea Elloven Desk Shelf",
+          "note": "Despite my monitor having height adjustment, I use this to keep my desk clean from small stuff."
+        }
+      ]
+    },
+    {
+      "title": "Terminal and dev tools",
+      "description": "The core stack I touch every day.",
+      "items": [
+        {
+          "name": "Xcode",
+          "note": "Primary IDE for iOS development. I use this almost every minute of my working hours."
+        },
+        {
+          "name": "Cursor",
+          "note": "Primary editor for all my AI Experiments."
+        },
+        {
+          "name": "Warp & Ghostty",
+          "note": "I use these two alternatively while I finally transition to using Ghostty as my primary terminal."
+        },
+        {
+          "name": "zsh + starship",
+          "note": "My preferred shell and prompt."
+        }
+      ]
+    },
+    {
+      "title": "Apps I keep open",
+      "description": "Focus, planning, and creative work.",
+      "items": [
+        {
+          "name": "Figma",
+          "note": "Anything design related."
+        },
+        {
+          "name": "Obsidian",
+          "note": "Trying to use this more and more to take notes and manage my life."
+        },
+        {
+          "name": "Spotify",
+          "note": "Just getting in the zone, creating vibes and getting work done."
+        }
+      ]
+    }
+  ]
+}
