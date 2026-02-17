@@ -92,7 +92,15 @@ export default function Portfolio() {
           </section>
         </div>
       </main>
-      
+
+      <aside className="pb-10 flex justify-center">
+        <Link
+          href="/til"
+          className="text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 transition-colors duration-200 hover:underline"
+        >
+          today i learnt
+        </Link>
+      </aside>
     </div>
   )
 }
