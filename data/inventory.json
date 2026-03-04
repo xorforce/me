@@ -33,10 +33,22 @@
       "img": "/images/inventory/ap-max.png"
     },
     {
-      "type": "Purchased",
+      "type": "Gifted",
       "brand": "Sneaker Freaker",
       "name": "Soled Out",
       "img": "/images/inventory/soled-out.webp"
+    },
+    {
+      "type": "Purchased",
+      "brand": "Louis Vuitton",
+      "name": "Ombre Nomade",
+      "img": "/images/inventory/lv.png"
+    },
+    {
+      "type": "Purchased",
+      "brand": "Chanel",
+      "name": "Allure Homme Sport",
+      "img": "/images/inventory/chanel.webp"
     },
     {
       "type": "Purchased",

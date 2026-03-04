@@ -14,7 +14,7 @@ export default function Inventory() {
   }
 
   return (
-    <div className="min-h-screen bg-background font-mono dark:bg-gray-950">
+    <div className="min-h-screen bg-background font-mono">
       <nav className="flex items-center justify-between px-4 sm:px-6 py-6 max-w-5xl mx-auto text-sm">
         <Button
           variant="ghost"
@@ -29,18 +29,9 @@ export default function Inventory() {
 
       <main className="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
         <section className="pt-2 pb-12 animate-in fade-in duration-500">
-          <p className="text-xs uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400 mb-5">
-            Inventory
-          </p>
           <h1 className="text-3xl font-medium text-gray-900 dark:text-gray-50 mb-4">
             Inventory
           </h1>
-          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4 max-w-2xl">
-            {inventoryData.intro}
-          </p>
-          <p className="text-[11px] uppercase tracking-[0.16em] text-gray-500 dark:text-gray-400">
-            Last updated: {inventoryData.updated}
-          </p>
         </section>
 
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
