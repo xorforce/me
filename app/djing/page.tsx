@@ -76,7 +76,7 @@ export default function DJing() {
     return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
   }
   return (
-    <div className="min-h-screen bg-background font-mono dark:bg-gray-950">
+    <div className="min-h-screen bg-background font-mono">
       {/* Navigation */}
       <nav className="flex items-center justify-between px-8 py-6 max-w-4xl mx-auto text-sm">
         {/* Back Arrow */}
