@@ -57,3 +57,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .article-content > *:first-child {
+    margin-top: 0;
+  }
+
+  .article-content h1,
+  .article-content h2,
+  .article-content h3,
+  .article-content h4 {
+    scroll-margin-top: 2rem;
+  }
+
+  .article-content hr {
+    @apply my-10 border-gray-200 dark:border-gray-800;
+  }
+}
