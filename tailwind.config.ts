@@ -13,10 +13,10 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['var(--font-primary)', 'sans-serif'],
-        secondary: ['var(--font-secondary)', 'sans-serif'],
-        mono: ['var(--font-mono)', 'monospace'],
-        display: ['var(--font-display)', 'serif'],
+        primary: ['var(--font-ibm-plex-mono)', 'monospace'],
+        secondary: ['var(--font-ibm-plex-mono)', 'monospace'],
+        mono: ['var(--font-ibm-plex-mono)', 'monospace'],
+        display: ['var(--font-ibm-plex-mono)', 'monospace'],
       },
       fontSize: {
         'xs': '0.875rem',    // xs → sm: 12px → 14px

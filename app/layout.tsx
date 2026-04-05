@@ -1,6 +1,6 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { fontClasses, fontVariables, getCSSVariables } from "@/lib/typography";
+import { fontVariables } from "@/lib/typography";
 import "./globals.css";
 import { ThemeProvider } from "../components/theme-provider";
 import { ThemeSwitcher } from "../components/theme-switcher";
@@ -16,18 +16,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const variables = getCSSVariables();
-  const css = `:root { ${Object.entries(variables)
-    .map(([key, value]) => `${key}: ${value};`)
-    .join(" ")} }`;
-
   return (
     <html lang="en" className={fontVariables} suppressHydrationWarning>
       <head>
-        <style dangerouslySetInnerHTML={{ __html: css }} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className={fontClasses.primary}>
+      <body className="font-primary antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
           <ThemeSwitcher />
