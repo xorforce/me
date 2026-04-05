@@ -1,5 +1,4 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { SubpageShell } from "@/components/subpage-shell"
 import inventoryData from "@/data/inventory.json"
 
 export default function Inventory() {
@@ -14,26 +13,11 @@ export default function Inventory() {
   }
 
   return (
-    <div className="min-h-screen bg-background font-mono">
-      <nav className="flex items-center justify-between px-4 sm:px-6 py-6 max-w-5xl mx-auto text-sm">
-        <Button
-          variant="ghost"
-          size="sm"
-          className="h-auto p-0 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-transparent"
-        >
-          <Link href="/" className="hover:underline flex items-center">
-            ← back
-          </Link>
-        </Button>
-      </nav>
-
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
-        <section className="pt-2 pb-12 animate-in fade-in duration-500">
-          <h1 className="text-3xl font-medium text-gray-900 dark:text-gray-50 mb-4">
-            Inventory
-          </h1>
-        </section>
-
+    <SubpageShell
+      title="Inventory"
+      maxWidthClass="max-w-5xl"
+      contentClassName="pt-2 pb-16 px-4 sm:px-6"
+    >
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
           {shuffledItems.map((item, index) => (
             <article
@@ -53,21 +37,20 @@ export default function Inventory() {
                   />
                 </div>
               </div>
-              <div className="mt-3 text-xs text-gray-700 dark:text-gray-300">
-                <div className="font-medium text-gray-900 dark:text-gray-100">
+              <div className="mt-3">
+                <div className="text-sm font-medium text-gray-900 dark:text-gray-100">
                   {item.brand}
                 </div>
-                <div>{item.name}</div>
+                <div className="site-body-copy mt-1">{item.name}</div>
               </div>
               {item.type === "Gifted" ? (
-                <div className="mt-1 text-[10px] uppercase tracking-[0.18em] text-gray-500 dark:text-gray-500">
+                <div className="site-subtle-label mt-1">
                   Gifted
                 </div>
               ) : null}
             </article>
           ))}
         </section>
-      </main>
-    </div>
+    </SubpageShell>
   )
 }

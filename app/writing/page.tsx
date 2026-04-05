@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { useState, useMemo } from "react"
+import { useMemo, useState } from "react"
+import { SubpageShell } from "@/components/subpage-shell"
 import articles from "@/data/articles.json"
 
 export default function Writing() {
@@ -14,209 +14,130 @@ export default function Writing() {
 
   const filteredArticles = useMemo(() => {
     return articles.filter((article) => {
-      // First filter by source
       if (selectedSource === "All") return true
       if (selectedSource === "Medium" && article.mediumUrl) return true
       if (selectedSource === "Kodeco" && article.kodecoUrl) {
-        // Then filter by content type (only for Kodeco)
         if (selectedContentType === "All") return true
         return article.contentType === selectedContentType
       }
+
       return false
     })
   }, [selectedSource, selectedContentType])
 
   return (
-    <div className="min-h-screen bg-background font-mono">
-      {/* Navigation */}
-      <nav className="flex items-center justify-between px-8 py-6 max-w-2xl mx-auto text-sm">
-        {/* Back Arrow */}
-        <Button
-          variant="ghost"
-          size="sm"
-          className="h-auto p-0 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-transparent"
-        >
-          <Link href="/" className="hover:underline flex items-center">
-            ← back
-          </Link>
-        </Button>
-        
-        <div className="flex items-center space-x-4 text-xs">
-          <Button
-            variant="ghost"
-            size="sm"
-            className="h-auto p-0 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-transparent"
-          >
-            <Link href="/" className="hover:underline">
-              home
-            </Link>
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="h-auto p-0 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-transparent"
-          >
-            <Link href="https://github.com/xorforce" className="hover:underline">
-              github
-            </Link>
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="h-auto p-0 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-transparent"
-          >
-            <Link href="https://twitter.com/soulful_swift" className="hover:underline">
-              twitter
-            </Link>
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="h-auto p-0 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-transparent"
-          >
-            <Link href="mailto:bhagatsingh2297@gmail.com" className="hover:underline">
-              email
-            </Link>
-          </Button>
-        </div>
-      </nav>
+    <SubpageShell
+      title="Writing"
+      description="Thoughts on iOS, music, the internet, and surviving life in general."
+      showFooterBorder
+    >
+      <div className="space-y-12">
+        <section className="space-y-4">
+          <h2 className="site-subtle-label">Sources</h2>
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-900 dark:text-gray-50">
+            {sources.map((source) => (
+              <button
+                key={source}
+                onClick={() => {
+                  setSelectedSource(source)
+                  setSelectedContentType("All")
+                }}
+                className={`transition-colors duration-200 hover:text-gray-700 dark:hover:text-gray-300 ${
+                  selectedSource === source ? "font-bold" : ""
+                }`}
+              >
+                {source}
+              </button>
+            ))}
+          </div>
 
-      {/* Main Content */}
-      <main className="max-w-2xl mx-auto px-8 py-12 animate-in fade-in duration-500">
-        <section className="mb-16">
-          <h1 className="text-2xl font-medium text-gray-900 dark:text-gray-50 mb-4 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300">
-            Writing
-          </h1>
-          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-12 hover:text-gray-800 dark:hover:text-gray-300 transition-colors duration-200">
-            Thoughts on everything going around me, mainly iOS developement, me pusuing music, and surviving life in general.
-          </p>
-
-          {/* Filter Section */}
-          <div className="mb-8">
-            <h2 className="text-xs text-gray-500 dark:text-gray-400 uppercase mb-4">Sources</h2>
-            <div className="flex space-x-4 text-sm text-gray-900 dark:text-gray-50 mb-4">
-              {sources.map((source) => (
-                <button
-                  key={source}
-                  onClick={() => {
-                    setSelectedSource(source)
-                    setSelectedContentType("All") // Reset content type when source changes
-                  }}
-                  className={`${
-                    selectedSource === source ? "font-bold" : ""
-                  } hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-200`}
-                >
-                  {source}
-                </button>
-              ))}
-            </div>
-            
-            {/* Sub-filter for Kodeco */}
-            {selectedSource === "Kodeco" && (
-              <div className="mt-4">
-                <h3 className="text-xs text-gray-500 dark:text-gray-400 uppercase mb-2">Content Type</h3>
-                <div className="flex space-x-4 text-sm text-gray-900 dark:text-gray-50">
-                  {contentTypes.map((contentType) => (
-                    <button
-                      key={contentType}
-                      onClick={() => setSelectedContentType(contentType)}
-                      className={`${
-                        selectedContentType === contentType ? "font-bold" : ""
-                      } hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-200`}
-                    >
-                      {contentType}
-                    </button>
-                  ))}
-                </div>
+          {selectedSource === "Kodeco" ? (
+            <div className="space-y-3 pt-2">
+              <h3 className="site-subtle-label">Content type</h3>
+              <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-900 dark:text-gray-50">
+                {contentTypes.map((contentType) => (
+                  <button
+                    key={contentType}
+                    onClick={() => setSelectedContentType(contentType)}
+                    className={`transition-colors duration-200 hover:text-gray-700 dark:hover:text-gray-300 ${
+                      selectedContentType === contentType ? "font-bold" : ""
+                    }`}
+                  >
+                    {contentType}
+                  </button>
+                ))}
               </div>
-            )}
-          </div>
-
-          <div className="space-y-8">
-            {filteredArticles.map((article) => {
-              const externalUrl = article.mediumUrl || article.kodecoUrl;
-              const externalSource = article.mediumUrl ? 'Medium' : article.kodecoUrl ? 'Kodeco' : null;
-              
-              return (
-                <article key={article.id} className="group hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200 p-4 -m-4 rounded-lg hover:scale-[1.005] transition-transform duration-200 cursor-pointer">
-                  <div>
-                    <Link href={externalUrl || `/writing/${article.id}`} className="block" target={externalUrl ? "_blank" : "_self"} rel={externalUrl ? "noopener noreferrer" : ""}>
-                      <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50 group-hover:text-gray-600 dark:group-hover:text-gray-300 mb-2 transition-colors duration-200">
-                        {article.title}
-                      </h2>
-                      <div className='text-xs text-gray-500 mb-3'>
-                        {article.date} • {article.readTime || 'Book'}
-                      </div>
-                      <p className='text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-200'>
-                        {article.excerpt}
-                      </p>
-                      <div className='flex flex-wrap gap-2 mb-3'>
-                        {article.tags.map((tag, index) => (
-                          <span key={index} className='text-xs text-gray-600 dark:text-gray-300 bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-colors duration-200 whitespace-nowrap'>
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </Link>
-                    {externalSource && (
-                      <div className='text-xs text-blue-600 dark:text-blue-400 group-hover:text-blue-800 dark:group-hover:text-blue-300 transition-colors duration-200'>
-                        {externalSource === 'Kodeco' && article.contentType === 'Course' && 'Complete the full course on Kodeco →'}
-                        {externalSource === 'Kodeco' && article.contentType === 'Book' && 'Get the book on Kodeco →'}
-                        {externalSource === 'Kodeco' && article.contentType === 'Article' && 'Read full article on Kodeco →'}
-                        {externalSource === 'Medium' && 'Read full article on Medium →'}
-                      </div>
-                    )}
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-
-          {filteredArticles.length === 0 && (
-            <div className="text-center text-gray-500 dark:text-gray-400 py-8">
-              No articles found for the selected filters.
             </div>
-          )}
+          ) : null}
         </section>
 
-        <section>
-          <div className='text-center py-8'>
-            <p className='text-xs text-gray-500 hover:text-gray-700 transition-colors duration-200'>
-              More articles coming soon. Follow me on{' '}
-              <Link
-                href='https://twitter.com/soulful_swift'
-                className='hover:text-gray-900 transition-colors duration-200 hover:underline'
-              >
-                Twitter
-              </Link>{' '}
-              for updates.
-            </p>
-          </div>
-        </section>
-      </main>
+        <section className="space-y-8">
+          {filteredArticles.map((article) => {
+            const externalUrl = article.mediumUrl || article.kodecoUrl
+            const externalSource = article.mediumUrl
+              ? "Medium"
+              : article.kodecoUrl
+                ? "Kodeco"
+                : null
 
-      {/* Footer */}
-      <footer className='border-t border-gray-200 dark:border-gray-800 py-8'>
-        <div className='max-w-2xl mx-auto px-8'>
-          <div className='flex justify-between items-center text-xs text-gray-500'>
-            <p>© 2024 Bhagat Singh</p>
-            <div className='flex space-x-4'>
-              <Link
-                href='/about'
-                className='hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200 hover:underline'
-              >
-                about
-              </Link>
-              <Link
-                href='mailto:bhagatsingh2297@gmail.com'
-                className='hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200 hover:underline'
-              >
-                contact
-              </Link>
+            return (
+              <article key={article.id} className="group site-card cursor-pointer p-4 -m-4">
+                <div>
+                  <Link
+                    href={externalUrl || `/writing/${article.id}`}
+                    className="block"
+                    target={externalUrl ? "_blank" : "_self"}
+                    rel={externalUrl ? "noopener noreferrer" : undefined}
+                  >
+                    <h2 className="site-card-title mb-2">{article.title}</h2>
+                    <div className="site-meta mb-3">
+                      {article.date} • {article.readTime || "Book"}
+                    </div>
+                    <p className="site-card-copy mb-4">{article.excerpt}</p>
+                    <div className="mb-3 flex flex-wrap gap-2">
+                      {article.tags.map((tag) => (
+                        <span key={tag} className="site-chip">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </Link>
+                  {externalSource ? (
+                    <div className="text-xs text-blue-600 transition-colors duration-200 group-hover:text-blue-800 dark:text-blue-400 dark:group-hover:text-blue-300">
+                      {externalSource === "Kodeco" && article.contentType === "Course"
+                        ? "Complete the full course on Kodeco →"
+                        : null}
+                      {externalSource === "Kodeco" && article.contentType === "Book"
+                        ? "Get the book on Kodeco →"
+                        : null}
+                      {externalSource === "Kodeco" && article.contentType === "Article"
+                        ? "Read full article on Kodeco →"
+                        : null}
+                      {externalSource === "Medium" ? "Read full article on Medium →" : null}
+                    </div>
+                  ) : null}
+                </div>
+              </article>
+            )
+          })}
+
+          {filteredArticles.length === 0 ? (
+            <div className="py-8 text-center">
+              <p className="site-footer-note">No articles found for the selected filters.</p>
             </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
+          ) : null}
+        </section>
+
+        <section className="py-4 text-center">
+          <p className="site-footer-note">
+            More articles coming soon. Follow me on{" "}
+            <Link href="https://twitter.com/soulful_swift" className="site-inline-link">
+              Twitter
+            </Link>{" "}
+            for updates.
+          </p>
+        </section>
+      </div>
+    </SubpageShell>
+  )
 }

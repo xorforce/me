@@ -4,48 +4,52 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 20% 98%;
-    --secondary: 210 20% 98%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 20% 98%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 20% 98%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --background: 0 14% 1%;
+    --foreground: 210 20% 96%;
+    --card: 0 14% 1%;
+    --card-foreground: 210 20% 96%;
+    --popover: 0 14% 1%;
+    --popover-foreground: 210 20% 96%;
+    --primary: 210 20% 98%;
+    --primary-foreground: 0 14% 1%;
+    --secondary: 0 8% 8%;
+    --secondary-foreground: 210 20% 96%;
+    --muted: 0 8% 8%;
+    --muted-foreground: 0 6% 72%;
+    --accent: 0 8% 8%;
+    --accent-foreground: 210 20% 96%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 20% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 5% 15%;
+    --input: 0 5% 15%;
+    --ring: 210 20% 96%;
     --radius: 0.5rem;
+    --home-rule: 0 5% 15%;
+    --home-label: 0 6% 72%;
   }
 
   .dark {
-    --background: 0 0% 5%;
-    --foreground: 210 20% 98%;
-    --card: 0 0% 5%;
-    --card-foreground: 210 20% 98%;
-    --popover: 0 0% 5%;
-    --popover-foreground: 210 20% 98%;
+    --background: 0 14% 1%;
+    --foreground: 210 20% 96%;
+    --card: 0 14% 1%;
+    --card-foreground: 210 20% 96%;
+    --popover: 0 14% 1%;
+    --popover-foreground: 210 20% 96%;
     --primary: 210 20% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 20% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 0 0% 20%;
-    --accent-foreground: 210 20% 98%;
+    --primary-foreground: 0 14% 1%;
+    --secondary: 0 8% 8%;
+    --secondary-foreground: 210 20% 96%;
+    --muted: 0 8% 8%;
+    --muted-foreground: 0 6% 72%;
+    --accent: 0 8% 8%;
+    --accent-foreground: 210 20% 96%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 20% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 210 20% 98%;
+    --border: 0 5% 15%;
+    --input: 0 5% 15%;
+    --ring: 210 20% 96%;
+    --home-rule: 0 5% 15%;
+    --home-label: 0 6% 72%;
   }
 }
 
@@ -55,16 +59,160 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "liga" 1, "kern" 1;
+    letter-spacing: -0.015em;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: -0.03em;
+  }
+
+  p,
+  li {
+    letter-spacing: -0.015em;
   }
 }
 
 @layer components {
+  .site-shell {
+    @apply min-h-screen bg-background text-foreground;
+  }
+
+  .site-nav {
+    @apply mx-auto flex items-center justify-between px-8 py-6;
+  }
+
+  .site-nav-actions {
+    @apply flex items-center gap-4 text-xs;
+  }
+
+  .site-nav-button {
+    @apply h-auto p-0 text-xs text-gray-500 dark:text-gray-400 hover:bg-transparent hover:text-gray-900 dark:hover:text-gray-50;
+  }
+
+  .site-nav-link {
+    @apply flex items-center underline-offset-4 hover:underline;
+  }
+
+  .site-main {
+    @apply mx-auto animate-in fade-in px-8 py-12 duration-500;
+  }
+
+  .site-page-title {
+    @apply mb-4 text-2xl font-medium text-gray-900 dark:text-gray-50;
+  }
+
+  .site-page-intro {
+    @apply mb-8 text-sm leading-relaxed text-gray-600 dark:text-gray-400;
+  }
+
+  .site-section-title {
+    @apply text-base font-medium text-gray-900 dark:text-gray-50;
+  }
+
+  .site-card {
+    @apply rounded-lg border-none shadow-none transition-[transform,background-color] duration-200 hover:scale-[1.005] hover:bg-gray-50 dark:hover:bg-gray-800;
+  }
+
+  .site-card-title {
+    @apply text-base font-medium text-gray-900 transition-colors duration-200 group-hover:text-gray-700 dark:text-gray-50 dark:group-hover:text-gray-300;
+  }
+
+  .site-body-copy {
+    @apply text-sm leading-relaxed text-gray-600 dark:text-gray-400;
+  }
+
+  .site-card-copy {
+    @apply text-sm leading-relaxed text-gray-600 transition-colors duration-200 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300;
+  }
+
+  .site-meta {
+    @apply text-xs text-gray-500 dark:text-gray-400;
+  }
+
+  .site-subtle-label {
+    @apply text-[11px] uppercase tracking-[0.16em] text-gray-500 dark:text-gray-400;
+  }
+
+  .site-chip {
+    @apply whitespace-nowrap rounded bg-blue-50 px-2 py-1 text-xs text-gray-600 transition-colors duration-200 hover:bg-blue-100 dark:bg-blue-900/20 dark:text-gray-300 dark:hover:bg-blue-900/40;
+  }
+
+  .site-inline-link {
+    @apply transition-colors duration-200 hover:text-gray-900 dark:hover:text-gray-50 hover:underline hover:underline-offset-4;
+  }
+
+  .site-divider {
+    @apply h-px bg-gray-100 dark:bg-gray-800;
+  }
+
+  .site-footer-note {
+    @apply text-xs text-gray-500 dark:text-gray-400;
+  }
+
+  .home-editorial {
+    text-wrap: balance;
+  }
+
+  .home-name {
+    @apply mb-3 text-[19px] font-bold tracking-[-0.03em] text-white;
+  }
+
+  .home-deck {
+    @apply mb-10 max-w-xl text-[15px] leading-[1.6] text-white;
+  }
+
+  .home-section-label {
+    @apply mb-3 text-[14px] font-bold tracking-[0.08em] text-white;
+  }
+
+  .home-section-copy {
+    @apply space-y-4 text-[15px] leading-[1.7] text-white;
+  }
+
+  .home-contact-list {
+    @apply flex flex-wrap items-center gap-x-4 gap-y-1 pt-3 text-[12px] leading-6 text-white;
+  }
+
+  .home-link {
+    @apply relative inline-block text-white;
+  }
+
+  .home-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.08em;
+    height: 1px;
+    background: rgb(255 255 255);
+    opacity: 0.35;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+    transform-origin: left center;
+  }
+
+  .home-link:hover::after {
+    opacity: 1;
+    transform: scaleX(1.02);
+  }
+
   .til-content h2 {
-    @apply mt-6 mb-2 text-sm font-medium text-gray-900 dark:text-gray-50;
+    @apply mt-6 mb-2 text-base font-medium text-gray-900 dark:text-gray-50;
   }
 
   .til-content h3 {
-    @apply mt-4 mb-2 text-xs font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400;
+    @apply mt-4 mb-2 text-[11px] font-medium uppercase tracking-[0.16em] text-gray-500 dark:text-gray-400;
   }
 
   .til-content p {
