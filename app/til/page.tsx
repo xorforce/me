@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import tilData from "@/data/til.json"
+import TilContent from "@/data/til.mdx"
 
 export default function TodayILearnt() {
   return (
@@ -68,23 +68,8 @@ export default function TodayILearnt() {
             A small, running log of daily notes, tips, and reminders I pick up along the way.
           </p>
 
-          <div className="space-y-6">
-            {tilData.entries.map((entry) => (
-              <article
-                key={entry.id}
-                className="group hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200 p-4 -m-4 rounded-lg hover:scale-[1.005] transition-transform duration-200"
-              >
-                <div className="text-xs text-gray-500 dark:text-gray-400 mb-2">
-                  {entry.date}
-                </div>
-                <h2 className="text-sm font-medium text-gray-900 dark:text-gray-50 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-200 mb-2">
-                  {entry.title}
-                </h2>
-                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-200">
-                  {entry.note}
-                </p>
-              </article>
-            ))}
+          <div className="til-content space-y-6 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            <TilContent />
           </div>
         </section>
       </main>

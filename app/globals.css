@@ -57,3 +57,29 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .til-content h2 {
+    @apply mt-6 mb-2 text-sm font-medium text-gray-900 dark:text-gray-50;
+  }
+
+  .til-content h3 {
+    @apply mt-4 mb-2 text-xs font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400;
+  }
+
+  .til-content p {
+    @apply text-sm text-gray-600 dark:text-gray-400 leading-relaxed;
+  }
+
+  .til-content ul {
+    @apply list-disc pl-5 space-y-2;
+  }
+
+  .til-content li {
+    @apply text-sm text-gray-600 dark:text-gray-400 leading-relaxed;
+  }
+
+  .til-content hr {
+    @apply my-6 border-gray-200 dark:border-gray-800;
+  }
+}
