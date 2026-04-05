@@ -1,14 +1,8 @@
-import { JetBrains_Mono } from 'next/font/google';
 import localFont from 'next/font/local';
 
 // =============================================================================
 // FONT DEFINITIONS
 // =============================================================================
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains-mono',
-});
 
 const chillax = localFont({
   src: [
@@ -31,7 +25,6 @@ const chillax = localFont({
 // =============================================================================
 
 export const fonts = {
-  jetbrainsMono,
   chillax,
 };
 
@@ -47,12 +40,11 @@ export const typography = {
   // Secondary font for headings, navigation, important text
   secondary: fonts.chillax,
   
-  // Monospace font for code (keep as monospace)
-  mono: fonts.jetbrainsMono,
-  
   // Display font for large titles, hero text, brand elements
   display: fonts.chillax,
 };
+
+const systemMonoStack = 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
 
 // =============================================================================
 // GENERATED EXPORTS (Don't edit these - they're auto-generated)
@@ -62,7 +54,6 @@ export const typography = {
 export const fontVariables = [
   typography.primary.variable,
   typography.secondary.variable,
-  typography.mono.variable,
   typography.display.variable,
 ].join(' ');
 
@@ -70,7 +61,7 @@ export const fontVariables = [
 export const fontClasses = {
   primary: typography.primary.className,
   secondary: typography.secondary.className,
-  mono: typography.mono.className,
+  mono: '',
   display: typography.display.className,
 };
 
@@ -79,7 +70,7 @@ export function getCSSVariables() {
   return {
     '--font-primary': typography.primary.variable.replace('--font-', 'var(--font-') + ')',
     '--font-secondary': typography.secondary.variable.replace('--font-', 'var(--font-') + ')',
-    '--font-mono': typography.mono.variable.replace('--font-', 'var(--font-') + ')',
+    '--font-mono': systemMonoStack,
     '--font-display': typography.display.variable.replace('--font-', 'var(--font-') + ')',
   };
 }

@@ -4,7 +4,7 @@ import usesData from "@/data/uses.json"
 
 export default function Uses() {
   return (
-    <div className="min-h-screen bg-background font-mono dark:bg-gray-950">
+    <div className="min-h-screen bg-background font-mono">
       <nav className="flex items-center justify-between px-8 py-6 max-w-3xl mx-auto text-sm">
         <Button
           variant="ghost"

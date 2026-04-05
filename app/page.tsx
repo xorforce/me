@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-background font-mono dark:bg-gray-950 flex flex-col">
+    <div className="min-h-screen bg-background font-mono flex flex-col">
       {/* Main Content - Centered */}
       <main className="flex-1 flex items-center justify-center">
         <div className="max-w-2xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16 py-12 animate-in fade-in duration-500 text-center">
@@ -34,60 +34,59 @@ export default function Portfolio() {
               I{" "}
               <Link
                 href="/writing"
-                className="hover:underline text-gray-900 dark:text-gray-50 bg-gray-100 dark:bg-gray-800 px-1 rounded"
+                className="underline text-gray-900 dark:text-gray-50"
               >
                 write
               </Link>
               , give{" "}
               <Link
                 href="/talks"
-                className="hover:underline text-gray-900 dark:text-gray-50 bg-gray-100 dark:bg-gray-800 px-1 rounded"
+                className="underline text-gray-900 dark:text-gray-50"
               >
                 tech talks
               </Link>
               , do{" "}
               <Link
                 href="/podcasts"
-                className="hover:underline text-gray-900 dark:text-gray-50 bg-gray-100 dark:bg-gray-800 px-1 rounded"
+                className="underline text-gray-900 dark:text-gray-50"
               >
                 podcasts
               </Link>
               ,{" "}
               <Link
                 href="/djing"
-                className="hover:underline text-gray-900 dark:text-gray-50 bg-gray-100 dark:bg-gray-800 px-1 rounded"
+                className="underline text-gray-900 dark:text-gray-50"
               >
                 dj
               </Link>
               , and work on{" "}
               <Link
                 href="/projects"
-                className="hover:underline text-gray-900 dark:text-gray-50 bg-gray-100 dark:bg-gray-800 px-1 rounded"
+                className="underline text-gray-900 dark:text-gray-50"
               >
                 projects
               </Link>
               . Know more{" "}
               <Link
                 href="/about"
-                className="hover:underline text-gray-900 dark:text-gray-50 bg-gray-100 dark:bg-gray-800 px-1 rounded"
+                className="underline text-gray-900 dark:text-gray-50"
               >
                 about me
               </Link>
               {""}, peek at the{" "}
               <Link
                 href="/uses"
-                className="hover:underline text-gray-900 dark:text-gray-50 bg-gray-100 dark:bg-gray-800 px-1 rounded"
+                className="underline text-gray-900 dark:text-gray-50"
               >
                 things I use
               </Link>
               {" "}or dive into my{" "}
               <Link
                 href="/inventory"
-                className="hover:underline text-gray-900 dark:text-gray-50 bg-gray-100 dark:bg-gray-800 px-1 rounded"
+                className="underline text-gray-900 dark:text-gray-50"
               >
                 inventory.
               </Link>
-              
             </p>
           </section>
         </div>
@@ -96,7 +95,7 @@ export default function Portfolio() {
       <aside className="pb-10 flex justify-center">
         <Link
           href="/til"
-          className="text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 transition-colors duration-200 hover:underline"
+          className="underline text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 transition-colors duration-200"
         >
           today i learnt
         </Link>
