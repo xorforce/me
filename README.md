@@ -28,7 +28,7 @@ npm run build:static
 
 ## Spotify Now Playing
 
-The homepage includes a Spotify-powered now-playing avatar inspired by Daniel Voigt's article on building a current-track widget with Next.js. Because this site is deployed as a static export to GitHub Pages, the implementation is adapted to generate a Spotify snapshot during the build instead of using a live server route.
+The homepage includes a Spotify-powered now-playing avatar inspired by Daniel Voigt's article on building a current-track widget with Next.js. The main site still deploys as a static export on GitHub Pages, but Spotify refreshes are now decoupled from the Pages deploy.
 
 For live data in GitHub Actions, add these repository secrets:
 
@@ -36,13 +36,22 @@ For live data in GitHub Actions, add these repository secrets:
 - `SPOTIFY_CLIENT_SECRET`
 - `SPOTIFY_REFRESH_TOKEN`
 
-The deploy workflow refreshes `public/spotify-now-playing.json` before each build and also runs on a `*/10 * * * *` schedule so the homepage music state stays reasonably fresh on GitHub Pages.
+How it works now:
+
+- `.github/workflows/deploy.yml` only runs for normal site deploys on `main` pushes or manual dispatch
+- `.github/workflows/spotify-refresh.yml` runs every 5 minutes and on manual dispatch
+- the refresh workflow updates `spotify-now-playing.json` on the dedicated `spotify-data` branch
+- the homepage fetches `https://raw.githubusercontent.com/xorforce/me/spotify-data/spotify-now-playing.json` first and falls back to the local `public/spotify-now-playing.json`
+
+This keeps the music state updating without rebuilding and redeploying the full site every few minutes.
 
 To generate a local snapshot manually:
 
 ```bash
 npm run spotify:generate
 ```
+
+On localhost, the homepage prefers the local `public/spotify-now-playing.json` file first, so local testing still works without waiting for the remote snapshot branch.
 
 To fetch a refresh token locally:
 
@@ -55,6 +64,8 @@ npm run spotify:auth
 ```
 
 By default the auth helper uses `http://127.0.0.1:3124/callback`. Override it with `SPOTIFY_REDIRECT_URI` if needed.
+
+If you ever move the site off GitHub Pages, the same mechanism can stay in place by pointing the client at a different JSON endpoint with `NEXT_PUBLIC_SPOTIFY_NOW_PLAYING_URL`.
 
 ## Deployment to GitHub Pages
 

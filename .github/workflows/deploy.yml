@@ -3,8 +3,6 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: ["main"]
-  schedule:
-    - cron: "*/10 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -37,13 +35,6 @@ jobs:
           # Clean install for consistent builds
           npm ci --legacy-peer-deps || (rm -f package-lock.json && npm install --legacy-peer-deps)
 
-      - name: Generate Spotify now playing snapshot
-        run: npm run spotify:generate
-        env:
-          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
-          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
-          SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
-      
       - name: Build with Next.js
         run: npm run build
       

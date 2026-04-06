@@ -17,7 +17,10 @@ export type NowPlayingSnapshot = {
   fetchedAt: string
 }
 
-const NOW_PLAYING_ENDPOINT = "./spotify-now-playing.json"
+const REMOTE_NOW_PLAYING_ENDPOINT =
+  process.env.NEXT_PUBLIC_SPOTIFY_NOW_PLAYING_URL?.trim() ||
+  "https://raw.githubusercontent.com/xorforce/me/spotify-data/spotify-now-playing.json"
+const LOCAL_NOW_PLAYING_ENDPOINT = "./spotify-now-playing.json"
 const REFRESH_INTERVAL_MS = 60_000
 
 const fallbackSnapshot: NowPlayingSnapshot = {
@@ -59,6 +62,36 @@ function normalizeSnapshot(payload: unknown): NowPlayingSnapshot {
   }
 }
 
+function getNowPlayingEndpoints() {
+  if (typeof window === "undefined") {
+    return [REMOTE_NOW_PLAYING_ENDPOINT, LOCAL_NOW_PLAYING_ENDPOINT]
+  }
+
+  const hostname = window.location.hostname
+  const isLocalhost =
+    hostname === "localhost" ||
+    hostname === "127.0.0.1" ||
+    hostname === "::1" ||
+    hostname === "[::1]"
+
+  return isLocalhost
+    ? [LOCAL_NOW_PLAYING_ENDPOINT, REMOTE_NOW_PLAYING_ENDPOINT]
+    : [REMOTE_NOW_PLAYING_ENDPOINT, LOCAL_NOW_PLAYING_ENDPOINT]
+}
+
+async function fetchSnapshot(endpoint: string) {
+  const separator = endpoint.includes("?") ? "&" : "?"
+  const response = await fetch(`${endpoint}${separator}ts=${Date.now()}`, {
+    cache: "no-store",
+  })
+
+  if (!response.ok) {
+    throw new Error(`Failed to load now playing snapshot: ${response.status}`)
+  }
+
+  return normalizeSnapshot(await response.json())
+}
+
 export function useNowPlaying() {
   const [snapshot, setSnapshot] = useState<NowPlayingSnapshot>(fallbackSnapshot)
   const [isLoading, setIsLoading] = useState(true)
@@ -68,22 +101,21 @@ export function useNowPlaying() {
 
     const loadSnapshot = async () => {
       try {
-        const response = await fetch(`${NOW_PLAYING_ENDPOINT}?ts=${Date.now()}`, {
-          cache: "no-store",
-        })
+        for (const endpoint of getNowPlayingEndpoints()) {
+          try {
+            const payload = await fetchSnapshot(endpoint)
 
-        if (!response.ok) {
-          throw new Error(`Failed to load now playing snapshot: ${response.status}`)
+            if (!isMounted) {
+              return
+            }
+
+            setSnapshot(payload)
+            return
+          } catch {
+            continue
+          }
         }
 
-        const payload = normalizeSnapshot(await response.json())
-
-        if (!isMounted) {
-          return
-        }
-
-        setSnapshot(payload)
-      } catch {
         if (!isMounted) {
           return
         }
