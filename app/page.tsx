@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
@@ -171,6 +172,16 @@ export default function Portfolio() {
     <main className="min-h-screen bg-background">
       <div className="mx-auto flex min-h-screen max-w-3xl items-start px-6 py-24 sm:px-10">
         <section className="home-editorial w-full animate-in fade-in duration-500">
+          <div className="mb-6 h-[80px] w-[80px] overflow-hidden rounded-full border border-white/15 bg-white/5 shadow-[0_18px_44px_rgba(0,0,0,0.35)]">
+            <Image
+              src="/images/profile/shinchan-profile.jpeg"
+              alt="Shinchan profile picture"
+              width={80}
+              height={80}
+              priority
+              className="h-full w-full object-cover"
+            />
+          </div>
           <h1 className="home-name">Bhagat Singh</h1>
           <p className="home-deck">
             I build software with a bias toward clarity, useful interfaces, and systems that hold up.
