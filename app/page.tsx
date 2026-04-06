@@ -3,6 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import { useNowPlaying } from "@/hooks/use-now-playing"
 
 const HOME_SECTIONS_STORAGE_KEY = "home-open-sections"
 const defaultOpenSections = {
@@ -15,6 +16,8 @@ const defaultOpenSections = {
 export default function Portfolio() {
   const [openSections, setOpenSections] = useState(defaultOpenSections)
   const [hasLoadedSectionState, setHasLoadedSectionState] = useState(false)
+  const { snapshot: nowPlayingSnapshot } = useNowPlaying()
+  const isTrackPlaying = nowPlayingSnapshot.status === "playing" && !!nowPlayingSnapshot.albumImageUrl
 
   const aboutContent = [
     <>
@@ -172,15 +175,62 @@ export default function Portfolio() {
     <main className="min-h-screen bg-background">
       <div className="mx-auto flex min-h-screen max-w-3xl items-start px-6 py-24 sm:px-10">
         <section className="home-editorial w-full animate-in fade-in duration-500">
-          <div className="mb-6 h-[80px] w-[80px] overflow-hidden rounded-full border border-white/15 bg-white/5 shadow-[0_18px_44px_rgba(0,0,0,0.35)]">
-            <Image
-              src="/images/profile/shinchan-profile.jpeg"
-              alt="Shinchan profile picture"
-              width={80}
-              height={80}
-              priority
-              className="h-full w-full object-cover"
-            />
+          <div className="home-avatar-row">
+            {isTrackPlaying && nowPlayingSnapshot.trackUrl ? (
+              <Link
+                href={nowPlayingSnapshot.trackUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="home-avatar home-avatar-link"
+              >
+                <div className="home-avatar-disc home-avatar-disc--playing">
+                  <img
+                    src={nowPlayingSnapshot.albumImageUrl ?? ""}
+                    alt={
+                      nowPlayingSnapshot.album
+                        ? `${nowPlayingSnapshot.album} cover art`
+                        : "Current album cover art"
+                    }
+                    className="h-full w-full rounded-full object-cover"
+                  />
+                  <span className="home-avatar-disc-gloss" aria-hidden="true" />
+                  <span className="home-avatar-disc-ring" aria-hidden="true" />
+                  <span className="home-avatar-disc-hole" aria-hidden="true" />
+                </div>
+              </Link>
+            ) : (
+              <div className="home-avatar">
+                <Image
+                  src="/images/profile/shinchan-profile.jpeg"
+                  alt="Shinchan profile picture"
+                  width={80}
+                  height={80}
+                  priority
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            )}
+
+            {isTrackPlaying ? (
+              nowPlayingSnapshot.trackUrl ? (
+                <Link
+                  href={nowPlayingSnapshot.trackUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="home-avatar-meta home-avatar-meta-link"
+                >
+                  <p className="home-avatar-kicker">Now playing</p>
+                  <p className="home-avatar-title">{nowPlayingSnapshot.title ?? ""}</p>
+                  <p className="home-avatar-artist">{nowPlayingSnapshot.artist ?? ""}</p>
+                </Link>
+              ) : (
+                <div className="home-avatar-meta">
+                  <p className="home-avatar-kicker">Now playing</p>
+                  <p className="home-avatar-title">{nowPlayingSnapshot.title ?? ""}</p>
+                  <p className="home-avatar-artist">{nowPlayingSnapshot.artist ?? ""}</p>
+                </div>
+              )
+            ) : null}
           </div>
           <h1 className="home-name">Bhagat Singh</h1>
           <p className="home-deck">

@@ -26,6 +26,36 @@ npm run build
 npm run build:static
 ```
 
+## Spotify Now Playing
+
+The homepage includes a Spotify-powered now-playing avatar inspired by Daniel Voigt's article on building a current-track widget with Next.js. Because this site is deployed as a static export to GitHub Pages, the implementation is adapted to generate a Spotify snapshot during the build instead of using a live server route.
+
+For live data in GitHub Actions, add these repository secrets:
+
+- `SPOTIFY_CLIENT_ID`
+- `SPOTIFY_CLIENT_SECRET`
+- `SPOTIFY_REFRESH_TOKEN`
+
+The deploy workflow refreshes `public/spotify-now-playing.json` before each build and also runs on a `*/10 * * * *` schedule so the homepage music state stays reasonably fresh on GitHub Pages.
+
+To generate a local snapshot manually:
+
+```bash
+npm run spotify:generate
+```
+
+To fetch a refresh token locally:
+
+1. Add `SPOTIFY_CLIENT_ID` and `SPOTIFY_CLIENT_SECRET` to `.env.local`
+2. Add the same redirect URI to your Spotify app settings
+3. Run:
+
+```bash
+npm run spotify:auth
+```
+
+By default the auth helper uses `http://127.0.0.1:3124/callback`. Override it with `SPOTIFY_REDIRECT_URI` if needed.
+
 ## Deployment to GitHub Pages
 
 This repository is configured for automatic deployment to GitHub Pages using GitHub Actions.
