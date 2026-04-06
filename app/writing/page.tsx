@@ -1,29 +1,18 @@
 "use client"
 
 import Link from "next/link"
-import { useMemo, useState } from "react"
+import { useMemo } from "react"
 import { SubpageShell } from "@/components/subpage-shell"
 import articles from "@/data/articles.json"
 
 export default function Writing() {
-  const [selectedSource, setSelectedSource] = useState("All")
-  const [selectedContentType, setSelectedContentType] = useState("All")
-
-  const sources = useMemo(() => ["All", "Medium", "Kodeco"], [])
-  const contentTypes = useMemo(() => ["All", "Article", "Course", "Book"], [])
+  const hiddenArticleIds = useMemo(() => new Set(["mvc-modern-ios"]), [])
 
   const filteredArticles = useMemo(() => {
-    return articles.filter((article) => {
-      if (selectedSource === "All") return true
-      if (selectedSource === "Medium" && article.mediumUrl) return true
-      if (selectedSource === "Kodeco" && article.kodecoUrl) {
-        if (selectedContentType === "All") return true
-        return article.contentType === selectedContentType
-      }
-
-      return false
-    })
-  }, [selectedSource, selectedContentType])
+    return articles.filter(
+      (article) => !article.tags.includes("Kodeco") && !hiddenArticleIds.has(article.id),
+    )
+  }, [hiddenArticleIds])
 
   return (
     <SubpageShell
@@ -32,53 +21,10 @@ export default function Writing() {
       showFooterBorder
     >
       <div className="space-y-12">
-        <section className="space-y-4">
-          <h2 className="site-subtle-label">Sources</h2>
-          <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-900 dark:text-gray-50">
-            {sources.map((source) => (
-              <button
-                key={source}
-                onClick={() => {
-                  setSelectedSource(source)
-                  setSelectedContentType("All")
-                }}
-                className={`transition-colors duration-200 hover:text-gray-700 dark:hover:text-gray-300 ${
-                  selectedSource === source ? "font-bold" : ""
-                }`}
-              >
-                {source}
-              </button>
-            ))}
-          </div>
-
-          {selectedSource === "Kodeco" ? (
-            <div className="space-y-3 pt-2">
-              <h3 className="site-subtle-label">Content type</h3>
-              <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-900 dark:text-gray-50">
-                {contentTypes.map((contentType) => (
-                  <button
-                    key={contentType}
-                    onClick={() => setSelectedContentType(contentType)}
-                    className={`transition-colors duration-200 hover:text-gray-700 dark:hover:text-gray-300 ${
-                      selectedContentType === contentType ? "font-bold" : ""
-                    }`}
-                  >
-                    {contentType}
-                  </button>
-                ))}
-              </div>
-            </div>
-          ) : null}
-        </section>
-
         <section className="space-y-8">
           {filteredArticles.map((article) => {
             const externalUrl = article.mediumUrl || article.kodecoUrl
-            const externalSource = article.mediumUrl
-              ? "Medium"
-              : article.kodecoUrl
-                ? "Kodeco"
-                : null
+            const externalSource = article.mediumUrl ? "Medium" : null
 
             return (
               <article key={article.id} className="group site-card cursor-pointer p-4 -m-4">
@@ -104,15 +50,6 @@ export default function Writing() {
                   </Link>
                   {externalSource ? (
                     <div className="text-xs text-blue-600 transition-colors duration-200 group-hover:text-blue-800 dark:text-blue-400 dark:group-hover:text-blue-300">
-                      {externalSource === "Kodeco" && article.contentType === "Course"
-                        ? "Complete the full course on Kodeco →"
-                        : null}
-                      {externalSource === "Kodeco" && article.contentType === "Book"
-                        ? "Get the book on Kodeco →"
-                        : null}
-                      {externalSource === "Kodeco" && article.contentType === "Article"
-                        ? "Read full article on Kodeco →"
-                        : null}
                       {externalSource === "Medium" ? "Read full article on Medium →" : null}
                     </div>
                   ) : null}
@@ -123,7 +60,7 @@ export default function Writing() {
 
           {filteredArticles.length === 0 ? (
             <div className="py-8 text-center">
-              <p className="site-footer-note">No articles found for the selected filters.</p>
+              <p className="site-footer-note">No articles found.</p>
             </div>
           ) : null}
         </section>
