@@ -24,6 +24,8 @@ export default function Contact() {
                 <Link
                   href="https://twitter.com/soulful_swift"
                   className="site-inline-link"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   @soulful_swift
                 </Link>
@@ -33,6 +35,8 @@ export default function Contact() {
                 <Link
                   href="https://github.com/xorforce"
                   className="site-inline-link"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   github.com/xorforce
                 </Link>

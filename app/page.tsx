@@ -95,15 +95,11 @@ export default function Portfolio() {
       <Link href="/uses" className="home-link">
       few things
       </Link>
-      {" "}everyday, keep an {" "}
+      {" "}everyday and keep an {" "}
       <Link href="/inventory" className="home-link">
         inventory
       </Link>
-      {" "}of what I carry, use and display, and{" "}
-      <Link href="/inventory" className="home-link">
-        collect
-      </Link>
-      {" "}a few from around the world.
+      {" "}of what I carry, use and display.
     </>,
     <>
     I also{" "}
@@ -300,10 +296,20 @@ export default function Portfolio() {
                 <Link href="mailto:bhagatsingh2297@gmail.com" className="home-link">
                   email
                 </Link>
-                <Link href="https://twitter.com/soulful_swift" className="home-link">
+                <Link
+                  href="https://twitter.com/soulful_swift"
+                  className="home-link"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   X
                 </Link>
-                <Link href="https://linkedin.com/in/ibhagatsingh" className="home-link">
+                <Link
+                  href="https://linkedin.com/in/ibhagatsingh"
+                  className="home-link"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   LinkedIn
                 </Link>
               </div>
