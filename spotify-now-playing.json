@@ -1,0 +1,12 @@
+{
+  "status": "idle",
+  "isPlaying": false,
+  "title": null,
+  "artist": null,
+  "album": null,
+  "albumImageUrl": null,
+  "trackUrl": null,
+  "progressMs": null,
+  "durationMs": null,
+  "fetchedAt": "2026-04-26T19:35:18.044Z"
+}
