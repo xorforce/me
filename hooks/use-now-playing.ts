@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import type { NowPlayingSnapshot, NowPlayingStatus } from "@/lib/spotify-now-playing"
 
 const NOW_PLAYING_ENDPOINT = "/api/now-playing"
-const REFRESH_INTERVAL_MS = 15_000
+const REFRESH_INTERVAL_MS = 5_000
 
 const fallbackSnapshot: NowPlayingSnapshot = {
   status: "idle",
