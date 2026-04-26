@@ -10,7 +10,6 @@ const withMDX = nextMDX({
 })
 
 const nextConfig = {
-  output: 'export',
   trailingSlash: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   eslint: {

@@ -1,27 +1,10 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import type { NowPlayingSnapshot, NowPlayingStatus } from "@/lib/spotify-now-playing"
 
-export type NowPlayingStatus = "playing" | "paused" | "idle" | "error"
-
-export type NowPlayingSnapshot = {
-  status: NowPlayingStatus
-  isPlaying: boolean
-  title: string | null
-  artist: string | null
-  album: string | null
-  albumImageUrl: string | null
-  trackUrl: string | null
-  progressMs: number | null
-  durationMs: number | null
-  fetchedAt: string
-}
-
-const REMOTE_NOW_PLAYING_ENDPOINT =
-  process.env.NEXT_PUBLIC_SPOTIFY_NOW_PLAYING_URL?.trim() ||
-  "https://raw.githubusercontent.com/xorforce/me/spotify-data/spotify-now-playing.json"
-const LOCAL_NOW_PLAYING_ENDPOINT = "./spotify-now-playing.json"
-const REFRESH_INTERVAL_MS = 60_000
+const NOW_PLAYING_ENDPOINT = "/api/now-playing"
+const REFRESH_INTERVAL_MS = 15_000
 
 const fallbackSnapshot: NowPlayingSnapshot = {
   status: "idle",
@@ -62,26 +45,8 @@ function normalizeSnapshot(payload: unknown): NowPlayingSnapshot {
   }
 }
 
-function getNowPlayingEndpoints() {
-  if (typeof window === "undefined") {
-    return [REMOTE_NOW_PLAYING_ENDPOINT, LOCAL_NOW_PLAYING_ENDPOINT]
-  }
-
-  const hostname = window.location.hostname
-  const isLocalhost =
-    hostname === "localhost" ||
-    hostname === "127.0.0.1" ||
-    hostname === "::1" ||
-    hostname === "[::1]"
-
-  return isLocalhost
-    ? [LOCAL_NOW_PLAYING_ENDPOINT, REMOTE_NOW_PLAYING_ENDPOINT]
-    : [REMOTE_NOW_PLAYING_ENDPOINT, LOCAL_NOW_PLAYING_ENDPOINT]
-}
-
-async function fetchSnapshot(endpoint: string) {
-  const separator = endpoint.includes("?") ? "&" : "?"
-  const response = await fetch(`${endpoint}${separator}ts=${Date.now()}`, {
+async function fetchSnapshot() {
+  const response = await fetch(`${NOW_PLAYING_ENDPOINT}?ts=${Date.now()}`, {
     cache: "no-store",
   })
 
@@ -101,21 +66,14 @@ export function useNowPlaying() {
 
     const loadSnapshot = async () => {
       try {
-        for (const endpoint of getNowPlayingEndpoints()) {
-          try {
-            const payload = await fetchSnapshot(endpoint)
+        const payload = await fetchSnapshot()
 
-            if (!isMounted) {
-              return
-            }
-
-            setSnapshot(payload)
-            return
-          } catch {
-            continue
-          }
+        if (!isMounted) {
+          return
         }
 
+        setSnapshot(payload)
+      } catch {
         if (!isMounted) {
           return
         }
