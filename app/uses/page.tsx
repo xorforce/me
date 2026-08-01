@@ -30,16 +30,16 @@ export default function Uses() {
                   </p>
                 ) : null}
               </div>
-              <div className="mt-3 space-y-3">
+              <ul className="mt-3 list-none space-y-2">
                 {section.items.map((item) => (
-                  <p key={item.name} className="site-body-copy">
+                  <li key={item.name} className="site-body-copy flex gap-2">
+                    <span aria-hidden="true">-</span>
                     <span className="font-medium text-gray-900 dark:text-gray-50">
                       {item.name}
-                    </span>{" "}
-                    {item.note}
-                  </p>
+                    </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
               <div className="site-divider" />
             </section>
           ))}
