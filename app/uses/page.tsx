@@ -23,7 +23,7 @@ export default function Uses() {
                   {section.title}
                 </h2>
                 {section.description ? (
-                  <p className="site-meta mt-1">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
                     {section.description}
                   </p>
                 ) : null}
