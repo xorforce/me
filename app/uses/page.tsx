@@ -18,14 +18,12 @@ export default function Uses() {
         <div className="space-y-10">
           {usesData.sections.map((section) => (
             <section key={section.title} className="space-y-3">
-              <div className="flex items-start justify-between gap-6">
-                <div>
-                  <h2 className="site-section-title">
+              <div>
+                <h2 className="site-section-title">
                   {section.title}
-                  </h2>
-                </div>
+                </h2>
                 {section.description ? (
-                  <p className="site-meta max-w-xs text-right">
+                  <p className="site-meta mt-1">
                     {section.description}
                   </p>
                 ) : null}
