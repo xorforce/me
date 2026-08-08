@@ -1,18 +1,58 @@
-"use client"
-
 import Link from "next/link"
-import { useMemo } from "react"
 import { SubpageShell } from "@/components/subpage-shell"
+import { getInternalArticles } from "@/lib/articles"
 import articles from "@/data/articles.json"
 
-export default function Writing() {
-  const hiddenArticleIds = useMemo(() => new Set(["mvc-modern-ios"]), [])
+const hiddenArticleIds = new Set(["mvc-modern-ios"])
 
-  const filteredArticles = useMemo(() => {
-    return articles.filter(
-      (article) => !article.tags.includes("Kodeco") && !hiddenArticleIds.has(article.id),
-    )
-  }, [hiddenArticleIds])
+function formatDate(date: string) {
+  const parsed = new Date(date)
+  if (Number.isNaN(parsed.getTime())) return date
+  return parsed.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })
+}
+
+type ListArticle = {
+  id: string
+  title: string
+  date: string
+  readTime?: string
+  excerpt: string
+  tags: string[]
+  href: string
+  external: boolean
+  externalSource: string | null
+}
+
+export default async function Writing() {
+  const internalArticles = await getInternalArticles()
+
+  const internal: ListArticle[] = internalArticles.map((article) => ({
+    id: article.slug,
+    title: article.frontmatter.title,
+    date: formatDate(article.frontmatter.date),
+    readTime: article.frontmatter.readTime,
+    excerpt: article.frontmatter.excerpt,
+    tags: article.frontmatter.tags ?? [],
+    href: `/writing/${article.slug}`,
+    external: false,
+    externalSource: null,
+  }))
+
+  const external: ListArticle[] = articles
+    .filter((article) => !article.tags.includes("Kodeco") && !hiddenArticleIds.has(article.id))
+    .map((article) => ({
+      id: article.id,
+      title: article.title,
+      date: article.date,
+      readTime: article.readTime || "Book",
+      excerpt: article.excerpt,
+      tags: article.tags,
+      href: article.mediumUrl || article.kodecoUrl || `/writing/${article.id}`,
+      external: Boolean(article.mediumUrl || article.kodecoUrl),
+      externalSource: article.mediumUrl ? "Medium" : null,
+    }))
+
+  const filteredArticles = [...internal, ...external]
 
   return (
     <SubpageShell
@@ -22,41 +62,37 @@ export default function Writing() {
     >
       <div className="space-y-12">
         <section className="space-y-8">
-          {filteredArticles.map((article) => {
-            const externalUrl = article.mediumUrl || article.kodecoUrl
-            const externalSource = article.mediumUrl ? "Medium" : null
-
-            return (
-              <article key={article.id} className="group site-card cursor-pointer p-4 -m-4">
-                <div>
-                  <Link
-                    href={externalUrl || `/writing/${article.id}`}
-                    className="block"
-                    target={externalUrl ? "_blank" : "_self"}
-                    rel={externalUrl ? "noopener noreferrer" : undefined}
-                  >
-                    <h2 className="site-card-title mb-2">{article.title}</h2>
-                    <div className="site-meta mb-3">
-                      {article.date} • {article.readTime || "Book"}
-                    </div>
-                    <p className="site-card-copy mb-4">{article.excerpt}</p>
-                    <div className="mb-3 flex flex-wrap gap-2">
-                      {article.tags.map((tag) => (
-                        <span key={tag} className="site-chip">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </Link>
-                  {externalSource ? (
-                    <div className="text-xs text-blue-600 transition-colors duration-200 group-hover:text-blue-800 dark:text-blue-400 dark:group-hover:text-blue-300">
-                      {externalSource === "Medium" ? "Read full article on Medium →" : null}
-                    </div>
-                  ) : null}
-                </div>
-              </article>
-            )
-          })}
+          {filteredArticles.map((article) => (
+            <article key={article.id} className="group site-card cursor-pointer p-4 -m-4">
+              <div>
+                <Link
+                  href={article.href}
+                  className="block"
+                  target={article.external ? "_blank" : "_self"}
+                  rel={article.external ? "noopener noreferrer" : undefined}
+                >
+                  <h2 className="site-card-title mb-2">{article.title}</h2>
+                  <div className="site-meta mb-3">
+                    {article.date}
+                    {article.readTime ? ` • ${article.readTime}` : ""}
+                  </div>
+                  <p className="site-card-copy mb-4">{article.excerpt}</p>
+                  <div className="mb-3 flex flex-wrap gap-2">
+                    {article.tags.map((tag) => (
+                      <span key={tag} className="site-chip">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </Link>
+                {article.externalSource ? (
+                  <div className="text-xs text-blue-600 transition-colors duration-200 group-hover:text-blue-800 dark:text-blue-400 dark:group-hover:text-blue-300">
+                    Read full article on {article.externalSource} →
+                  </div>
+                ) : null}
+              </div>
+            </article>
+          ))}
 
           {filteredArticles.length === 0 ? (
             <div className="py-8 text-center">
