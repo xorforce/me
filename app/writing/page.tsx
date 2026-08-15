@@ -11,10 +11,19 @@ function formatDate(date: string) {
   return parsed.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })
 }
 
+function parseDateToISO(date: string): string {
+  const parsed = new Date(date)
+  if (!Number.isNaN(parsed.getTime())) {
+    return parsed.toISOString().split('T')[0]
+  }
+  return date
+}
+
 type ListArticle = {
   id: string
   title: string
   date: string
+  sortDate: string
   readTime?: string
   excerpt: string
   tags: string[]
@@ -30,6 +39,7 @@ export default async function Writing() {
     id: article.slug,
     title: article.frontmatter.title,
     date: formatDate(article.frontmatter.date),
+    sortDate: article.frontmatter.date,
     readTime: article.frontmatter.readTime,
     excerpt: article.frontmatter.excerpt,
     tags: article.frontmatter.tags ?? [],
@@ -44,6 +54,7 @@ export default async function Writing() {
       id: article.id,
       title: article.title,
       date: article.date,
+      sortDate: parseDateToISO(article.date),
       readTime: article.readTime || "Book",
       excerpt: article.excerpt,
       tags: article.tags,
@@ -52,7 +63,11 @@ export default async function Writing() {
       externalSource: article.mediumUrl ? "Medium" : null,
     }))
 
-  const allArticles = [...internal, ...external]
+  const allArticles = [...internal, ...external].sort((a, b) => {
+    const dateA = new Date(a.sortDate).getTime()
+    const dateB = new Date(b.sortDate).getTime()
+    return dateB - dateA
+  })
 
   return (
     <SubpageShell

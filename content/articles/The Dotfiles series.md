@@ -1,4 +1,10 @@
-## The Dotfiles series
+---
+title: "The Dotfiles Series"
+date: 2024-08-08
+excerpt: "A multi-part series exploring dotfiles, syncing mechanisms, and system configuration."
+tags: [Dotfiles, Linux, Configuration]
+---
+
 > This is going to be a multi-part series where I dabble the world of dotfiles for my systems, documenting steps, decisions and explorations.
 
 Dotfiles are a way to replicate your custom settings for different applications across computer systems. The term “dotfiles” literally comes from the actual files that configure an application you might have come across, like a `.vimrc` or a `.zshrc`. 
