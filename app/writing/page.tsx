@@ -72,13 +72,14 @@ export default async function Writing() {
                     target={article.external ? "_blank" : "_self"}
                     rel={article.external ? "noopener noreferrer" : undefined}
                   >
-                    <h3 className="site-card-title mb-2 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
-                      {article.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                      {article.date}
-                      {article.readTime ? ` • ${article.readTime}` : ""}
-                    </p>
+                    <div className="flex items-center justify-between gap-4 mb-2">
+                      <h3 className="site-card-title group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors flex-1">
+                        {article.title}
+                      </h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">
+                        {article.date}
+                      </p>
+                    </div>
                     <p className="site-card-copy">{article.excerpt}</p>
                   </Link>
                 </article>
@@ -102,20 +103,21 @@ export default async function Writing() {
                     target={article.external ? "_blank" : "_self"}
                     rel={article.external ? "noopener noreferrer" : undefined}
                   >
-                    <div className="flex items-start justify-between gap-4 mb-2">
-                      <h3 className="site-card-title group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
+                    <div className="flex items-center justify-between gap-4 mb-2">
+                      <h3 className="site-card-title group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors flex-1">
                         {article.title}
                       </h3>
-                      {article.externalSource && (
-                        <span className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded whitespace-nowrap">
-                          {article.externalSource}
-                        </span>
-                      )}
+                      <div className="flex items-center gap-3 whitespace-nowrap">
+                        {article.externalSource && (
+                          <span className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">
+                            {article.externalSource}
+                          </span>
+                        )}
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                          {article.date}
+                        </p>
+                      </div>
                     </div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                      {article.date}
-                      {article.readTime ? ` • ${article.readTime}` : ""}
-                    </p>
                     <p className="site-card-copy">{article.excerpt}</p>
                   </Link>
                 </article>
