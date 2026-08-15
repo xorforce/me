@@ -55,7 +55,6 @@ export default async function Writing() {
   return (
     <SubpageShell
       title="Writing"
-      description="Thoughts on iOS, music, the internet, and surviving life in general."
       showFooterBorder
     >
       <div className="space-y-12">
