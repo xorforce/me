@@ -63,24 +63,21 @@ export default async function Writing() {
             <div>
               <h2 className="site-section-title">Essays</h2>
             </div>
-            <div className="space-y-8">
+            <div className="space-y-4">
               {internal.map((article) => (
-                <article key={article.id} className="group cursor-pointer">
+                <article key={article.id} className="group cursor-pointer py-2">
                   <Link
                     href={article.href}
-                    className="block"
+                    className="block flex items-center justify-between gap-4"
                     target={article.external ? "_blank" : "_self"}
                     rel={article.external ? "noopener noreferrer" : undefined}
                   >
-                    <div className="flex items-center justify-between gap-4 mb-2">
-                      <h3 className="site-card-title group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors flex-1">
-                        {article.title}
-                      </h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">
-                        {article.date}
-                      </p>
-                    </div>
-                    <p className="site-card-copy">{article.excerpt}</p>
+                    <h3 className="site-card-title group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors flex-1">
+                      {article.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">
+                      {article.date}
+                    </p>
                   </Link>
                 </article>
               ))}
@@ -94,31 +91,28 @@ export default async function Writing() {
             <div>
               <h2 className="site-section-title">Published Work</h2>
             </div>
-            <div className="space-y-8">
+            <div className="space-y-4">
               {external.map((article) => (
-                <article key={article.id} className="group cursor-pointer">
+                <article key={article.id} className="group cursor-pointer py-2">
                   <Link
                     href={article.href}
-                    className="block"
+                    className="block flex items-center justify-between gap-4"
                     target={article.external ? "_blank" : "_self"}
                     rel={article.external ? "noopener noreferrer" : undefined}
                   >
-                    <div className="flex items-center justify-between gap-4 mb-2">
-                      <h3 className="site-card-title group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors flex-1">
-                        {article.title}
-                      </h3>
-                      <div className="flex items-center gap-3 whitespace-nowrap">
-                        {article.externalSource && (
-                          <span className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">
-                            {article.externalSource}
-                          </span>
-                        )}
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
-                          {article.date}
-                        </p>
-                      </div>
+                    <h3 className="site-card-title group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors flex-1">
+                      {article.title}
+                    </h3>
+                    <div className="flex items-center gap-3 whitespace-nowrap">
+                      {article.externalSource && (
+                        <span className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">
+                          {article.externalSource}
+                        </span>
+                      )}
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        {article.date}
+                      </p>
                     </div>
-                    <p className="site-card-copy">{article.excerpt}</p>
                   </Link>
                 </article>
               ))}
