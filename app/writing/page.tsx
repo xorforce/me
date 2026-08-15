@@ -52,8 +52,6 @@ export default async function Writing() {
       externalSource: article.mediumUrl ? "Medium" : null,
     }))
 
-  const filteredArticles = [...internal, ...external]
-
   return (
     <SubpageShell
       title="Writing"
@@ -61,55 +59,77 @@ export default async function Writing() {
       showFooterBorder
     >
       <div className="space-y-12">
-        <section className="space-y-8">
-          {filteredArticles.map((article) => (
-            <article key={article.id} className="group site-card cursor-pointer p-4 -m-4">
-              <div>
-                <Link
-                  href={article.href}
-                  className="block"
-                  target={article.external ? "_blank" : "_self"}
-                  rel={article.external ? "noopener noreferrer" : undefined}
-                >
-                  <h2 className="site-card-title mb-2">{article.title}</h2>
-                  <div className="site-meta mb-3">
-                    {article.date}
-                    {article.readTime ? ` • ${article.readTime}` : ""}
-                  </div>
-                  <p className="site-card-copy mb-4">{article.excerpt}</p>
-                  <div className="mb-3 flex flex-wrap gap-2">
-                    {article.tags.map((tag) => (
-                      <span key={tag} className="site-chip">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </Link>
-                {article.externalSource ? (
-                  <div className="text-xs text-blue-600 transition-colors duration-200 group-hover:text-blue-800 dark:text-blue-400 dark:group-hover:text-blue-300">
-                    Read full article on {article.externalSource} →
-                  </div>
-                ) : null}
-              </div>
-            </article>
-          ))}
-
-          {filteredArticles.length === 0 ? (
-            <div className="py-8 text-center">
-              <p className="site-footer-note">No articles found.</p>
+        {internal.length > 0 && (
+          <section className="space-y-6">
+            <div>
+              <h2 className="site-section-title">Essays</h2>
             </div>
-          ) : null}
-        </section>
+            <div className="space-y-8">
+              {internal.map((article) => (
+                <article key={article.id} className="group cursor-pointer">
+                  <Link
+                    href={article.href}
+                    className="block"
+                    target={article.external ? "_blank" : "_self"}
+                    rel={article.external ? "noopener noreferrer" : undefined}
+                  >
+                    <h3 className="site-card-title mb-2 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
+                      {article.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                      {article.date}
+                      {article.readTime ? ` • ${article.readTime}` : ""}
+                    </p>
+                    <p className="site-card-copy">{article.excerpt}</p>
+                  </Link>
+                </article>
+              ))}
+            </div>
+            <div className="site-divider" />
+          </section>
+        )}
 
-        <section className="py-4 text-center">
-          <p className="site-footer-note">
-            More articles coming soon. Follow me on{" "}
-            <Link href="https://twitter.com/soulful_swift" className="site-inline-link">
-              Twitter
-            </Link>{" "}
-            for updates.
-          </p>
-        </section>
+        {external.length > 0 && (
+          <section className="space-y-6">
+            <div>
+              <h2 className="site-section-title">Published Work</h2>
+            </div>
+            <div className="space-y-8">
+              {external.map((article) => (
+                <article key={article.id} className="group cursor-pointer">
+                  <Link
+                    href={article.href}
+                    className="block"
+                    target={article.external ? "_blank" : "_self"}
+                    rel={article.external ? "noopener noreferrer" : undefined}
+                  >
+                    <div className="flex items-start justify-between gap-4 mb-2">
+                      <h3 className="site-card-title group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
+                        {article.title}
+                      </h3>
+                      {article.externalSource && (
+                        <span className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded whitespace-nowrap">
+                          {article.externalSource}
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                      {article.date}
+                      {article.readTime ? ` • ${article.readTime}` : ""}
+                    </p>
+                    <p className="site-card-copy">{article.excerpt}</p>
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {internal.length === 0 && external.length === 0 && (
+          <div className="py-8 text-center">
+            <p className="site-footer-note">No articles found.</p>
+          </div>
+        )}
       </div>
     </SubpageShell>
   )
