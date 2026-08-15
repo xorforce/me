@@ -1,4 +1,10 @@
-## The Dotfiles Series: Sync and Shell
+---
+title: "The Dotfiles Series: Sync and Shell"
+date: 2024-08-16
+excerpt: "Exploring dotfile syncing mechanisms and shell configuration. Part two in the dotfiles series."
+tags: [Dotfiles, Linux, Configuration]
+---
+
 > This is the second part in a series of figuring out dofiles. If you haven’t read the first post, read [here](https://www.bhagat.zone/writing/the-dotfiles-series/).
 
 In the last post, we looked at dotfiles and about their different syncing mechanims, some popular approaches in the community and why we should sync them.
