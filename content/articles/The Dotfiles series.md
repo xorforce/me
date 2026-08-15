@@ -1,6 +1,6 @@
 ---
 title: "The Dotfiles Series"
-date: 2024-08-08
+date: "2024-08-08"
 excerpt: "A multi-part series exploring dotfiles, syncing mechanisms, and system configuration."
 tags: [Dotfiles, Linux, Configuration]
 ---

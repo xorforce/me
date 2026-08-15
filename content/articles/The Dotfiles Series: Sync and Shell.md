@@ -1,6 +1,6 @@
 ---
 title: "The Dotfiles Series: Sync and Shell"
-date: 2024-08-16
+date: "2024-08-16"
 excerpt: "Exploring dotfile syncing mechanisms and shell configuration. Part two in the dotfiles series."
 tags: [Dotfiles, Linux, Configuration]
 ---
