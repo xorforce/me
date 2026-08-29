@@ -1,44 +1,24 @@
 import localFont from "next/font/local"
 
-const ibmPlexMono = localFont({
+const intelOneMono = localFont({
   src: [
     {
-      path: "../public/fonts/IBM_Plex_Mono/IBMPlexMono-Regular.ttf",
-      weight: "400",
+      path: "../public/fonts/Intel_One_Mono/IntelOneMono-VariableFont_wght.ttf",
+      weight: "400 700",
       style: "normal",
     },
     {
-      path: "../public/fonts/IBM_Plex_Mono/IBMPlexMono-Italic.ttf",
-      weight: "400",
-      style: "italic",
-    },
-    {
-      path: "../public/fonts/IBM_Plex_Mono/IBMPlexMono-Medium.ttf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/IBM_Plex_Mono/IBMPlexMono-MediumItalic.ttf",
-      weight: "500",
-      style: "italic",
-    },
-    {
-      path: "../public/fonts/IBM_Plex_Mono/IBMPlexMono-Bold.ttf",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/IBM_Plex_Mono/IBMPlexMono-BoldItalic.ttf",
-      weight: "700",
+      path: "../public/fonts/Intel_One_Mono/IntelOneMono-Italic-VariableFont_wght.ttf",
+      weight: "400 700",
       style: "italic",
     },
   ],
-  variable: "--font-ibm-plex-mono",
+  variable: "--font-intel-one-mono",
   display: "swap",
 })
 
 export const fonts = {
-  ibmPlexMono,
+  intelOneMono,
 }
 
-export const fontVariables = [fonts.ibmPlexMono.variable].join(" ")
+export const fontVariables = [fonts.intelOneMono.variable].join(" ")
