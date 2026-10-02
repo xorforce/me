@@ -1,0 +1,458 @@
+{
+  "intro": "",
+  "speed": 100,
+  "cards": [
+    {
+      "id": "holiday-cup",
+      "name": "Holiday Cup",
+      "series": "Holiday",
+      "image": "/images/collections/starbucks-cards/holiday-cup.webp",
+      "width": 602,
+      "height": 1000,
+      "details": {
+        "Picked up from": "Indonesia"
+      }
+    },
+    {
+      "id": "autumn-teacup",
+      "name": "Autumn Teacup",
+      "series": "Autumn",
+      "image": "/images/collections/starbucks-cards/autumn-teacup.webp",
+      "width": 1000,
+      "height": 699,
+      "details": {
+        "Picked up from": "Indonesia"
+      }
+    },
+    {
+      "id": "autumn-leaves",
+      "name": "Autumn Leaves",
+      "series": "Autumn",
+      "image": "/images/collections/starbucks-cards/autumn-leaves.webp",
+      "width": 1000,
+      "height": 676,
+      "details": {
+        "Picked up from": "Thailand"
+      }
+    },
+    {
+      "id": "sakura",
+      "name": "Sakura",
+      "series": "Spring",
+      "image": "/images/collections/starbucks-cards/sakura.webp",
+      "width": 1000,
+      "height": 952,
+      "details": {
+        "Picked up from": "Indonesia"
+      }
+    },
+    {
+      "id": "reserve-roastery-tokyo",
+      "name": "Reserve Roastery Tokyo",
+      "series": "Reserve",
+      "image": "/images/collections/starbucks-cards/reserve-roastery-tokyo.webp",
+      "width": 1000,
+      "height": 631,
+      "details": {
+        "Picked up from": "Japan"
+      },
+      "standUp": true
+    },
+    {
+      "id": "osaka",
+      "name": "Osaka",
+      "series": "City",
+      "image": "/images/collections/starbucks-cards/osaka.webp",
+      "width": 1000,
+      "height": 631,
+      "details": {
+        "Picked up from": "Japan"
+      },
+      "standUp": true
+    },
+    {
+      "id": "sweet-treats",
+      "name": "Sweet Treats",
+      "series": "Seasonal",
+      "image": "/images/collections/starbucks-cards/sweet-treats.webp",
+      "width": 1000,
+      "height": 631,
+      "details": {
+        "Picked up from": "Vietnam"
+      },
+      "standUp": true
+    },
+    {
+      "id": "starbucks-reserve",
+      "name": "Starbucks Reserve",
+      "series": "Reserve",
+      "image": "/images/collections/starbucks-cards/starbucks-reserve.webp",
+      "width": 1000,
+      "height": 631,
+      "details": {
+        "Picked up from": "India"
+      },
+      "standUp": true
+    },
+    {
+      "id": "summer-picnic",
+      "name": "Summer Picnic",
+      "series": "Seasonal",
+      "image": "/images/collections/starbucks-cards/summer-picnic.webp",
+      "width": 1000,
+      "height": 631,
+      "details": {
+        "Picked up from": "India"
+      },
+      "standUp": true
+    },
+    {
+      "id": "space-doodles",
+      "name": "Space Doodles",
+      "series": "Artist",
+      "image": "/images/collections/starbucks-cards/space-doodles.webp",
+      "width": 1000,
+      "height": 631,
+      "details": {
+        "Picked up from": "India"
+      },
+      "standUp": true
+    },
+    {
+      "id": "happy-diwali",
+      "name": "Happy Diwali",
+      "series": "Festive",
+      "image": "/images/collections/starbucks-cards/happy-diwali.webp",
+      "width": 1000,
+      "height": 631,
+      "details": {
+        "Picked up from": "India"
+      },
+      "standUp": true
+    },
+    {
+      "id": "cheers",
+      "name": "Cheers",
+      "series": "Celebration",
+      "image": "/images/collections/starbucks-cards/cheers.webp",
+      "width": 1000,
+      "height": 631,
+      "details": {
+        "Picked up from": "India"
+      },
+      "standUp": true
+    },
+    {
+      "id": "dock",
+      "name": "dOCk",
+      "series": "Collab",
+      "image": "/images/collections/starbucks-cards/dock.webp",
+      "width": 1000,
+      "height": 631,
+      "details": {
+        "Picked up from": "Malaysia"
+      },
+      "standUp": true
+    },
+    {
+      "id": "wicked",
+      "name": "Wicked",
+      "series": "Collab",
+      "image": "/images/collections/starbucks-cards/wicked.webp",
+      "width": 1000,
+      "height": 631,
+      "details": {
+        "Picked up from": "Thailand"
+      },
+      "standUp": true
+    },
+    {
+      "id": "fifty-years",
+      "name": "50 Years",
+      "series": "Anniversary",
+      "image": "/images/collections/starbucks-cards/fifty-years.webp",
+      "width": 1000,
+      "height": 631,
+      "details": {
+        "Picked up from": "India"
+      },
+      "standUp": true
+    },
+    {
+      "id": "wild-garden",
+      "name": "Wild Garden",
+      "series": "Artist",
+      "image": "/images/collections/starbucks-cards/wild-garden.webp",
+      "width": 1000,
+      "height": 631,
+      "details": {
+        "Picked up from": "Singapore"
+      },
+      "standUp": true
+    },
+    {
+      "id": "indonesia",
+      "name": "Indonesia",
+      "series": "City",
+      "image": "/images/collections/starbucks-cards/indonesia.webp",
+      "width": 1000,
+      "height": 631,
+      "details": {
+        "Picked up from": "Indonesia"
+      },
+      "standUp": true
+    },
+    {
+      "id": "singapore",
+      "name": "Singapore",
+      "series": "City",
+      "image": "/images/collections/starbucks-cards/singapore.webp",
+      "width": 1000,
+      "height": 631,
+      "details": {
+        "Picked up from": "Singapore"
+      },
+      "standUp": true
+    },
+    {
+      "id": "siren-tail",
+      "name": "Siren Tail",
+      "series": "Classic",
+      "image": "/images/collections/starbucks-cards/siren-tail.webp",
+      "width": 1000,
+      "height": 631,
+      "details": {
+        "Picked up from": "Indonesia"
+      },
+      "standUp": true
+    },
+    {
+      "id": "osaka-ii",
+      "name": "Osaka II",
+      "series": "City",
+      "image": "/images/collections/starbucks-cards/osaka-ii.webp",
+      "width": 1000,
+      "height": 631,
+      "details": {
+        "Picked up from": "Japan"
+      },
+      "standUp": true
+    },
+    {
+      "id": "wordmark",
+      "name": "Wordmark",
+      "series": "Classic",
+      "image": "/images/collections/starbucks-cards/wordmark.webp",
+      "width": 1000,
+      "height": 631,
+      "details": {
+        "Picked up from": "India"
+      },
+      "standUp": true
+    },
+    {
+      "id": "new-year-2025",
+      "name": "2025",
+      "series": "Festive",
+      "image": "/images/collections/starbucks-cards/new-year-2025.webp",
+      "width": 1000,
+      "height": 631,
+      "details": {
+        "Picked up from": "India"
+      },
+      "standUp": true
+    },
+    {
+      "id": "dewata-bali",
+      "name": "Dewata Bali",
+      "series": "City",
+      "image": "/images/collections/starbucks-cards/dewata-bali.webp",
+      "width": 1000,
+      "height": 631,
+      "details": {
+        "Picked up from": "Indonesia"
+      },
+      "standUp": true
+    },
+    {
+      "id": "shine-so-bright",
+      "name": "Shine So Bright",
+      "series": "Holiday",
+      "image": "/images/collections/starbucks-cards/shine-so-bright.webp",
+      "width": 1000,
+      "height": 631,
+      "details": {
+        "Picked up from": "Thailand"
+      },
+      "standUp": true
+    },
+    {
+      "id": "year-of-the-rabbit",
+      "name": "Year of the Rabbit",
+      "series": "Lunar New Year",
+      "image": "/images/collections/starbucks-cards/year-of-the-rabbit.webp",
+      "width": 1000,
+      "height": 631,
+      "standUp": true,
+      "details": {
+        "Picked up from": "Indonesia"
+      }
+    },
+    {
+      "id": "latte-art",
+      "name": "Latte Art",
+      "series": "Artist",
+      "image": "/images/collections/starbucks-cards/latte-art.webp",
+      "width": 1000,
+      "height": 631,
+      "standUp": true,
+      "details": {
+        "Picked up from": "Indonesia"
+      }
+    },
+    {
+      "id": "christmas-trees",
+      "name": "Christmas Trees",
+      "series": "Holiday",
+      "image": "/images/collections/starbucks-cards/christmas-trees.webp",
+      "width": 1000,
+      "height": 631,
+      "standUp": true,
+      "details": {
+        "Picked up from": "Indonesia"
+      }
+    },
+    {
+      "id": "jakarta",
+      "name": "Jakarta",
+      "series": "City",
+      "image": "/images/collections/starbucks-cards/jakarta.webp",
+      "width": 1000,
+      "height": 631,
+      "standUp": true,
+      "details": {
+        "Picked up from": "Indonesia"
+      }
+    },
+    {
+      "id": "seattle-1971",
+      "name": "Seattle 1971",
+      "series": "Classic",
+      "image": "/images/collections/starbucks-cards/seattle-1971.webp",
+      "width": 1000,
+      "height": 631,
+      "standUp": true,
+      "details": {
+        "Picked up from": "Malaysia"
+      }
+    },
+    {
+      "id": "siren-heritage",
+      "name": "Siren Heritage",
+      "series": "Classic",
+      "image": "/images/collections/starbucks-cards/siren-heritage.webp",
+      "width": 1000,
+      "height": 631,
+      "standUp": true,
+      "details": {
+        "Picked up from": "Indonesia"
+      }
+    },
+    {
+      "id": "poppies",
+      "name": "Poppies",
+      "series": "Spring",
+      "image": "/images/collections/starbucks-cards/poppies.webp",
+      "width": 1000,
+      "height": 631,
+      "standUp": true,
+      "details": {
+        "Picked up from": "Indonesia"
+      }
+    },
+    {
+      "id": "happy-halloween",
+      "name": "Happy Halloween",
+      "series": "Festive",
+      "image": "/images/collections/starbucks-cards/happy-halloween.webp",
+      "width": 1000,
+      "height": 631,
+      "standUp": true,
+      "details": {
+        "Picked up from": "Indonesia"
+      }
+    },
+    {
+      "id": "wordmark-stripes",
+      "name": "Wordmark Stripes",
+      "series": "Classic",
+      "image": "/images/collections/starbucks-cards/wordmark-stripes.webp",
+      "width": 1000,
+      "height": 631,
+      "standUp": true,
+      "details": {
+        "Picked up from": "India"
+      }
+    },
+    {
+      "id": "special-edition-tail",
+      "name": "Special Edition",
+      "series": "Classic",
+      "image": "/images/collections/starbucks-cards/special-edition-tail.webp",
+      "width": 1000,
+      "height": 631,
+      "standUp": true,
+      "details": {
+        "Picked up from": "India"
+      }
+    },
+    {
+      "id": "cafe-corner",
+      "name": "Café Corner",
+      "series": "Seasonal",
+      "image": "/images/collections/starbucks-cards/cafe-corner.webp",
+      "width": 1000,
+      "height": 631,
+      "standUp": true,
+      "details": {
+        "Picked up from": "India"
+      }
+    },
+    {
+      "id": "meadow",
+      "name": "Meadow",
+      "series": "Spring",
+      "image": "/images/collections/starbucks-cards/meadow.webp",
+      "width": 1000,
+      "height": 631,
+      "standUp": true,
+      "details": {
+        "Picked up from": "India"
+      }
+    },
+    {
+      "id": "sakura-boat",
+      "name": "Sakura Boat",
+      "series": "Spring",
+      "image": "/images/collections/starbucks-cards/sakura-boat.webp",
+      "width": 1000,
+      "height": 631,
+      "standUp": true,
+      "details": {
+        "Picked up from": "India"
+      }
+    },
+    {
+      "id": "halloween-cauldron",
+      "name": "Halloween Cauldron",
+      "series": "Festive",
+      "image": "/images/collections/starbucks-cards/halloween-cauldron.webp",
+      "width": 1000,
+      "height": 631,
+      "standUp": true,
+      "details": {
+        "Picked up from": "Indonesia"
+      }
+    }
+  ]
+}

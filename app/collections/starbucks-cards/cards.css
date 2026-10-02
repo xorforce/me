@@ -1,0 +1,304 @@
+/* ---------- /cards ---------- */
+
+/* the carousel runs edge to edge of the window, not just the content column */
+body:has(.cards-stage) {
+  overflow-x: clip;
+}
+
+/* the row drifts on its own; swipe, shift-scroll or drag to move it faster */
+.cards-stage {
+  margin-inline: calc(50% - 50vw);
+  overflow: hidden;
+  touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 6%,
+    #000 94%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 6%,
+    #000 94%,
+    transparent
+  );
+}
+
+.cards-track {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  width: max-content;
+  padding: 56px 20px 4px;
+  will-change: transform;
+}
+
+.cards-stage.is-dragging {
+  cursor: grabbing;
+}
+
+/* while dragging, nothing lifts or dims */
+.cards-stage.is-dragging .cards-item {
+  pointer-events: none;
+}
+
+.cards-item {
+  flex: none;
+  text-align: left;
+  transition: opacity 0.5s ease;
+}
+
+.cards-item:focus-visible {
+  outline: none;
+}
+
+.cards-track:has(.cards-item:hover) .cards-item:not(:hover) {
+  opacity: 0.35;
+}
+
+/* every card stands on the same shelf line */
+.cards-shelf {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  height: 346px;
+}
+
+.cards-cutout {
+  display: block;
+  max-width: none;
+  user-select: none;
+  filter: drop-shadow(0 14px 14px rgba(0, 0, 0, 0.55));
+}
+
+/* landscape cards stand on their end; the shadow lives on the wrapper so it falls downward */
+.cards-turned {
+  position: relative;
+  display: block;
+  filter: drop-shadow(0 14px 14px rgba(0, 0, 0, 0.55));
+}
+
+.cards-turned > .cards-cutout {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  filter: none;
+}
+
+.cards-shelf > * {
+  transition:
+    transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.15),
+    filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cards-item:hover .cards-shelf > *,
+.cards-item:focus-visible .cards-shelf > * {
+  transform: translateY(-32px);
+  filter: drop-shadow(0 26px 22px rgba(0, 0, 0, 0.7));
+}
+
+.cards-item:focus-visible .cards-shelf > * {
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.9))
+    drop-shadow(0 26px 22px rgba(0, 0, 0, 0.7));
+}
+
+/* ---------- overlay ---------- */
+
+.cards-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow: auto;
+}
+
+.cards-scrim {
+  position: fixed;
+  inset: 0;
+  cursor: zoom-out;
+  background: hsl(var(--background) / 0.6);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.cards-overlay.is-in .cards-scrim {
+  opacity: 1;
+}
+
+.cards-overlay.is-out .cards-scrim {
+  transition-delay: 0.12s;
+}
+
+.cards-overlay-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(20px, 5vw, 56px);
+  align-items: center;
+  width: 100%;
+  max-width: 960px;
+  pointer-events: none;
+}
+
+.cards-big-slot {
+  display: flex;
+  justify-content: center;
+}
+
+.cards-big,
+.cards-info {
+  pointer-events: auto;
+}
+
+.cards-big {
+  position: relative;
+  perspective: 1600px;
+  will-change: transform;
+}
+
+.cards-tilt {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cards-flipper {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s cubic-bezier(0.2, 0.85, 0.25, 1.08);
+}
+
+.cards-flipper.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.cards-face {
+  position: absolute;
+  inset: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.cards-face .cards-cutout {
+  filter: drop-shadow(0 40px 34px rgba(0, 0, 0, 0.75));
+}
+
+/* light that follows the pointer, clipped to the card's outline */
+.cards-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--gx, 50%) var(--gy, 50%),
+    rgba(255, 255, 255, 0.25),
+    transparent 50%
+  );
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  mix-blend-mode: soft-light;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.cards-big:hover .cards-glare {
+  opacity: 1;
+}
+
+.cards-back {
+  transform: rotateY(180deg);
+}
+
+/* no photo of the back: the front's outline, mirrored, in card stock */
+.cards-blank-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9e7e1;
+  color: #2a2a2a;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  transform: scaleX(-1);
+  filter: drop-shadow(0 40px 34px rgba(0, 0, 0, 0.75));
+}
+
+.cards-blank-back-text {
+  transform: scaleX(-1);
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.cards-info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.cards-details {
+  border-top: 1px solid hsl(var(--border));
+}
+
+.cards-details > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+/* info arrives line by line, after the card lands */
+.cards-rise {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.3s ease;
+}
+
+.cards-overlay.is-in .cards-rise {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.6s ease,
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(380ms + var(--i, 0) * 70ms);
+}
+
+@media (max-width: 640px) {
+  .cards-overlay {
+    padding: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cards-shelf > *,
+  .cards-item,
+  .cards-tilt,
+  .cards-flipper,
+  .cards-scrim,
+  .cards-rise,
+  .cards-overlay.is-in .cards-rise {
+    transition-duration: 0.01s !important;
+    transition-delay: 0s !important;
+  }
+}
