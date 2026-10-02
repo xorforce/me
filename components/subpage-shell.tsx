@@ -10,6 +10,7 @@ type SubpageShellProps = {
   contentClassName?: string
   showFooterBorder?: boolean
   footerContent?: ReactNode
+  hideNav?: boolean
 }
 
 export function SubpageShell({
@@ -20,11 +21,13 @@ export function SubpageShell({
   contentClassName = "",
   showFooterBorder = false,
   footerContent,
+  hideNav = false,
 }: SubpageShellProps) {
   const footerClassName = showFooterBorder ? "border-t border-gray-200 dark:border-gray-800 py-8" : "py-8"
 
   return (
     <div className="site-shell">
+      {hideNav ? null : (
       <nav className={`site-nav ${maxWidthClass}`}>
         <Button
           variant="ghost"
@@ -75,6 +78,7 @@ export function SubpageShell({
           </Button>
         </div>
       </nav>
+      )}
 
       <main className={`site-main ${maxWidthClass} ${contentClassName}`}>
         {title || description ? (
