@@ -99,7 +99,11 @@ export default function Portfolio() {
       <Link href="/inventory" className="home-link">
         inventory
       </Link>
-      {" "}of what I carry, use and display.
+      {" "}of what I carry, use and display, along with a few{" "}
+      <Link href="/collections/starbucks-cards" className="home-link">
+        collections
+      </Link>
+      .
     </>,
     <>
     I also{" "}
