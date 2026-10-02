@@ -1,6 +1,6 @@
 # Typography System
 
-The site now uses a single font family, IBM Plex Mono, for all typography roles.
+The site now uses a single font family, Intel One Mono (variable), for all typography roles.
 
 ## Source of truth
 
@@ -11,13 +11,14 @@ The site now uses a single font family, IBM Plex Mono, for all typography roles.
 
 ## Current mapping
 
-- `font-primary`: IBM Plex Mono
-- `font-secondary`: IBM Plex Mono
-- `font-display`: IBM Plex Mono
-- `font-mono`: IBM Plex Mono
+- `font-primary`: Intel One Mono
+- `font-secondary`: Intel One Mono
+- `font-display`: Intel One Mono
+- `font-mono`: Intel One Mono
 
 ## Notes
 
-- Next injects the `--font-ibm-plex-mono` variable on the root `html` element.
+- Next injects the `--font-intel-one-mono` variable on the root `html` element.
 - Tailwind font utilities point directly to that variable.
+- The variable font supports weight 400–700 (upright + italic).
 - If you change the site font again, update `lib/typography.ts` and keep `tailwind.config.ts` aligned.
